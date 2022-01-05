@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="Rrl-ci-nKw">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashImage" translatesAutoresizingMaskIntoConstraints="NO" id="Rrl-ci-nKw">
                                 <rect key="frame" x="120" y="361" width="174" height="174"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Rrl-ci-nKw" secondAttribute="height" multiplier="1:1" id="0ao-JL-rXX"/>
@@ -40,7 +40,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LaunchImage" width="209" height="212.5"/>
+        <image name="SplashImage" width="209" height="212.5"/>
         <namedColor name="MainColor">
             <color red="0.0" green="0.71399998664855957" blue="0.84299999475479126" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
