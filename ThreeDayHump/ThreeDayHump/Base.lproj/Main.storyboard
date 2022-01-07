@@ -26,27 +26,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="목표 정하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pce-MG-DHM">
-                                <rect key="frame" x="112" y="271.5" width="190" height="63"/>
-                                <fontDescription key="fontDescription" name="BMYEONSUNG-OTF" family="BM YEONSUNG OTF" pointSize="52"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="목표 정하기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pce-MG-DHM">
+                                <rect key="frame" x="119.5" y="256.5" width="175.5" height="58"/>
+                                <fontDescription key="fontDescription" name="BMYEONSUNG-OTF" family="BM YEONSUNG OTF" pointSize="48"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4kA-L7-ReM">
-                                <rect key="frame" x="40" y="364.5" width="334" height="167"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="center" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4kA-L7-ReM">
+                                <rect key="frame" x="40" y="334.5" width="334" height="167"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="4kA-L7-ReM" secondAttribute="height" multiplier="2:1" id="sIH-5u-md5"/>
                                 </constraints>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4Z-qA-XDX">
-                                <rect key="frame" x="80" y="611.5" width="254" height="63.5"/>
+                                <rect key="frame" x="107" y="561.5" width="200" height="57"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="A4Z-qA-XDX" secondAttribute="height" multiplier="4:1" id="IcG-Im-RIA"/>
+                                    <constraint firstAttribute="width" secondItem="A4Z-qA-XDX" secondAttribute="height" multiplier="3.5:1" id="IcG-Im-RIA"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="63.5" id="T65-PQ-eQl"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="ZLy-jw-luJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="BMHANNAProOTF" family="BM HANNA Pro OTF" pointSize="32"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -57,7 +59,7 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="작심삼일 시작">
                                             <attributes>
-                                                <font key="NSFont" size="32" name="BMHANNAProOTF"/>
+                                                <font key="NSFont" size="28" name="BMHANNAProOTF"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
@@ -70,14 +72,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="MainColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="A4Z-qA-XDX" secondAttribute="trailing" constant="80" id="66H-dc-92R"/>
-                            <constraint firstItem="4kA-L7-ReM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7pU-hJ-5uv"/>
-                            <constraint firstItem="A4Z-qA-XDX" firstAttribute="leading" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="7xZ-ZK-qh6"/>
+                            <constraint firstItem="4kA-L7-ReM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-30" id="7pU-hJ-5uv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4kA-L7-ReM" secondAttribute="trailing" constant="40" id="9kw-na-JIV"/>
-                            <constraint firstItem="A4Z-qA-XDX" firstAttribute="top" secondItem="4kA-L7-ReM" secondAttribute="bottom" constant="80" id="EFm-9g-ntH"/>
+                            <constraint firstItem="A4Z-qA-XDX" firstAttribute="top" secondItem="4kA-L7-ReM" secondAttribute="bottom" constant="60" id="EFm-9g-ntH"/>
                             <constraint firstItem="pce-MG-DHM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KvQ-hl-v9F"/>
+                            <constraint firstItem="A4Z-qA-XDX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zyg-zA-unD"/>
                             <constraint firstItem="4kA-L7-ReM" firstAttribute="leading" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="cZw-sm-Gnt"/>
-                            <constraint firstItem="4kA-L7-ReM" firstAttribute="top" secondItem="pce-MG-DHM" secondAttribute="bottom" constant="30" id="m6f-4Z-qu6"/>
+                            <constraint firstItem="4kA-L7-ReM" firstAttribute="top" secondItem="pce-MG-DHM" secondAttribute="bottom" constant="20" id="m6f-4Z-qu6"/>
                             <constraint firstItem="4kA-L7-ReM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="v7F-FW-fnZ"/>
                         </constraints>
                     </view>
