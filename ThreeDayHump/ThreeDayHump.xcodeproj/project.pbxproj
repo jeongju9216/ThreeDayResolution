@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B1A0CF42789190C0085B9CF /* ThreeDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1A0CF32789190C0085B9CF /* ThreeDayViewController.swift */; };
+		9B1A0CF727891D360085B9CF /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1A0CF627891D360085B9CF /* Goal.swift */; };
 		9B65DAE32787270000F01979 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B65DAE22787270000F01979 /* MoreViewController.swift */; };
 		9B65DAE5278728DA00F01979 /* BMHANNAProOTF.otf.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B65DAE4278728DA00F01979 /* BMHANNAProOTF.otf.ttf */; };
 		9BF6C1FD2781DC4800E486CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF6C1FC2781DC4800E486CE /* AppDelegate.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B1A0CF32789190C0085B9CF /* ThreeDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeDayViewController.swift; sourceTree = "<group>"; };
+		9B1A0CF627891D360085B9CF /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		9B65DAE22787270000F01979 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		9B65DAE4278728DA00F01979 /* BMHANNAProOTF.otf.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BMHANNAProOTF.otf.ttf; sourceTree = "<group>"; };
 		9BF6C1F92781DC4800E486CE /* ThreeDayHump.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThreeDayHump.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +82,7 @@
 		9BF6C210278710D300E486CE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9B1A0CF627891D360085B9CF /* Goal.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -87,6 +92,7 @@
 			children = (
 				9BF6C2002781DC4800E486CE /* GoalViewController.swift */,
 				9B65DAE22787270000F01979 /* MoreViewController.swift */,
+				9B1A0CF32789190C0085B9CF /* ThreeDayViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -174,8 +180,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BF6C2012781DC4800E486CE /* GoalViewController.swift in Sources */,
+				9B1A0CF42789190C0085B9CF /* ThreeDayViewController.swift in Sources */,
 				9B65DAE32787270000F01979 /* MoreViewController.swift in Sources */,
 				9BF6C1FD2781DC4800E486CE /* AppDelegate.swift in Sources */,
+				9B1A0CF727891D360085B9CF /* Goal.swift in Sources */,
 				9BF6C1FF2781DC4800E486CE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -19,8 +19,11 @@ class GoalViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        
         initVies()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        goalTextView.centerVerticalText()
     }
 
     //MARK: - Overrides
@@ -28,30 +31,36 @@ class GoalViewController: UIViewController {
         goalTextView.endEditing(true)
     }
     
+    //MARK: - IBActions
+    @IBAction func clickedStartButton(_ sender: UIButton) {
+        Goal.shared.goal = goalTextView.text ?? ""
+    }
+    
     
     //MARK: - Methods
     private func initVies() {
+        initGoalTextView()
+        initStartButton()
+    }
+    
+    private func initGoalTextView() {
         goalTextView.delegate = self
         goalTextView.backgroundColor = .white
         goalTextView.layer.cornerRadius = 15
-        goalTextView.textContainer.maximumNumberOfLines = 2
-        goalTextView.textContainer.lineBreakMode = .byTruncatingTail
-        
+    }
+    
+    private func initStartButton() {
         startButton.layer.cornerRadius = 5
+        
         startButton.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3).cgColor
         startButton.layer.shadowOffset = CGSize(width: 0.0, height: 3.0)
         startButton.layer.shadowOpacity = 1
         startButton.layer.masksToBounds = false
     }
-
 }
 
 extension GoalViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
-        goalTextView.centerVerticalText()
-    }
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
         goalTextView.centerVerticalText()
     }
     

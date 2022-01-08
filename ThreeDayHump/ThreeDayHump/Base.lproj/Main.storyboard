@@ -18,7 +18,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--홈-->
+        <!--Goal View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="GoalViewController" customModule="ThreeDayHump" customModuleProvider="target" sceneMemberID="viewController">
@@ -26,13 +26,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="목표 정하기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pce-MG-DHM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="목표 정하기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pce-MG-DHM">
                                 <rect key="frame" x="119.5" y="256.5" width="175.5" height="58"/>
                                 <fontDescription key="fontDescription" name="BMYEONSUNG-OTF" family="BM YEONSUNG OTF" pointSize="48"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="center" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4kA-L7-ReM">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4kA-L7-ReM">
                                 <rect key="frame" x="40" y="334.5" width="334" height="167"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -67,6 +67,10 @@
                                     <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
                                     <color key="baseForegroundColor" name="MainColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="clickedStartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ini-bm-XAd"/>
+                                    <segue destination="b1h-ch-X3p" kind="show" id="UU5-wx-iwa"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -82,7 +86,7 @@
                             <constraint firstItem="4kA-L7-ReM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="v7F-FW-fnZ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="홈" image="square.grid.2x2" catalog="system" selectedImage="square.grid.2x2.fill" id="UBv-nB-gtd"/>
+                    <navigationItem key="navigationItem" id="Qk0-pp-Xp7"/>
                     <connections>
                         <outlet property="goalTextView" destination="4kA-L7-ReM" id="f6G-HZ-Rm1"/>
                         <outlet property="startButton" destination="A4Z-qA-XDX" id="AaE-RE-Zsd"/>
@@ -90,7 +94,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="128.57142857142856"/>
+            <point key="canvasLocation" x="1957.9710144927537" y="128.57142857142856"/>
+        </scene>
+        <!--Three Day View Controller-->
+        <scene sceneID="trI-t7-1K6">
+            <objects>
+                <viewController id="b1h-ch-X3p" customClass="ThreeDayViewController" customModule="ThreeDayHump" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qON-8W-Euh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="VvI-CY-xFQ"/>
+                        <color key="backgroundColor" name="MainColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="EMH-yq-8Ds"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xcY-bv-p7P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2818.840579710145" y="128.57142857142856"/>
         </scene>
         <!--설정-->
         <scene sceneID="REZ-p1-XJU">
@@ -121,13 +141,32 @@
                         <color key="selectedImageTintColor" name="TabColor"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="l6x-ga-vow"/>
+                        <segue destination="0LJ-0q-Icg" kind="relationship" relationship="viewControllers" id="l6x-ga-vow"/>
                         <segue destination="NvQ-hB-Sns" kind="relationship" relationship="viewControllers" id="Yig-QX-QUk"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wht-6q-KwY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="128.57142857142856"/>
+        </scene>
+        <!--홈-->
+        <scene sceneID="5Ok-xP-Pg8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0LJ-0q-Icg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="홈" image="square.grid.2x2" catalog="system" selectedImage="square.grid.2x2.fill" id="UBv-nB-gtd"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xvw-2T-yZP">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Ug2-1o-8Am"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KBN-Dh-wmc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="128.57142857142856"/>
         </scene>
     </scenes>
     <resources>
