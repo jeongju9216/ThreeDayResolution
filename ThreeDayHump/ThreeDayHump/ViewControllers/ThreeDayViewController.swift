@@ -26,7 +26,7 @@ class ThreeDayViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         initView()
-
+        
         self.navigationItem.hidesBackButton = true
         self.navigationItem.title = Goal.shared.goal ?? ""
                 
