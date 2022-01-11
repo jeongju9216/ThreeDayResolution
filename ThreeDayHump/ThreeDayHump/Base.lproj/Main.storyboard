@@ -27,25 +27,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="목표 정하기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pce-MG-DHM">
-                                <rect key="frame" x="119.5" y="236.5" width="175.5" height="58"/>
-                                <fontDescription key="fontDescription" name="BMYEONSUNG-OTF" family="BM YEONSUNG OTF" pointSize="48"/>
+                                <rect key="frame" x="137.5" y="226.5" width="139" height="46"/>
+                                <fontDescription key="fontDescription" name="BMYEONSUNG-OTF" family="BM YEONSUNG OTF" pointSize="38"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FZg-7l-Y9w">
-                                <rect key="frame" x="20" y="324.5" width="374" height="187"/>
+                                <rect key="frame" x="20" y="292.5" width="374" height="75"/>
                                 <color key="backgroundColor" name="TextFieldColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="FZg-7l-Y9w" secondAttribute="height" multiplier="2:1" id="EhR-CQ-CcX"/>
+                                    <constraint firstAttribute="width" secondItem="FZg-7l-Y9w" secondAttribute="height" multiplier="1:0.2" id="EhR-CQ-CcX"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4Z-qA-XDX">
-                                <rect key="frame" x="107" y="571.5" width="200" height="57"/>
+                                <rect key="frame" x="119.5" y="397.5" width="175" height="50"/>
                                 <color key="backgroundColor" name="TextFieldColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="A4Z-qA-XDX" secondAttribute="height" multiplier="3.5:1" id="IcG-Im-RIA"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="63.5" id="T65-PQ-eQl"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="ZLy-jw-luJ"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="175" id="ZLy-jw-luJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="BMHANNAProOTF" family="BM HANNA Pro OTF" pointSize="32"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -56,7 +56,7 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="작심삼일 시작">
                                             <attributes>
-                                                <font key="NSFont" size="28" name="BMHANNAProOTF"/>
+                                                <font key="NSFont" size="24" name="BMHANNAProOTF"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
@@ -70,9 +70,9 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="Vjd-AS-f8B">
-                                <rect key="frame" x="30" y="329.5" width="354" height="177"/>
+                                <rect key="frame" x="30" y="294.5" width="354" height="71"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Vjd-AS-f8B" secondAttribute="height" multiplier="2:1" id="hma-4h-xeF"/>
+                                    <constraint firstAttribute="width" secondItem="Vjd-AS-f8B" secondAttribute="height" multiplier="1:0.2" id="hma-4h-xeF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -83,12 +83,12 @@
                         <constraints>
                             <constraint firstItem="FZg-7l-Y9w" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3KL-FS-8tS"/>
                             <constraint firstItem="FZg-7l-Y9w" firstAttribute="trailing" secondItem="Vjd-AS-f8B" secondAttribute="trailing" constant="10" id="4hi-cT-vJp"/>
-                            <constraint firstItem="A4Z-qA-XDX" firstAttribute="top" secondItem="FZg-7l-Y9w" secondAttribute="bottom" constant="60" id="AfC-gG-05G"/>
+                            <constraint firstItem="A4Z-qA-XDX" firstAttribute="top" secondItem="FZg-7l-Y9w" secondAttribute="bottom" constant="30" id="AfC-gG-05G"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FZg-7l-Y9w" secondAttribute="trailing" constant="20" id="Cet-tK-vAD"/>
-                            <constraint firstItem="FZg-7l-Y9w" firstAttribute="top" secondItem="pce-MG-DHM" secondAttribute="bottom" constant="30" id="Iwg-bW-nqD"/>
+                            <constraint firstItem="FZg-7l-Y9w" firstAttribute="top" secondItem="pce-MG-DHM" secondAttribute="bottom" constant="20" id="Iwg-bW-nqD"/>
                             <constraint firstItem="pce-MG-DHM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KvQ-hl-v9F"/>
                             <constraint firstItem="Vjd-AS-f8B" firstAttribute="centerY" secondItem="FZg-7l-Y9w" secondAttribute="centerY" id="LDk-0m-DJW"/>
-                            <constraint firstItem="FZg-7l-Y9w" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-30" id="Lte-Ih-Yvk"/>
+                            <constraint firstItem="FZg-7l-Y9w" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-118" id="Lte-Ih-Yvk"/>
                             <constraint firstItem="A4Z-qA-XDX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zyg-zA-unD"/>
                             <constraint firstItem="FZg-7l-Y9w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="iwy-LR-aft"/>
                             <constraint firstItem="Vjd-AS-f8B" firstAttribute="leading" secondItem="FZg-7l-Y9w" secondAttribute="leading" constant="10" id="sH8-na-4jB"/>
@@ -115,13 +115,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="작심 0일" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Av2-St-Cl6">
-                                <rect key="frame" x="138.5" y="252.5" width="137.5" height="58"/>
-                                <fontDescription key="fontDescription" name="BMYEONSUNG-OTF" family="BM YEONSUNG OTF" pointSize="48"/>
+                                <rect key="frame" x="152.5" y="234.5" width="109" height="46"/>
+                                <fontDescription key="fontDescription" name="BMYEONSUNG-OTF" family="BM YEONSUNG OTF" pointSize="38"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="qWg-i5-fo5">
-                                <rect key="frame" x="129.5" y="340.5" width="155" height="155"/>
+                                <rect key="frame" x="129.5" y="300.5" width="155" height="155"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="kV9-wD-uJT">
                                         <rect key="frame" x="0.0" y="0.0" width="155" height="70"/>
@@ -158,10 +158,10 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fdi-SX-yhm">
-                                <rect key="frame" x="107" y="555.5" width="200" height="57"/>
+                                <rect key="frame" x="119.5" y="525.5" width="175" height="50"/>
                                 <color key="backgroundColor" name="TextFieldColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="9Hc-dB-lbf"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="175" id="9Hc-dB-lbf"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="63.5" id="Ndp-jQ-Lgg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="BMHANNAProOTF" family="BM HANNA Pro OTF" pointSize="32"/>
@@ -173,7 +173,7 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="오늘도 해냈다">
                                             <attributes>
-                                                <font key="NSFont" size="28" name="BMHANNAProOTF"/>
+                                                <font key="NSFont" size="24" name="BMHANNAProOTF"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
@@ -190,10 +190,10 @@
                         <viewLayoutGuide key="safeArea" id="VvI-CY-xFQ"/>
                         <color key="backgroundColor" name="MainColor"/>
                         <constraints>
-                            <constraint firstItem="qWg-i5-fo5" firstAttribute="top" secondItem="Av2-St-Cl6" secondAttribute="bottom" constant="30" id="2uT-jf-xUP"/>
+                            <constraint firstItem="qWg-i5-fo5" firstAttribute="top" secondItem="Av2-St-Cl6" secondAttribute="bottom" constant="20" id="2uT-jf-xUP"/>
                             <constraint firstItem="Fdi-SX-yhm" firstAttribute="centerX" secondItem="qON-8W-Euh" secondAttribute="centerX" id="F8f-9h-eAh"/>
-                            <constraint firstItem="Fdi-SX-yhm" firstAttribute="top" secondItem="qWg-i5-fo5" secondAttribute="bottom" constant="60" id="GcR-MA-1Th"/>
-                            <constraint firstItem="qWg-i5-fo5" firstAttribute="centerY" secondItem="qON-8W-Euh" secondAttribute="centerY" constant="-30" id="RW2-0U-HyU"/>
+                            <constraint firstItem="Fdi-SX-yhm" firstAttribute="top" secondItem="qWg-i5-fo5" secondAttribute="bottom" constant="70" id="GcR-MA-1Th"/>
+                            <constraint firstItem="qWg-i5-fo5" firstAttribute="centerY" secondItem="qON-8W-Euh" secondAttribute="centerY" constant="-70" id="RW2-0U-HyU"/>
                             <constraint firstItem="Fdi-SX-yhm" firstAttribute="width" secondItem="Fdi-SX-yhm" secondAttribute="height" multiplier="3.5:1" id="WUR-w3-SQM"/>
                             <constraint firstItem="qWg-i5-fo5" firstAttribute="centerX" secondItem="qON-8W-Euh" secondAttribute="centerX" id="ZJB-eD-Fmk"/>
                             <constraint firstItem="Av2-St-Cl6" firstAttribute="centerX" secondItem="qON-8W-Euh" secondAttribute="centerX" id="lEw-TY-2lq"/>
@@ -249,11 +249,11 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="128.57142857142856"/>
         </scene>
-        <!--홈-->
+        <!--작심삼일-->
         <scene sceneID="5Ok-xP-Pg8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0LJ-0q-Icg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="홈" image="square.grid.2x2" catalog="system" selectedImage="square.grid.2x2.fill" id="UBv-nB-gtd"/>
+                    <tabBarItem key="tabBarItem" title="작심삼일" image="square.grid.2x2" catalog="system" selectedImage="square.grid.2x2.fill" id="UBv-nB-gtd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xvw-2T-yZP">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
