@@ -12,4 +12,8 @@ final class Goal {
     
     var goal: String?
     var day: Int = 0
+    
+    var destination: String {
+        "작심 \(day)일"
+    }
 }
