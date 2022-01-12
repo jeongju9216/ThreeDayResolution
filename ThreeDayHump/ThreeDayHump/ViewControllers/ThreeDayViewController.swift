@@ -11,6 +11,7 @@ import AVFoundation
 class ThreeDayViewController: UIViewController {
 
     //MARK: - IBOutlets
+    @IBOutlet weak var goalLabel: UILabel!
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var firstView: UIView!
@@ -25,10 +26,9 @@ class ThreeDayViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        initView()
-        
         self.navigationItem.hidesBackButton = true
-        self.navigationItem.title = Goal.shared.goal ?? ""
+
+        initView()
                 
         updateGoalViews()
     }
@@ -53,6 +53,8 @@ class ThreeDayViewController: UIViewController {
     
     //MARK: - Methods
     private func initView() {
+        goalLabel.text = Goal.shared.goal ?? ""
+
         doneButton.layer.cornerRadius = 5
         doneButton.createShadow()
         

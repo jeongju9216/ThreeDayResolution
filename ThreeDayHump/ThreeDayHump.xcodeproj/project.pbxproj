@@ -12,6 +12,7 @@
 		9B65DAE32787270000F01979 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B65DAE22787270000F01979 /* MoreViewController.swift */; };
 		9B65DAE5278728DA00F01979 /* BMHANNAProOTF.otf.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B65DAE4278728DA00F01979 /* BMHANNAProOTF.otf.ttf */; };
 		9BA9F7D52789889C00F9F86B /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA9F7D42789889C00F9F86B /* UIButton.swift */; };
+		9BB8C96D278F1B4A000B61F4 /* GowunBatang-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BB8C96C278F1B4A000B61F4 /* GowunBatang-Bold.ttf */; };
 		9BF6C1FD2781DC4800E486CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF6C1FC2781DC4800E486CE /* AppDelegate.swift */; };
 		9BF6C1FF2781DC4800E486CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF6C1FE2781DC4800E486CE /* SceneDelegate.swift */; };
 		9BF6C2012781DC4800E486CE /* GoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF6C2002781DC4800E486CE /* GoalViewController.swift */; };
@@ -27,6 +28,7 @@
 		9B65DAE22787270000F01979 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		9B65DAE4278728DA00F01979 /* BMHANNAProOTF.otf.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BMHANNAProOTF.otf.ttf; sourceTree = "<group>"; };
 		9BA9F7D42789889C00F9F86B /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		9BB8C96C278F1B4A000B61F4 /* GowunBatang-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GowunBatang-Bold.ttf"; sourceTree = "<group>"; };
 		9BF6C1F92781DC4800E486CE /* ThreeDayHump.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThreeDayHump.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BF6C1FC2781DC4800E486CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BF6C1FE2781DC4800E486CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 		9BF6C21227871C4F00E486CE /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				9BB8C96C278F1B4A000B61F4 /* GowunBatang-Bold.ttf */,
 				9B65DAE4278728DA00F01979 /* BMHANNAProOTF.otf.ttf */,
 				9BF6C21327871D6E00E486CE /* BMYEONSUNG_otf.otf */,
 			);
@@ -170,6 +173,7 @@
 				9BF6C21427871D6E00E486CE /* BMYEONSUNG_otf.otf in Resources */,
 				9BF6C2092781DC4900E486CE /* LaunchScreen.storyboard in Resources */,
 				9B65DAE5278728DA00F01979 /* BMHANNAProOTF.otf.ttf in Resources */,
+				9BB8C96D278F1B4A000B61F4 /* GowunBatang-Bold.ttf in Resources */,
 				9BF6C2062781DC4900E486CE /* Assets.xcassets in Resources */,
 				9BF6C2042781DC4800E486CE /* Main.storyboard in Resources */,
 			);
@@ -351,7 +355,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jeong9216.ThreeDayHump;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -381,7 +385,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jeong9216.ThreeDayHump;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
