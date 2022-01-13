@@ -21,7 +21,7 @@
         <!--Goal View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="GoalViewController" customModule="ThreeDayHump" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GoalViewController" id="BYZ-38-t0r" customClass="GoalViewController" customModule="ThreeDayHump" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -109,7 +109,7 @@
         <!--Three Day View Controller-->
         <scene sceneID="trI-t7-1K6">
             <objects>
-                <viewController id="b1h-ch-X3p" customClass="ThreeDayViewController" customModule="ThreeDayHump" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ThreeDayViewController" id="b1h-ch-X3p" customClass="ThreeDayViewController" customModule="ThreeDayHump" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qON-8W-Euh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -224,7 +224,7 @@
         <!--설정-->
         <scene sceneID="REZ-p1-XJU">
             <objects>
-                <viewController id="NvQ-hB-Sns" customClass="MoreViewController" customModule="ThreeDayHump" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MoreViewController" id="NvQ-hB-Sns" customClass="MoreViewController" customModule="ThreeDayHump" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E6B-ml-3pX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -240,7 +240,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="bip-hY-ZFL">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="N4t-gz-D9Z" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="N4t-gz-D9Z" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MlE-NN-6ys">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -261,7 +261,7 @@
         <!--작심삼일-->
         <scene sceneID="5Ok-xP-Pg8">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0LJ-0q-Icg" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="UINavigationController" automaticallyAdjustsScrollViewInsets="NO" id="0LJ-0q-Icg" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="작심삼일" image="square.grid.2x2" catalog="system" selectedImage="square.grid.2x2.fill" id="UBv-nB-gtd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xvw-2T-yZP">
