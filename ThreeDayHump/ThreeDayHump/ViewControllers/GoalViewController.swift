@@ -33,8 +33,8 @@ class GoalViewController: UIViewController {
     @IBAction func clickedStartButton(_ sender: UIButton) {
         Goal.shared.goal = goalTextField.text ?? ""
         
-        let defaults = UserDefaults.standard
-        defaults.set(Goal.shared.goal, forKey: "goal")
+        UserDefaults.standard.set(Goal.shared.goal, forKey: "goal")
+        UserDefaults.standard.set(Goal.shared.day, forKey: "day")
     }
     
     //MARK: - Methods

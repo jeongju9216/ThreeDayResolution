@@ -27,13 +27,14 @@ class ThreeDayViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.navigationItem.hidesBackButton = true
-
+        
         initView()
-                
         updateGoalViews()
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         updateGoalViews() //앱 밖에서 다크모드를 바꾼 경우
     }
     
@@ -44,7 +45,11 @@ class ThreeDayViewController: UIViewController {
         Goal.shared.day += 1
         if Goal.shared.day > 3 {
             Goal.shared.day = 0
+            UserDefaults.standard.removeObject(forKey: "goal")
+            UserDefaults.standard.removeObject(forKey: "day")
             resetGoalViews()
+        } else {
+            UserDefaults.standard.set(Goal.shared.day, forKey: "day")
         }
         
         updateGoalViews()
