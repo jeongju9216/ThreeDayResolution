@@ -24,7 +24,6 @@ class GoalViewController: UIViewController {
         goalTextField.delegate = self
     }
     
-    
     //MARK: - Overrides
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         goalTextField.endEditing(true)
@@ -33,6 +32,9 @@ class GoalViewController: UIViewController {
     //MARK: - IBActions
     @IBAction func clickedStartButton(_ sender: UIButton) {
         Goal.shared.goal = goalTextField.text ?? ""
+        
+        UserDefaults.standard.set(Goal.shared.goal, forKey: "goal")
+        UserDefaults.standard.set(Goal.shared.day, forKey: "day")
     }
     
     //MARK: - Methods

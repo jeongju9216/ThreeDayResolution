@@ -16,7 +16,41 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        
+        guard let sceneWindow = (scene as? UIWindowScene) else {
+            return
+        }
+        
+        
+        
+        if let goal = UserDefaults.standard.object(forKey: "goal") as? String,
+           let day = UserDefaults.standard.object(forKey: "day") as? Int {
+            print("Goal: \(goal)")
+            Goal.shared.goal = goal
+            Goal.shared.day = day
+
+            changeRootViewController(sceneWindow: sceneWindow)            
+        } else {
+            print("Goal is nil")
+        }
+    }
+    
+    private func changeRootViewController(sceneWindow: UIWindowScene) {
+        window = UIWindow(windowScene: sceneWindow)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let threeDayViewController = storyboard.instantiateViewController(withIdentifier: "ThreeDayViewController")
+        let moreViewController = storyboard.instantiateViewController(withIdentifier: "MoreViewController")
+        
+        let tabBarController = storyboard.instantiateViewController(withIdentifier: "TabBarController") as? UITabBarController
+        
+        threeDayViewController.tabBarItem = UITabBarItem(title: "작심삼일", image: UIImage(systemName: "square.grid.2x2", withConfiguration: UIImage.SymbolConfiguration(weight: .heavy)), tag: 0)
+        threeDayViewController.tabBarItem.selectedImage = UIImage(systemName: "square.grid.2x2.fill")
+                    
+        tabBarController?.viewControllers = [threeDayViewController, moreViewController]
+        
+        window?.rootViewController = tabBarController
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
