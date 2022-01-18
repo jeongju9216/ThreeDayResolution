@@ -18,7 +18,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Goal View Controller-->
+        <!--목표설정-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="GoalViewController" id="BYZ-38-t0r" customClass="GoalViewController" customModule="ThreeDayHump" customModuleProvider="target" sceneMemberID="viewController">
@@ -66,7 +66,6 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="clickedStartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ini-bm-XAd"/>
-                                    <segue destination="b1h-ch-X3p" kind="show" id="UU5-wx-iwa"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="Vjd-AS-f8B">
@@ -95,6 +94,7 @@
                             <constraint firstItem="Vjd-AS-f8B" firstAttribute="centerX" secondItem="FZg-7l-Y9w" secondAttribute="centerX" id="x1Y-J0-h6n"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="목표설정" image="square.grid.2x2" catalog="system" selectedImage="square.grid.2x2.fill" id="JPp-JP-dAv"/>
                     <navigationItem key="navigationItem" id="Qk0-pp-Xp7"/>
                     <connections>
                         <outlet property="goalBackgroundView" destination="FZg-7l-Y9w" id="CZZ-By-1P2"/>
@@ -104,9 +104,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1957.9710144927537" y="128.57142857142856"/>
+            <point key="canvasLocation" x="362" y="408"/>
         </scene>
-        <!--Three Day View Controller-->
+        <!--작심삼일-->
         <scene sceneID="trI-t7-1K6">
             <objects>
                 <viewController storyboardIdentifier="ThreeDayViewController" id="b1h-ch-X3p" customClass="ThreeDayViewController" customModule="ThreeDayHump" customModuleProvider="target" sceneMemberID="viewController">
@@ -187,7 +187,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕하세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="euO-yq-i4c">
-                                <rect key="frame" x="152" y="88" width="110" height="35"/>
+                                <rect key="frame" x="152" y="44" width="110" height="35"/>
                                 <fontDescription key="fontDescription" name="GowunBatang-Bold" family="Gowun Batang" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -207,6 +207,7 @@
                             <constraint firstItem="euO-yq-i4c" firstAttribute="top" secondItem="VvI-CY-xFQ" secondAttribute="top" id="ryq-9k-sGF"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="작심삼일" image="square.grid.2x2" catalog="system" selectedImage="square.grid.2x2.fill" id="IPR-qG-Cc2"/>
                     <navigationItem key="navigationItem" id="EMH-yq-8Ds"/>
                     <connections>
                         <outlet property="dayLabel" destination="Av2-St-Cl6" id="f2H-wQ-XJn"/>
@@ -219,7 +220,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xcY-bv-p7P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2818.840579710145" y="128.57142857142856"/>
+            <point key="canvasLocation" x="1483" y="408"/>
         </scene>
         <!--설정-->
         <scene sceneID="REZ-p1-XJU">
@@ -235,7 +236,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eQg-VI-Lmk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1048" y="864"/>
+            <point key="canvasLocation" x="2533" y="408"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="bip-hY-ZFL">
@@ -250,39 +251,14 @@
                         <color key="selectedImageTintColor" name="TabColor"/>
                     </tabBar>
                     <connections>
-                        <segue destination="0LJ-0q-Icg" kind="relationship" relationship="viewControllers" id="l6x-ga-vow"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="TD8-Y4-fAN"/>
+                        <segue destination="b1h-ch-X3p" kind="relationship" relationship="viewControllers" id="YcN-Qw-rhM"/>
                         <segue destination="NvQ-hB-Sns" kind="relationship" relationship="viewControllers" id="Yig-QX-QUk"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wht-6q-KwY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="128.57142857142856"/>
-        </scene>
-        <!--작심삼일-->
-        <scene sceneID="5Ok-xP-Pg8">
-            <objects>
-                <navigationController storyboardIdentifier="NavigationController" automaticallyAdjustsScrollViewInsets="NO" id="0LJ-0q-Icg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="작심삼일" image="square.grid.2x2" catalog="system" selectedImage="square.grid.2x2.fill" id="UBv-nB-gtd"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xvw-2T-yZP">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                        <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Ug2-1o-8Am"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KBN-Dh-wmc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="128.57142857142856"/>
+            <point key="canvasLocation" x="1484" y="-323"/>
         </scene>
     </scenes>
     <resources>
@@ -295,7 +271,7 @@
             <color red="0.0" green="0.71372549019607845" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="MainColor">
-            <color red="0.0" green="0.71372549019607845" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.0" green="0.71399998664855957" blue="0.84299999475479126" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="TabBackgroundColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

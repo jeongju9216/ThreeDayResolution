@@ -21,55 +21,31 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return
         }
         
-        
-        
-        if let goal = UserDefaults.standard.object(forKey: "goal") as? String,
-           let day = UserDefaults.standard.object(forKey: "day") as? Int {
-            print("Goal: \(goal)")
-            Goal.shared.goal = goal
-            Goal.shared.day = day
-
-            changeRootViewController(sceneWindow: sceneWindow)            
-        } else {
-            print("Goal is nil")
-        }
-    }
-    
-    private func changeRootViewController(sceneWindow: UIWindowScene) {
         window = UIWindow(windowScene: sceneWindow)
-        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
+        let tabBarController = storyboard.instantiateViewController(withIdentifier: "TabBarController") as? UITabBarController
         
+        let goalViewController = storyboard.instantiateViewController(withIdentifier: "GoalViewController")
         let threeDayViewController = storyboard.instantiateViewController(withIdentifier: "ThreeDayViewController")
         let moreViewController = storyboard.instantiateViewController(withIdentifier: "MoreViewController")
         
-        let tabBarController = storyboard.instantiateViewController(withIdentifier: "TabBarController") as? UITabBarController
-        
-        threeDayViewController.tabBarItem = UITabBarItem(title: "작심삼일", image: UIImage(systemName: "square.grid.2x2", withConfiguration: UIImage.SymbolConfiguration(weight: .heavy)), tag: 0)
-        threeDayViewController.tabBarItem.selectedImage = UIImage(systemName: "square.grid.2x2.fill")
-                    
-        tabBarController?.viewControllers = [threeDayViewController, moreViewController]
-        
+        if let goal = UserDefaults.standard.string(forKey: "goal") {
+            let day = UserDefaults.standard.integer(forKey: "day")
+            
+            print("Goal: \(goal) / Day: \(day)")
+            Goal.shared.goal = goal
+            Goal.shared.day = day
+
+            tabBarController?.setViewControllers([threeDayViewController, moreViewController], animated: false)
+        } else {
+            print("Goal is nil")
+            tabBarController?.setViewControllers([goalViewController, moreViewController], animated: false)
+        }
         window?.rootViewController = tabBarController
+        window?.makeKeyAndVisible()
     }
-
-    func sceneDidDisconnect(_ scene: UIScene) {
-        // Called as the scene is being released by the system.
-        // This occurs shortly after the scene enters the background, or when its session is discarded.
-        // Release any resources associated with this scene that can be re-created the next time the scene connects.
-        // The scene may re-connect later, as its session was not necessarily discarded (see `application:didDiscardSceneSessions` instead).
-    }
-
-    func sceneDidBecomeActive(_ scene: UIScene) {
-        // Called when the scene has moved from an inactive state to an active state.
-        // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
-    }
-
-    func sceneWillResignActive(_ scene: UIScene) {
-        // Called when the scene will move from an active state to an inactive state.
-        // This may occur due to temporary interruptions (ex. an incoming phone call).
-    }
-
+    
     func sceneWillEnterForeground(_ scene: UIScene) {
         // Called as the scene transitions from the background to the foreground.
         // Use this method to undo the changes made on entering the background.

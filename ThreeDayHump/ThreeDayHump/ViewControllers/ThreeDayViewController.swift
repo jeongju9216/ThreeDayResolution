@@ -25,9 +25,7 @@ class ThreeDayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        self.navigationItem.hidesBackButton = true
-        
+        // Do any additional setup after loading the view.        
         initView()
         updateGoalViews()
     }
@@ -49,8 +47,10 @@ class ThreeDayViewController: UIViewController {
             UserDefaults.standard.removeObject(forKey: "day")
             resetGoalViews()
         } else {
+            print("Set UserDefaults Day: \(Goal.shared.day)")
             UserDefaults.standard.set(Goal.shared.day, forKey: "day")
         }
+        UserDefaults.standard.synchronize()
         
         updateGoalViews()
     }
