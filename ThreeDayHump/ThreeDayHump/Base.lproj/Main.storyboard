@@ -18,7 +18,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--목표설정-->
+        <!--작심삼일-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="GoalViewController" id="BYZ-38-t0r" customClass="GoalViewController" customModule="ThreeDayHump" customModuleProvider="target" sceneMemberID="viewController">
@@ -94,7 +94,7 @@
                             <constraint firstItem="Vjd-AS-f8B" firstAttribute="centerX" secondItem="FZg-7l-Y9w" secondAttribute="centerX" id="x1Y-J0-h6n"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="목표설정" image="square.grid.2x2" catalog="system" selectedImage="square.grid.2x2.fill" id="JPp-JP-dAv"/>
+                    <tabBarItem key="tabBarItem" title="작심삼일" image="square.grid.2x2" catalog="system" selectedImage="square.grid.2x2.fill" id="JPp-JP-dAv"/>
                     <navigationItem key="navigationItem" id="Qk0-pp-Xp7"/>
                     <connections>
                         <outlet property="goalBackgroundView" destination="FZg-7l-Y9w" id="CZZ-By-1P2"/>

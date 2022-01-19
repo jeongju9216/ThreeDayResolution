@@ -16,6 +16,7 @@ final class Goal {
             UserDefaults.standard.synchronize()
         }
     }
+    
     var day: Int = 0 {
         didSet {
             UserDefaults.standard.set(self.day, forKey: "day")
@@ -25,5 +26,15 @@ final class Goal {
     
     var destination: String {
         "작심 \(day)일"
+    }
+    
+    var isAlert: Bool {
+        get {
+            UserDefaults.standard.bool( forKey: "isAlert")
+        }
+        set (newValue) {
+            UserDefaults.standard.set(newValue, forKey: "isAlert")
+            UserDefaults.standard.synchronize()
+        }
     }
 }

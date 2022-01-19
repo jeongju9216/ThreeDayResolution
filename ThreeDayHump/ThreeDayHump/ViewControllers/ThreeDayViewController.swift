@@ -14,6 +14,7 @@ class ThreeDayViewController: BaseViewController {
     @IBOutlet weak var goalLabel: UILabel!
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var doneButton: UIButton!
+    
     @IBOutlet weak var firstView: UIView!
     @IBOutlet weak var secondView: UIView!
     @IBOutlet weak var thirdView: UIView!
@@ -29,9 +30,7 @@ class ThreeDayViewController: BaseViewController {
         initView()
         
         resetGoalViews()
-        if Goal.shared.day > 0 {
-            fillSquares(Goal.shared.day % 3)
-        }
+        updateSquares()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -39,24 +38,23 @@ class ThreeDayViewController: BaseViewController {
         
         //앱 밖에서 다크모드를 바꾼 경우
         resetGoalViews()
-        if Goal.shared.day > 0 {
-            fillSquares(Goal.shared.day % 3)
+        updateSquares()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        //alert 상태에서 앱을 재시작했을 때 Alert
+        if Goal.shared.isAlert {
+            alertSuccess()
         }
     }
     
     //MARK: - IBActions
     @IBAction func clickedDone(_ sender: Any) {
         AudioServicesPlaySystemSound(1519)
+        animateSquare()
         
-        let beforeDay = Goal.shared.day
-        UIView.animate(withDuration: 0.1, animations: {
-                self.dayViews[beforeDay % 3].transform = CGAffineTransform(scaleX: 1.08, y: 1.08)
-            }, completion: { _ in
-                UIView.animate(withDuration: 0.1) {
-                    self.dayViews[beforeDay % 3].transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-                }
-            })
-
         Goal.shared.day += 1
         dayLabel.text = Goal.shared.destination
         
@@ -75,9 +73,32 @@ class ThreeDayViewController: BaseViewController {
     //MARK: - Methods
     private func initView() {
         goalLabel.text = Goal.shared.goal ?? ""
+        dayLabel.text = Goal.shared.destination
 
         doneButton.layer.cornerRadius = 5
         doneButton.createShadow()
+    }
+    
+    private func animateSquare() {
+        let animateIndex = Goal.shared.day % 3
+        UIView.animate(withDuration: 0.1, animations: { [weak self] in
+            self?.dayViews[animateIndex].transform = CGAffineTransform(scaleX: 1.08, y: 1.08)
+        }, completion: { _ in
+            UIView.animate(withDuration: 0.1) { [weak self] in
+                self?.dayViews[animateIndex].transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+            }
+        })
+    }
+    
+    private func updateSquares() {
+        if Goal.shared.day > 0 {
+            let fillCount = Goal.shared.day % 3
+            if fillCount == 0 && Goal.shared.isAlert {
+                fillAllSquares()
+            } else {
+                fillSquares(fillCount)
+            }
+        }
     }
     
     private func resetGoalViews() {
@@ -102,28 +123,27 @@ class ThreeDayViewController: BaseViewController {
     }
     
     private func alertSuccess() {
+        Goal.shared.isAlert = true
+        
         // 메시지창 컨트롤러 인스턴스 생성
-        let alert = UIAlertController(title: "알림", message: "알림 샘플 코드 입니다.", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "Success", message: "축하합니다!\n작심삼일을 성공했어요🥳", preferredStyle: UIAlertController.Style.alert)
         
         // 메시지 창 컨트롤러에 들어갈 버튼 액션 객체 생성
-        let defaultAction =  UIAlertAction(title: "Finish", style: UIAlertAction.Style.default) { (action) in
-            print("Click Default Button")
-            
-            self.showGoalViewController()
+        let stopAction = UIAlertAction(title: "그만하기", style: UIAlertAction.Style.default) { [weak self] _ in
+            Goal.shared.isAlert = false
+            self?.showGoalViewController()
         }
         
-        let destructiveAction = UIAlertAction(title: "Next", style: UIAlertAction.Style.default) { (action) in
-            // 버튼 클릭시 실행되는 코드
-            print("Click Next Button")
-            
-            self.resetGoalViews()
+        let continueAction = UIAlertAction(title: "계속하기", style: UIAlertAction.Style.destructive) { [weak self] _ in
+            Goal.shared.isAlert = false
+            self?.resetGoalViews()
         }
         
         //메시지 창 컨트롤러에 버튼 액션을 추가
-        alert.addAction(defaultAction)
-        alert.addAction(destructiveAction)
+        alert.addAction(stopAction)
+        alert.addAction(continueAction)
         
         //메시지 창 컨트롤러를 표시
-        self.present(alert, animated: false)
+        self.present(alert, animated: true)
     }
 }
