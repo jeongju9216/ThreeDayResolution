@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GoalViewController: UIViewController {
+class GoalViewController: BaseViewController {
 
     //MARK: - IBOutlets
     @IBOutlet weak var goalBackgroundView: UIView!
@@ -34,18 +34,7 @@ class GoalViewController: UIViewController {
         print("\(#fileID) \(#line)-line, \(#function)")
         Goal.shared.goal = goalTextField.text ?? ""
         
-        UserDefaults.standard.set(Goal.shared.goal, forKey: "goal")
-        UserDefaults.standard.set(Goal.shared.day, forKey: "day")
-        UserDefaults.standard.synchronize()
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-
-        let tabBarController = self.tabBarController
-        
-        let threeDayViewController = storyboard.instantiateViewController(withIdentifier: "ThreeDayViewController")
-        let moreViewController = storyboard.instantiateViewController(withIdentifier: "MoreViewController")
-        tabBarController?.setViewControllers([threeDayViewController, moreViewController], animated: false)
-        
+        showThreeDayViewController()
     }
     
     //MARK: - Methods
