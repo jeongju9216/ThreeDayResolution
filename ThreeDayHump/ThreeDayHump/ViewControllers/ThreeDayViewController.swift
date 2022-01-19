@@ -25,7 +25,7 @@ class ThreeDayViewController: BaseViewController {
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("\(#fileID) \(#line)-line, \(#function)")
         // Do any additional setup after loading the view.        
         initView()
         
@@ -35,6 +35,7 @@ class ThreeDayViewController: BaseViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        print("\(#fileID) \(#line)-line, \(#function)")
         
         //앱 밖에서 다크모드를 바꾼 경우
         resetGoalViews()
@@ -43,6 +44,7 @@ class ThreeDayViewController: BaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        print("\(#fileID) \(#line)-line, \(#function)")
         
         //alert 상태에서 앱을 재시작했을 때 Alert
         if Goal.shared.isAlert {
@@ -106,7 +108,7 @@ class ThreeDayViewController: BaseViewController {
             dayViews[i].layer.cornerRadius = 5
             dayViews[i].layer.borderWidth = 4
             dayViews[i].layer.borderColor = UIColor.white.cgColor
-            dayViews[i].layer.backgroundColor = UIColor(named: "MainColor")?.cgColor
+            dayViews[i].layer.backgroundColor = .none
         }
     }
     
