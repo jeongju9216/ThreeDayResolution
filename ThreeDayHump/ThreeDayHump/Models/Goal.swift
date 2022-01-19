@@ -10,8 +10,18 @@ import Foundation
 final class Goal {
     static let shared: Goal = Goal()
     
-    var goal: String?
-    var day: Int = 0
+    var goal: String? {
+        didSet {
+            UserDefaults.standard.set(self.goal, forKey: "goal")
+            UserDefaults.standard.synchronize()
+        }
+    }
+    var day: Int = 0 {
+        didSet {
+            UserDefaults.standard.set(self.day, forKey: "day")
+            UserDefaults.standard.synchronize()
+        }
+    }
     
     var destination: String {
         "작심 \(day)일"

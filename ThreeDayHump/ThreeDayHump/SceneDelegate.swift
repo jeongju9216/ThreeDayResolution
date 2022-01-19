@@ -30,7 +30,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let threeDayViewController = storyboard.instantiateViewController(withIdentifier: "ThreeDayViewController")
         let moreViewController = storyboard.instantiateViewController(withIdentifier: "MoreViewController")
         
-        if let goal = UserDefaults.standard.string(forKey: "goal") {
+        if let goal = UserDefaults.standard.string(forKey: "goal"),
+           !goal.isEmpty {
             let day = UserDefaults.standard.integer(forKey: "day")
             
             print("Goal: \(goal) / Day: \(day)")
@@ -39,7 +40,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
             tabBarController?.setViewControllers([threeDayViewController, moreViewController], animated: false)
         } else {
-            print("Goal is nil")
+            print("Goal is nil or Empty")
             tabBarController?.setViewControllers([goalViewController, moreViewController], animated: false)
         }
         window?.rootViewController = tabBarController
