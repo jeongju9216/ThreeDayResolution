@@ -32,15 +32,6 @@ class ThreeDayViewController: BaseViewController {
         resetGoalViews()
         updateSquares()
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("\(#fileID) \(#line)-line, \(#function)")
-        
-        //앱 밖에서 다크모드를 바꾼 경우
-        resetGoalViews()
-        updateSquares()
-    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

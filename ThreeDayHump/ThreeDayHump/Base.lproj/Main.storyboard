@@ -184,8 +184,8 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕하세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="euO-yq-i4c">
-                                <rect key="frame" x="152" y="44" width="110" height="35"/>
-                                <fontDescription key="fontDescription" name="GowunBatang-Bold" family="Gowun Batang" pointSize="24"/>
+                                <rect key="frame" x="147.5" y="104" width="119" height="38"/>
+                                <fontDescription key="fontDescription" name="GowunBatang-Bold" family="Gowun Batang" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -201,7 +201,7 @@
                             <constraint firstItem="Fdi-SX-yhm" firstAttribute="width" secondItem="Fdi-SX-yhm" secondAttribute="height" multiplier="3.5:1" id="WUR-w3-SQM"/>
                             <constraint firstItem="qWg-i5-fo5" firstAttribute="centerX" secondItem="qON-8W-Euh" secondAttribute="centerX" id="ZJB-eD-Fmk"/>
                             <constraint firstItem="Av2-St-Cl6" firstAttribute="centerX" secondItem="qON-8W-Euh" secondAttribute="centerX" id="lEw-TY-2lq"/>
-                            <constraint firstItem="euO-yq-i4c" firstAttribute="top" secondItem="VvI-CY-xFQ" secondAttribute="top" id="ryq-9k-sGF"/>
+                            <constraint firstItem="euO-yq-i4c" firstAttribute="top" secondItem="VvI-CY-xFQ" secondAttribute="top" constant="60" id="ryq-9k-sGF"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="작심삼일" image="square.grid.2x2" catalog="system" selectedImage="square.grid.2x2.fill" id="IPR-qG-Cc2"/>
