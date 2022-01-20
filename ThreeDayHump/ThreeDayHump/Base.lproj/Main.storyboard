@@ -154,7 +154,7 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fdi-SX-yhm">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fdi-SX-yhm">
                                 <rect key="frame" x="107" y="567" width="200" height="57"/>
                                 <color key="backgroundColor" name="TextFieldColor"/>
                                 <constraints>
@@ -164,9 +164,6 @@
                                 <fontDescription key="fontDescription" name="BMHANNAProOTF" family="BM HANNA Pro OTF" pointSize="32"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="작심삼일 시작">
-                                    <color key="titleColor" name="MainColor"/>
-                                </state>
-                                <buttonConfiguration key="configuration" style="plain">
                                     <attributedString key="attributedTitle">
                                         <fragment content="오늘도 해냈다">
                                             <attributes>
@@ -175,16 +172,15 @@
                                             </attributes>
                                         </fragment>
                                     </attributedString>
-                                    <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
-                                    <color key="baseForegroundColor" name="LabelColor"/>
-                                </buttonConfiguration>
+                                    <color key="titleColor" name="LabelColor"/>
+                                </state>
                                 <connections>
                                     <action selector="clickedDone:" destination="b1h-ch-X3p" eventType="touchUpInside" id="WJC-6H-i25"/>
                                     <action selector="clickedStartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XtX-OX-pXG"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕하세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="euO-yq-i4c">
-                                <rect key="frame" x="147.5" y="104" width="119" height="38"/>
+                                <rect key="frame" x="147.5" y="84" width="119" height="38"/>
                                 <fontDescription key="fontDescription" name="GowunBatang-Bold" family="Gowun Batang" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -198,10 +194,11 @@
                             <constraint firstItem="Fdi-SX-yhm" firstAttribute="centerX" secondItem="qON-8W-Euh" secondAttribute="centerX" id="F8f-9h-eAh"/>
                             <constraint firstItem="Fdi-SX-yhm" firstAttribute="top" secondItem="qWg-i5-fo5" secondAttribute="bottom" constant="70" id="GcR-MA-1Th"/>
                             <constraint firstItem="qWg-i5-fo5" firstAttribute="centerY" secondItem="qON-8W-Euh" secondAttribute="centerY" constant="-50" id="RW2-0U-HyU"/>
+                            <constraint firstItem="euO-yq-i4c" firstAttribute="top" secondItem="VvI-CY-xFQ" secondAttribute="top" constant="40" id="VV5-eQ-AyX"/>
                             <constraint firstItem="Fdi-SX-yhm" firstAttribute="width" secondItem="Fdi-SX-yhm" secondAttribute="height" multiplier="3.5:1" id="WUR-w3-SQM"/>
                             <constraint firstItem="qWg-i5-fo5" firstAttribute="centerX" secondItem="qON-8W-Euh" secondAttribute="centerX" id="ZJB-eD-Fmk"/>
+                            <constraint firstItem="Fdi-SX-yhm" firstAttribute="centerX" secondItem="qON-8W-Euh" secondAttribute="centerX" id="dcX-zG-UHo"/>
                             <constraint firstItem="Av2-St-Cl6" firstAttribute="centerX" secondItem="qON-8W-Euh" secondAttribute="centerX" id="lEw-TY-2lq"/>
-                            <constraint firstItem="euO-yq-i4c" firstAttribute="top" secondItem="VvI-CY-xFQ" secondAttribute="top" constant="60" id="ryq-9k-sGF"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="작심삼일" image="square.grid.2x2" catalog="system" selectedImage="square.grid.2x2.fill" id="IPR-qG-Cc2"/>
@@ -217,7 +214,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xcY-bv-p7P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1483" y="408"/>
+            <point key="canvasLocation" x="1482.608695652174" y="407.8125"/>
         </scene>
         <!--설정-->
         <scene sceneID="REZ-p1-XJU">

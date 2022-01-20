@@ -47,13 +47,13 @@ class ThreeDayViewController: BaseViewController {
     @IBAction func clickedDone(_ sender: Any) {
         AudioServicesPlaySystemSound(1519)
         animateSquare()
+        doneButton.removeShadow()
+        applyDone()
         
         Goal.shared.day += 1
         dayLabel.text = Goal.shared.destination
         
         let day = Goal.shared.day
-        print("day: \(day)")
-
         if day % 3 == 0 {
             fillAllSquares()
             alertSuccess()
@@ -70,6 +70,14 @@ class ThreeDayViewController: BaseViewController {
 
         doneButton.layer.cornerRadius = 5
         doneButton.createShadow()
+    }
+    
+    private func applyDone() {
+        doneButton.isEnabled = false
+        doneButton.backgroundColor = .none
+        doneButton.setTitleColor(UIColor(named: "TabColor"), for: .normal)
+//        doneButton.layer.borderWidth = 3
+//        doneButton.layer.borderColor = UIColor(named: "TabColor")?.cgColor
     }
     
     private func animateSquare() {
@@ -118,10 +126,8 @@ class ThreeDayViewController: BaseViewController {
     private func alertSuccess() {
         Goal.shared.isAlert = true
         
-        // 메시지창 컨트롤러 인스턴스 생성
         let alert = UIAlertController(title: "Success", message: "축하합니다!\n작심삼일을 성공했어요🥳", preferredStyle: UIAlertController.Style.alert)
         
-        // 메시지 창 컨트롤러에 들어갈 버튼 액션 객체 생성
         let stopAction = UIAlertAction(title: "그만하기", style: UIAlertAction.Style.default) { [weak self] _ in
             Goal.shared.isAlert = false
             self?.showGoalViewController()
@@ -132,11 +138,9 @@ class ThreeDayViewController: BaseViewController {
             self?.resetGoalViews()
         }
         
-        //메시지 창 컨트롤러에 버튼 액션을 추가
         alert.addAction(stopAction)
         alert.addAction(continueAction)
         
-        //메시지 창 컨트롤러를 표시
         self.present(alert, animated: true)
     }
 }
