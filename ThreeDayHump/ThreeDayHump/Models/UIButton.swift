@@ -15,4 +15,8 @@ extension UIButton {
         self.layer.shadowOpacity = 1
         self.layer.masksToBounds = false
     }
+    
+    func removeShadow() {
+        self.layer.shadowOpacity = 0
+    }
 }
