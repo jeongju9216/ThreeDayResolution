@@ -9,6 +9,10 @@ import UIKit
 import AVFoundation
 
 class ThreeDayViewController: BaseViewController {
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 
     //MARK: - IBOutlets
     @IBOutlet weak var goalLabel: UILabel!
@@ -30,54 +34,68 @@ class ThreeDayViewController: BaseViewController {
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("\(#fileID) \(#line)-line, \(#function)")
-        // Do any additional setup after loading the view.        
+        // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(self, selector: #selector(onForegroundAction), name: UIApplication.willEnterForegroundNotification, object: nil)
+
         initView()
         
         resetGoalViews()
         updateSquares()
         
         if checkAlreadyDone() {
-            print("Toady already Done!!")
-            applyDone()
+            setupDoneStyle()
+        } else {
+            setupNotDoneStyle()
         }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print("\(#fileID) \(#line)-line, \(#function)")
         
         //alert 상태에서 앱을 재시작했을 때 Alert
         if Goal.shared.isAlert {
-            alertSuccess()
+            alertSuccessThreeDay()
         }
     }
     
     //MARK: - IBActions
     @IBAction func clickedDone(_ sender: Any) {
-        let date = Date()
-        Goal.shared.clickDate = date
-        print(dateFormatter.string(from: date))
-        
-        AudioServicesPlaySystemSound(1519)
-        animateSquare()
-        doneButton.removeShadow()
-        applyDone()
-        
-        Goal.shared.day += 1
-        dayLabel.text = Goal.shared.destination
-        
-        let day = Goal.shared.day
-        if day % 3 == 0 {
-            fillAllSquares()
-            alertSuccess()
+        if checkAlreadyDone() {
+            alert(message: "이미 완료 했습니다.\n내일도 화이팅!")
         } else {
-            fillSquares(day % 3)
+            let date = Date()
+            Goal.shared.clickDate = date
+            print(dateFormatter.string(from: date))
+            
+            AudioServicesPlaySystemSound(1519)
+            animateSquare()
+            setupDoneStyle()
+            
+            Goal.shared.day += 1
+            dayLabel.text = Goal.shared.destination
+            
+            let day = Goal.shared.day
+            if day % 3 == 0 {
+                fillAllSquares()
+                alertSuccessThreeDay()
+            } else {
+                fillSquares(day % 3)
+            }
+        }
+    }
+    
+    //MARK: - Methods
+    @objc private func onForegroundAction() {
+        print("Foreground!!")
+        
+        if checkAlreadyDone() {
+            setupDoneStyle()
+        } else {
+            setupNotDoneStyle()
         }
     }
     
     
-    //MARK: - Methods
     private func initView() {
         goalLabel.text = Goal.shared.goal ?? ""
         dayLabel.text = Goal.shared.destination
@@ -94,14 +112,21 @@ class ThreeDayViewController: BaseViewController {
         return Calendar.current.isDateInToday(clickDate)
     }
     
-    private func applyDone() {
+    private func setupDoneStyle() {
         UIView.animate(withDuration: 0.05, animations: { [weak self] in
             self?.doneButton.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
         })
         
-        doneButton.isEnabled = false
+        doneButton.removeShadow()
         doneButton.backgroundColor = .none
-        doneButton.setTitleColor(UIColor(named: "TabColor"), for: .normal)
+        doneButton.titleLabel?.textColor = UIColor(named: "TabColor")
+    }
+    
+    private func setupNotDoneStyle() {
+        doneButton.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+        doneButton.createShadow()
+        doneButton.backgroundColor = UIColor(named: "TextFieldColor")
+        doneButton.titleLabel?.textColor = UIColor(named: "LabelColor")
     }
     
     private func animateSquare() {
@@ -147,24 +172,34 @@ class ThreeDayViewController: BaseViewController {
         }
     }
     
-    private func alertSuccess() {
+    private func alert(message: String) {
+        let alert = UIAlertController(title: "안내", message: message, preferredStyle: UIAlertController.Style.alert)
+        
+        let okAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default)
+        
+        alert.addAction(okAction)
+        
+        self.present(alert, animated: true)
+    }
+    
+    private func alertSuccessThreeDay() {
         Goal.shared.isAlert = true
         
         let alert = UIAlertController(title: "Success", message: "축하합니다!\n작심삼일을 성공했어요🥳", preferredStyle: UIAlertController.Style.alert)
         
-        let stopAction = UIAlertAction(title: "그만하기", style: UIAlertAction.Style.default) { [weak self] _ in
+        let stopAction = UIAlertAction(title: "그만하기", style: UIAlertAction.Style.destructive) { [weak self] _ in
             Goal.shared.isAlert = false
             self?.showGoalViewController()
         }
         
-        let continueAction = UIAlertAction(title: "계속하기", style: UIAlertAction.Style.destructive) { [weak self] _ in
+        let continueAction = UIAlertAction(title: "계속하기", style: UIAlertAction.Style.default) { [weak self] _ in
             Goal.shared.isAlert = false
             self?.resetGoalViews()
         }
         
         alert.addAction(stopAction)
         alert.addAction(continueAction)
-        
+
         self.present(alert, animated: true)
     }
 }
