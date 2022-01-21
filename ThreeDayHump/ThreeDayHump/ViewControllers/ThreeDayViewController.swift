@@ -21,6 +21,11 @@ class ThreeDayViewController: BaseViewController {
     
     //MARK: - Properties
     private lazy var dayViews: [UIView] = [firstView, secondView, thirdView]
+    private let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter
+    }()
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
@@ -31,6 +36,11 @@ class ThreeDayViewController: BaseViewController {
         
         resetGoalViews()
         updateSquares()
+        
+        if checkAlreadyDone() {
+            print("Toady already Done!!")
+            applyDone()
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -45,6 +55,10 @@ class ThreeDayViewController: BaseViewController {
     
     //MARK: - IBActions
     @IBAction func clickedDone(_ sender: Any) {
+        let date = Date()
+        Goal.shared.clickDate = date
+        print(dateFormatter.string(from: date))
+        
         AudioServicesPlaySystemSound(1519)
         animateSquare()
         doneButton.removeShadow()
@@ -72,18 +86,28 @@ class ThreeDayViewController: BaseViewController {
         doneButton.createShadow()
     }
     
+    private func checkAlreadyDone() -> Bool {
+        guard let clickDate = UserDefaults.standard.object(forKey: "clickDate") as? Date else {
+            return false
+        }
+        
+        return Calendar.current.isDateInToday(clickDate)
+    }
+    
     private func applyDone() {
+        UIView.animate(withDuration: 0.05, animations: { [weak self] in
+            self?.doneButton.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+        })
+        
         doneButton.isEnabled = false
         doneButton.backgroundColor = .none
         doneButton.setTitleColor(UIColor(named: "TabColor"), for: .normal)
-//        doneButton.layer.borderWidth = 3
-//        doneButton.layer.borderColor = UIColor(named: "TabColor")?.cgColor
     }
     
     private func animateSquare() {
         let animateIndex = Goal.shared.day % 3
         UIView.animate(withDuration: 0.1, animations: { [weak self] in
-            self?.dayViews[animateIndex].transform = CGAffineTransform(scaleX: 1.08, y: 1.08)
+            self?.dayViews[animateIndex].transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
         }, completion: { _ in
             UIView.animate(withDuration: 0.1) { [weak self] in
                 self?.dayViews[animateIndex].transform = CGAffineTransform(scaleX: 1.0, y: 1.0)

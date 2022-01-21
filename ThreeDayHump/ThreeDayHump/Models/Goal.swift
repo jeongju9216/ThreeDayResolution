@@ -28,6 +28,15 @@ final class Goal {
         "작심 \(day)일"
     }
     
+    var clickDate: Date? {
+        didSet {
+            UserDefaults.standard.set(self.clickDate, forKey: "clickDate")
+            UserDefaults.standard.synchronize()
+            
+            print("Set Date: \(UserDefaults.standard.object(forKey: "clickDate") ?? "nil")")
+        }
+    }
+    
     var isAlert: Bool {
         get {
             UserDefaults.standard.bool( forKey: "isAlert")
