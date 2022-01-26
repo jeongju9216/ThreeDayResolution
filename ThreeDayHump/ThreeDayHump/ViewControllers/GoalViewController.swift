@@ -33,6 +33,9 @@ class GoalViewController: BaseViewController {
         print("\(#fileID) \(#line)-line, \(#function)")
         Goal.shared.goal = goalTextField.text ?? ""
         
+        UserDefaults.standard.removeObject(forKey: "clickDate")
+        UserDefaults.standard.synchronize()
+        
         showThreeDayViewController()
     }
     
