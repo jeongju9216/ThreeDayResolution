@@ -80,6 +80,7 @@ class ThreeDayViewController: BaseViewController {
                 alertSuccessThreeDay()
             } else {
                 fillSquares(day % 3)
+                alert(message: "작심 \(day)일을 완료했어요!")
             }
         }
     }
