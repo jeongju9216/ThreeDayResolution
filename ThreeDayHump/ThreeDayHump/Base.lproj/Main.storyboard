@@ -175,16 +175,28 @@
                                     <color key="titleColor" name="LabelColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="clickedDone:" destination="b1h-ch-X3p" eventType="touchUpInside" id="WJC-6H-i25"/>
-                                    <action selector="clickedStartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XtX-OX-pXG"/>
+                                    <action selector="onDoneClicked:" destination="b1h-ch-X3p" eventType="touchUpInside" id="Ccn-kF-aM2"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕하세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="euO-yq-i4c">
-                                <rect key="frame" x="147.5" y="84" width="119" height="38"/>
+                                <rect key="frame" x="20" y="84" width="374" height="38"/>
                                 <fontDescription key="fontDescription" name="GowunBatang-Bold" family="Gowun Batang" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DEc-Cb-4Ig">
+                                <rect key="frame" x="370" y="91" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="G8X-mx-a6z"/>
+                                    <constraint firstAttribute="height" constant="24" id="OLl-X7-cD0"/>
+                                </constraints>
+                                <color key="tintColor" name="TabColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="flag.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="onGiveUpClicked:" destination="b1h-ch-X3p" eventType="touchUpInside" id="BXh-x6-w0V"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VvI-CY-xFQ"/>
                         <color key="backgroundColor" name="MainColor"/>
@@ -193,12 +205,15 @@
                             <constraint firstItem="euO-yq-i4c" firstAttribute="centerX" secondItem="qON-8W-Euh" secondAttribute="centerX" id="AvM-YV-UwI"/>
                             <constraint firstItem="Fdi-SX-yhm" firstAttribute="centerX" secondItem="qON-8W-Euh" secondAttribute="centerX" id="F8f-9h-eAh"/>
                             <constraint firstItem="Fdi-SX-yhm" firstAttribute="top" secondItem="qWg-i5-fo5" secondAttribute="bottom" constant="70" id="GcR-MA-1Th"/>
+                            <constraint firstItem="VvI-CY-xFQ" firstAttribute="trailing" secondItem="euO-yq-i4c" secondAttribute="trailing" constant="20" id="P47-zC-o0X"/>
                             <constraint firstItem="qWg-i5-fo5" firstAttribute="centerY" secondItem="qON-8W-Euh" secondAttribute="centerY" constant="-50" id="RW2-0U-HyU"/>
                             <constraint firstItem="euO-yq-i4c" firstAttribute="top" secondItem="VvI-CY-xFQ" secondAttribute="top" constant="40" id="VV5-eQ-AyX"/>
                             <constraint firstItem="Fdi-SX-yhm" firstAttribute="width" secondItem="Fdi-SX-yhm" secondAttribute="height" multiplier="3.5:1" id="WUR-w3-SQM"/>
                             <constraint firstItem="qWg-i5-fo5" firstAttribute="centerX" secondItem="qON-8W-Euh" secondAttribute="centerX" id="ZJB-eD-Fmk"/>
                             <constraint firstItem="Fdi-SX-yhm" firstAttribute="centerX" secondItem="qON-8W-Euh" secondAttribute="centerX" id="dcX-zG-UHo"/>
                             <constraint firstItem="Av2-St-Cl6" firstAttribute="centerX" secondItem="qON-8W-Euh" secondAttribute="centerX" id="lEw-TY-2lq"/>
+                            <constraint firstItem="DEc-Cb-4Ig" firstAttribute="centerY" secondItem="euO-yq-i4c" secondAttribute="centerY" id="uJV-Th-BQ3"/>
+                            <constraint firstItem="VvI-CY-xFQ" firstAttribute="trailing" secondItem="DEc-Cb-4Ig" secondAttribute="trailing" constant="20" id="vRd-Uf-9ld"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="작심삼일" image="square.grid.2x2" catalog="system" selectedImage="square.grid.2x2.fill" id="IPR-qG-Cc2"/>
@@ -257,6 +272,7 @@
     </scenes>
     <resources>
         <image name="SmileImage" width="92.5" height="92.5"/>
+        <image name="flag.fill" catalog="system" width="128" height="121"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="square.grid.2x2" catalog="system" width="128" height="114"/>
