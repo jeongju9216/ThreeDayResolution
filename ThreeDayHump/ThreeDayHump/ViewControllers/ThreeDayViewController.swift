@@ -59,7 +59,11 @@ class ThreeDayViewController: BaseViewController {
     }
     
     //MARK: - IBActions
-    @IBAction func clickedDone(_ sender: Any) {
+    @IBAction func onGiveUpClicked(_ sender: UIButton) {
+        alertGiveUp()
+    }
+    
+    @IBAction func onDoneClicked(_ sender: Any) {
         if checkAlreadyDone() {
             alert(message: "이미 완료 했습니다.\n내일도 화이팅!")
         } else {
@@ -190,12 +194,29 @@ class ThreeDayViewController: BaseViewController {
         
         let stopAction = UIAlertAction(title: "그만하기", style: UIAlertAction.Style.destructive) { [weak self] _ in
             Goal.shared.isAlert = false
+            self?.resetUserDefaults()
             self?.showGoalViewController()
         }
         
         let continueAction = UIAlertAction(title: "계속하기", style: UIAlertAction.Style.default) { [weak self] _ in
             Goal.shared.isAlert = false
             self?.resetGoalViews()
+        }
+        
+        alert.addAction(stopAction)
+        alert.addAction(continueAction)
+
+        self.present(alert, animated: true)
+    }
+    
+    private func alertGiveUp() {
+        let alert = UIAlertController(title: "포기하기", message: "작심 \(Goal.shared.day)일입니다.\n여기에서 그만 두시겠습니까?", preferredStyle: UIAlertController.Style.alert)
+        
+        let stopAction = UIAlertAction(title: "취소", style: UIAlertAction.Style.cancel)
+        
+        let continueAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default) { [weak self] _ in
+            self?.resetUserDefaults()
+            self?.showGoalViewController()
         }
         
         alert.addAction(stopAction)

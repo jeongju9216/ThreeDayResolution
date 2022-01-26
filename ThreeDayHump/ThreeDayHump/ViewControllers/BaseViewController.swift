@@ -9,9 +9,6 @@ import UIKit
 
 class BaseViewController: UIViewController {
     func showGoalViewController() {
-        Goal.shared.goal = ""
-        Goal.shared.day = 0
-        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let tabBarController = self.tabBarController
         
@@ -33,6 +30,9 @@ class BaseViewController: UIViewController {
     
     
     func resetUserDefaults() {
+        Goal.shared.goal = ""
+        Goal.shared.day = 0
+        
         UserDefaults.standard.removeObject(forKey: "goal")
         UserDefaults.standard.removeObject(forKey: "day")
     }
