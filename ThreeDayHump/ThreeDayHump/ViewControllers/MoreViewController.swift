@@ -11,6 +11,7 @@ class MoreViewController: UIViewController {
 
     //MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var versionLabel: UILabel!
     
     //MARK: - Properties
     let moreCellIdentifier: String = "moreCell"
@@ -23,6 +24,10 @@ class MoreViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        versionLabel.text = "version \(version ?? "0.0.0")"
+        
     }
     
 }

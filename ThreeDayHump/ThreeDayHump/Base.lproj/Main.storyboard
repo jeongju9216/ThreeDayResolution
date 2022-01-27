@@ -300,6 +300,7 @@
                     <tabBarItem key="tabBarItem" title="설정" image="gearshape" catalog="system" selectedImage="gearshape.fill" id="oai-G4-VfU"/>
                     <connections>
                         <outlet property="tableView" destination="j14-J5-2wp" id="yFX-dq-WKo"/>
+                        <outlet property="versionLabel" destination="0YW-8a-NB7" id="nHt-Zw-oZE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eQg-VI-Lmk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
