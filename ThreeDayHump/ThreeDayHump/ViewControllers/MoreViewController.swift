@@ -15,6 +15,7 @@ class MoreViewController: UIViewController {
     
     //MARK: - Properties
     let moreCellIdentifier: String = "moreCell"
+    let settings: [String] = ["테마", "정보"]
     
     //MARK: - Life Cycles
     override func viewDidLoad() {
@@ -34,14 +35,13 @@ class MoreViewController: UIViewController {
 
 extension MoreViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return settings.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: self.moreCellIdentifier, for: indexPath)
         
-//        cell.textLabel?.text = "설정"
-//        cell.imageView?.image = UIImage(named: "gearshape.fill")
+        cell.textLabel?.text = settings[indexPath.row]
 
         return cell
     }
