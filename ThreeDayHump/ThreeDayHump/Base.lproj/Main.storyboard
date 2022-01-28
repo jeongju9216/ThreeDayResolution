@@ -6,15 +6,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="BMHANNAProOTF.otf.ttf">
             <string>BMHANNAProOTF</string>
-        </array>
-        <array key="GowunBatang-Bold.ttf">
-            <string>GowunBatang-Bold</string>
         </array>
     </customFonts>
     <scenes>
@@ -26,10 +22,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="목표를 정해보세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pce-MG-DHM">
-                                <rect key="frame" x="115" y="257" width="184" height="35"/>
-                                <fontDescription key="fontDescription" name="GowunBatang-Bold" family="Gowun Batang" pointSize="24"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pce-MG-DHM">
+                                <rect key="frame" x="121" y="263" width="172.5" height="29"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="목표를 정해보세요">
+                                        <attributes>
+                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="24" name="AppleSDGothicNeo-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FZg-7l-Y9w">
@@ -179,18 +182,18 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕하세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="euO-yq-i4c">
-                                <rect key="frame" x="20" y="84" width="374" height="38"/>
-                                <fontDescription key="fontDescription" name="GowunBatang-Bold" family="Gowun Batang" pointSize="26"/>
+                                <rect key="frame" x="20" y="84" width="374" height="29"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DEc-Cb-4Ig">
-                                <rect key="frame" x="370" y="91" width="24" height="24"/>
+                                <rect key="frame" x="362" y="82.5" width="32" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="24" id="G8X-mx-a6z"/>
-                                    <constraint firstAttribute="height" constant="24" id="OLl-X7-cD0"/>
+                                    <constraint firstAttribute="width" constant="32" id="G8X-mx-a6z"/>
+                                    <constraint firstAttribute="width" secondItem="DEc-Cb-4Ig" secondAttribute="height" multiplier="1:1" id="Zji-8t-46l"/>
                                 </constraints>
-                                <color key="tintColor" name="TabColor"/>
+                                <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="flag.fill" catalog="system"/>
                                 <connections>
@@ -238,14 +241,68 @@
                     <view key="view" contentMode="scaleToFill" id="E6B-ml-3pX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="j14-J5-2wp">
+                                <rect key="frame" x="0.0" y="147.5" width="414" height="618.5"/>
+                                <color key="backgroundColor" name="MainColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="moreCell" textLabel="kIS-cN-pBS" style="IBUITableViewCellStyleDefault" id="LxN-Fo-bDo">
+                                        <rect key="frame" x="0.0" y="50" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LxN-Fo-bDo" id="bhQ-bX-sLZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="383.5" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kIS-cN-pBS">
+                                                    <rect key="frame" x="20" y="0.0" width="355.5" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="설정" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rk7-z7-8aq">
+                                <rect key="frame" x="20" y="84" width="62.5" height="43.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="62.5" id="Web-x3-2Oi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="36"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="version 1.0.0" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0YW-8a-NB7">
+                                <rect key="frame" x="313.5" y="786" width="80.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Dsf-pn-Alx"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="MainColor"/>
+                        <constraints>
+                            <constraint firstItem="0YW-8a-NB7" firstAttribute="top" secondItem="j14-J5-2wp" secondAttribute="bottom" constant="20" id="0Jw-uD-u4I"/>
+                            <constraint firstItem="j14-J5-2wp" firstAttribute="top" secondItem="Rk7-z7-8aq" secondAttribute="bottom" constant="20" id="C9f-96-K1i"/>
+                            <constraint firstItem="j14-J5-2wp" firstAttribute="leading" secondItem="Dsf-pn-Alx" secondAttribute="leading" id="Iu2-UP-CHa"/>
+                            <constraint firstItem="Rk7-z7-8aq" firstAttribute="top" secondItem="Dsf-pn-Alx" secondAttribute="top" constant="40" id="K0M-ue-cNC"/>
+                            <constraint firstItem="Dsf-pn-Alx" firstAttribute="trailing" secondItem="0YW-8a-NB7" secondAttribute="trailing" constant="20" id="Ssg-RP-fU4"/>
+                            <constraint firstItem="Rk7-z7-8aq" firstAttribute="leading" secondItem="Dsf-pn-Alx" secondAttribute="leading" constant="20" id="WNd-Ya-mO0"/>
+                            <constraint firstItem="Dsf-pn-Alx" firstAttribute="bottom" secondItem="0YW-8a-NB7" secondAttribute="bottom" constant="10" id="oXv-sX-GR5"/>
+                            <constraint firstItem="Dsf-pn-Alx" firstAttribute="trailing" secondItem="j14-J5-2wp" secondAttribute="trailing" id="q3e-Ag-OMX"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="설정" image="gearshape" catalog="system" selectedImage="gearshape.fill" id="oai-G4-VfU"/>
+                    <connections>
+                        <outlet property="tableView" destination="j14-J5-2wp" id="yFX-dq-WKo"/>
+                        <outlet property="versionLabel" destination="0YW-8a-NB7" id="nHt-Zw-oZE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eQg-VI-Lmk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2533" y="408"/>
+            <point key="canvasLocation" x="2530.434782608696" y="407.8125"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="bip-hY-ZFL">
@@ -292,8 +349,5 @@
         <namedColor name="TextFieldColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
