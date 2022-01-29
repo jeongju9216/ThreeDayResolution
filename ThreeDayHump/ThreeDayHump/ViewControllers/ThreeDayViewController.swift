@@ -65,7 +65,11 @@ class ThreeDayViewController: BaseViewController {
     
     @IBAction func onDoneClicked(_ sender: Any) {
         if checkAlreadyDone() {
-            alert(message: "이미 완료 했습니다.\n내일도 화이팅!")
+//            alert(message: "이미 완료 했습니다.\n내일도 화이팅!")
+            let alertViewController = AlertViewController()
+            alertViewController.modalPresentationStyle = .overFullScreen
+            present(alertViewController, animated: false, completion: nil)
+            
         } else {
             let date = Date()
             Goal.shared.clickDate = date

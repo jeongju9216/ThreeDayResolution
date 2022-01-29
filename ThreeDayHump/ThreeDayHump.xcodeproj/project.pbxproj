@@ -12,6 +12,8 @@
 		9B65DAE32787270000F01979 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B65DAE22787270000F01979 /* MoreViewController.swift */; };
 		9B65DAE5278728DA00F01979 /* BMHANNAProOTF.otf.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B65DAE4278728DA00F01979 /* BMHANNAProOTF.otf.ttf */; };
 		9B6CF8F3279824CD007384B2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6CF8F2279824CD007384B2 /* BaseViewController.swift */; };
+		9B6CF8FC27A53A76007384B2 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6CF8FA27A53A76007384B2 /* AlertViewController.swift */; };
+		9B6CF8FD27A53A76007384B2 /* AlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B6CF8FB27A53A76007384B2 /* AlertViewController.xib */; };
 		9BA9F7D52789889C00F9F86B /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA9F7D42789889C00F9F86B /* UIButton.swift */; };
 		9BB8C96D278F1B4A000B61F4 /* GowunBatang-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BB8C96C278F1B4A000B61F4 /* GowunBatang-Bold.ttf */; };
 		9BF6C1FD2781DC4800E486CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF6C1FC2781DC4800E486CE /* AppDelegate.swift */; };
@@ -29,6 +31,8 @@
 		9B65DAE22787270000F01979 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		9B65DAE4278728DA00F01979 /* BMHANNAProOTF.otf.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BMHANNAProOTF.otf.ttf; sourceTree = "<group>"; };
 		9B6CF8F2279824CD007384B2 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		9B6CF8FA27A53A76007384B2 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		9B6CF8FB27A53A76007384B2 /* AlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertViewController.xib; sourceTree = "<group>"; };
 		9BA9F7D42789889C00F9F86B /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		9BB8C96C278F1B4A000B61F4 /* GowunBatang-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GowunBatang-Bold.ttf"; sourceTree = "<group>"; };
 		9BF6C1F92781DC4800E486CE /* ThreeDayHump.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThreeDayHump.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +105,8 @@
 				9B65DAE22787270000F01979 /* MoreViewController.swift */,
 				9B1A0CF32789190C0085B9CF /* ThreeDayViewController.swift */,
 				9B6CF8F2279824CD007384B2 /* BaseViewController.swift */,
+				9B6CF8FA27A53A76007384B2 /* AlertViewController.swift */,
+				9B6CF8FB27A53A76007384B2 /* AlertViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -179,6 +185,7 @@
 				9BB8C96D278F1B4A000B61F4 /* GowunBatang-Bold.ttf in Resources */,
 				9BF6C2062781DC4900E486CE /* Assets.xcassets in Resources */,
 				9BF6C2042781DC4800E486CE /* Main.storyboard in Resources */,
+				9B6CF8FD27A53A76007384B2 /* AlertViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +200,7 @@
 				9B1A0CF42789190C0085B9CF /* ThreeDayViewController.swift in Sources */,
 				9B65DAE32787270000F01979 /* MoreViewController.swift in Sources */,
 				9BF6C1FD2781DC4800E486CE /* AppDelegate.swift in Sources */,
+				9B6CF8FC27A53A76007384B2 /* AlertViewController.swift in Sources */,
 				9BA9F7D52789889C00F9F86B /* UIButton.swift in Sources */,
 				9B6CF8F3279824CD007384B2 /* BaseViewController.swift in Sources */,
 				9B1A0CF727891D360085B9CF /* Goal.swift in Sources */,
