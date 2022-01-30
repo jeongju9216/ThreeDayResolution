@@ -64,12 +64,12 @@ class ThreeDayViewController: BaseViewController {
     }
     
     @IBAction func onDoneClicked(_ sender: Any) {
-        if checkAlreadyDone() {
-//            alert(message: "이미 완료 했습니다.\n내일도 화이팅!")
-            let alertViewController = AlertViewController()
-            alertViewController.modalPresentationStyle = .overFullScreen
-            present(alertViewController, animated: false, completion: nil)
-            
+        var titleText: String?, messageText: String?, alertType: AlertType?
+        
+        if false && checkAlreadyDone() {
+            titleText = "안내"
+            messageText = "이미 완료 했습니다.\n내일도 화이팅!"
+            alertType = .oneButton
         } else {
             let date = Date()
             Goal.shared.clickDate = date
@@ -85,12 +85,21 @@ class ThreeDayViewController: BaseViewController {
             let day = Goal.shared.day
             if day % 3 == 0 {
                 fillAllSquares()
-                alertSuccessThreeDay()
+                
+                titleText = "안내"
+                messageText = "축하합니다!\n작심삼일을 성공했어요🥳"
+                alertType = .twoButton
             } else {
                 fillSquares(day % 3)
-                alert(message: "작심 \(day)일을 완료했어요!")
+                
+                titleText = "안내"
+                messageText = "작심 \(Goal.shared.day)일을 달성했어요."
+                alertType = .oneButton
             }
         }
+        
+        let alertViewController = AlertViewController(titleText: titleText ?? "", messageText: messageText ?? "", alertType: alertType ?? .oneButton)
+        present(alertViewController, animated: false, completion: nil)
     }
     
     //MARK: - Methods
