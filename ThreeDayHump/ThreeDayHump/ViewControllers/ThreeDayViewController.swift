@@ -64,12 +64,8 @@ class ThreeDayViewController: BaseViewController {
     }
     
     @IBAction func onDoneClicked(_ sender: Any) {
-        var titleText: String?, messageText: String?, alertType: AlertType?
-        
-        if false && checkAlreadyDone() {
-            titleText = "안내"
-            messageText = "이미 완료 했습니다.\n내일도 화이팅!"
-            alertType = .oneButton
+        if checkAlreadyDone() {
+            alert(message: "이미 완료 했습니다.\n내일도 화이팅!")
         } else {
             let date = Date()
             Goal.shared.clickDate = date
@@ -85,24 +81,16 @@ class ThreeDayViewController: BaseViewController {
             let day = Goal.shared.day
             if day % 3 == 0 {
                 fillAllSquares()
-                
-                titleText = "안내"
-                messageText = "축하합니다!\n작심삼일을 성공했어요🥳"
-                alertType = .twoButton
+                alertSuccessThreeDay()
             } else {
                 fillSquares(day % 3)
-                
-                titleText = "안내"
-                messageText = "작심 \(Goal.shared.day)일을 달성했어요."
-                alertType = .oneButton
+                alert(message: "작심 \(Goal.shared.day)일을 달성했어요.")
             }
         }
-        
-        let alertViewController = AlertViewController(titleText: titleText ?? "", messageText: messageText ?? "", alertType: alertType ?? .oneButton)
-        present(alertViewController, animated: false, completion: nil)
     }
     
     //MARK: - Methods
+    
     @objc private func onForegroundAction() {
         print("Foreground!!")
         
@@ -191,50 +179,53 @@ class ThreeDayViewController: BaseViewController {
     }
     
     private func alert(message: String) {
-        let alert = UIAlertController(title: "안내", message: message, preferredStyle: UIAlertController.Style.alert)
-        
-        let okAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default)
-        
-        alert.addAction(okAction)
-        
-        self.present(alert, animated: true)
+        let alertViewController = AlertViewController(titleText: "안내", messageText: message, doneText: "확인", doneAction: UIAction { [weak self] _ in
+            self?.dismiss(animated: false, completion: nil)
+        })
+        present(alertViewController, animated: false, completion: nil)
     }
     
     private func alertSuccessThreeDay() {
         Goal.shared.isAlert = true
         
-        let alert = UIAlertController(title: "Success", message: "축하합니다!\n작심삼일을 성공했어요🥳", preferredStyle: UIAlertController.Style.alert)
+        let titleText = "축하합니다!"
+        let messageText = "작심 \(Goal.shared.day)일을 성공했어요🥳"
         
-        let stopAction = UIAlertAction(title: "그만하기", style: UIAlertAction.Style.destructive) { [weak self] _ in
-            Goal.shared.isAlert = false
-            self?.resetUserDefaults()
-            self?.showGoalViewController()
-        }
-        
-        let continueAction = UIAlertAction(title: "계속하기", style: UIAlertAction.Style.default) { [weak self] _ in
+        let doneAction = UIAction { [weak self] _ in
+            self?.dismiss(animated: false, completion: nil)
+
             Goal.shared.isAlert = false
             self?.resetGoalViews()
         }
         
-        alert.addAction(stopAction)
-        alert.addAction(continueAction)
+        let cancelAction = UIAction { [weak self] _ in
+            self?.dismiss(animated: false, completion: nil)
 
-        self.present(alert, animated: true)
-    }
-    
-    private func alertGiveUp() {
-        let alert = UIAlertController(title: "포기하기", message: "작심 \(Goal.shared.day)일입니다.\n여기에서 그만 두시겠습니까?", preferredStyle: UIAlertController.Style.alert)
-        
-        let stopAction = UIAlertAction(title: "취소", style: UIAlertAction.Style.cancel)
-        
-        let continueAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default) { [weak self] _ in
+            Goal.shared.isAlert = false
             self?.resetUserDefaults()
             self?.showGoalViewController()
         }
         
-        alert.addAction(stopAction)
-        alert.addAction(continueAction)
+        let alertViewController = AlertViewController(titleText: titleText, messageText: messageText, doneText: "계속하기", cancelText: "그만하기", doneAction: doneAction, cancelAction: cancelAction)
+        present(alertViewController, animated: false, completion: nil)
+    }
+    
+    private func alertGiveUp() {
+        let titleText = "경고"
+        let messageText = "작심 \(Goal.shared.day)일입니다.\n여기에서 포기하시겠습니까?"
+        
+        let doneAction = UIAction { [weak self] _ in
+            self?.dismiss(animated: false, completion: nil)
 
-        self.present(alert, animated: true)
+            self?.resetUserDefaults()
+            self?.showGoalViewController()
+        }
+        
+        let cancelAction = UIAction { [weak self] _ in
+            self?.dismiss(animated: false, completion: nil)
+        }
+        
+        let alertViewController = AlertViewController(titleText: titleText, messageText: messageText, doneText: "포기하기", cancelText: "취소", doneAction: doneAction, cancelAction: cancelAction)
+        present(alertViewController, animated: false, completion: nil)
     }
 }

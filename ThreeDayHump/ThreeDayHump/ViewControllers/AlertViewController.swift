@@ -19,19 +19,24 @@ class AlertViewController: UIViewController {
     //MARK: - Properties
     private var titleText:String? = "Title", messageText:String? = "Message"
     private var alertType: AlertType = .oneButton
+    private var doneText: String = "", cancelText: String = ""
+    private var doneAction: UIAction? = nil, cancelAction: UIAction? = nil
     
     //MARK: - Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         alertView.isLayoutMarginsRelativeArrangement = true
         alertView.layoutMargins = UIEdgeInsets(top: 15.0, left: 0, bottom: 0, right: 0)
         alertView.layer.cornerRadius = 10
         
+        titleLabel.text = titleText
+        messageLabel.text = messageText
+        
         cancelButton.layer.cornerRadius = 10
         doneButton.layer.cornerRadius = 10
-
+        
         switch alertType {
         case .oneButton:
             cancelButton.isHidden = true
@@ -41,42 +46,44 @@ class AlertViewController: UIViewController {
             cancelButton.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMaxYCorner)
             doneButton.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMaxXMaxYCorner)
         }
+                
+        if let doneAction = doneAction {
+            doneButton.addAction(doneAction, for: .touchUpInside)
+        }
         
-        doneButton.addTarget(self, action: #selector(onDoneClicked(_:)), for: .touchUpInside)
-        cancelButton.addTarget(self, action: #selector(onCancelClicked(_:)), for: .touchUpInside)
+        if let cancelAction = cancelAction {
+            cancelButton.addAction(cancelAction, for: .touchUpInside)
+        }
         
-        titleLabel.text = titleText
-        messageLabel.text = messageText
+        doneButton.setTitle(doneText, for: .normal)
+        cancelButton.setTitle(cancelText, for: .normal)
     }
     
-    convenience init(titleText: String? = nil, messageText: String? = nil, alertType: AlertType) {
+    convenience init(titleText: String? = nil, messageText: String? = nil, doneText: String = "확인", doneAction: UIAction? = nil) {
         self.init()
 
         self.titleText = titleText
         self.messageText = messageText
-        self.alertType = alertType
+        self.alertType = .oneButton
+        self.doneText = doneText
+        self.doneAction = doneAction
         
         modalPresentationStyle = .overFullScreen
     }
     
-    //MARK: - Methods
-    @objc private func onDoneClicked(_ sender: UIButton) {
-        dismiss(animated: false, completion: nil)
+    convenience init(titleText: String? = nil, messageText: String? = nil, doneText: String = "확인", cancelText: String = "취소", doneAction: UIAction? = nil, cancelAction: UIAction? = nil) {
+        self.init()
+        
+        self.titleText = titleText
+        self.messageText = messageText
+        self.alertType = .twoButton
+        
+        self.doneText = doneText
+        self.doneAction = doneAction
+        
+        self.cancelText = cancelText
+        self.cancelAction = cancelAction
+        
+        modalPresentationStyle = .overFullScreen
     }
-
-    @objc private func onCancelClicked(_ sender: UIButton) {
-        dismiss(animated: false, completion: nil)
-    }
-    
-    public func setUpDoneButton(title: String) {
-        doneButton.titleLabel?.text = title
-    }
-    
-    public func setUpCancelButton(title: String) {
-        cancelButton.titleLabel?.text = title
-    }
-}
-
-enum AlertType: Int {
-    case oneButton, twoButton
 }

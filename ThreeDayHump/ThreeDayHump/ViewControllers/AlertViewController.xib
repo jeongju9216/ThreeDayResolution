@@ -30,7 +30,7 @@
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="slB-dh-c7j">
-                    <rect key="frame" x="57" y="346" width="300" height="204"/>
+                    <rect key="frame" x="57" y="387.5" width="300" height="121"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WtJ-2r-2vS">
                             <rect key="frame" x="0.0" y="0.0" width="300" height="25.5"/>
@@ -38,32 +38,31 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxb-L1-WtZ">
-                            <rect key="frame" x="0.0" y="45.5" width="300" height="107.5"/>
-                            <string key="text">MessageMessageMessageMessageMessageMessageMessageMessageMessageMessageMessageMessageMessageMessageMessageMessageMessageMessageMessage</string>
-                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="3" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxb-L1-WtZ">
+                            <rect key="frame" x="0.0" y="45.5" width="300" height="21.5"/>
+                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
+                            <size key="shadowOffset" width="0.0" height="0.0"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="JqZ-Tu-SbJ">
-                            <rect key="frame" x="0.0" y="173" width="300" height="31"/>
+                            <rect key="frame" x="0.0" y="87" width="300" height="34"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ibz-cR-Q4H">
-                                    <rect key="frame" x="0.0" y="0.0" width="149.5" height="31"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="149.5" height="34"/>
                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="tintColor" systemColor="systemBackgroundColor"/>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7mb-fU-Hqg">
-                                    <rect key="frame" x="150.5" y="0.0" width="149.5" height="31"/>
-                                    <color key="backgroundColor" name="LabelColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                     <color key="tintColor" systemColor="systemBackgroundColor"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" title="Done"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="Done">
-                                        <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="14"/>
-                                    </buttonConfiguration>
+                                    <state key="normal" title="취소"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7mb-fU-Hqg">
+                                    <rect key="frame" x="150.5" y="0.0" width="149.5" height="34"/>
+                                    <color key="backgroundColor" name="LabelColor"/>
+                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="18"/>
+                                    <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="확인"/>
                                 </button>
                             </subviews>
                         </stackView>
