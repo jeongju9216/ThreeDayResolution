@@ -65,18 +65,9 @@ class ThreeDayViewController: BaseViewController {
     
     @IBAction func onDoneClicked(_ sender: Any) {
         if checkAlreadyDone() {
-            alert(message: "이미 완료 했습니다.\n내일도 화이팅!")
+            alert(message: "이미 완료했습니다.\n내일도 파이팅!")
         } else {
-            let date = Date()
-            Goal.shared.clickDate = date
-            print(dateFormatter.string(from: date))
-            
-            AudioServicesPlaySystemSound(1519)
-            animateSquare()
-            setupDoneStyle()
-            
-            Goal.shared.day += 1
-            dayLabel.text = Goal.shared.destination
+            addDay()
             
             let day = Goal.shared.day
             if day % 3 == 0 {
@@ -90,6 +81,17 @@ class ThreeDayViewController: BaseViewController {
     }
     
     //MARK: - Methods
+    private func addDay() {
+        let date = Date()
+        Goal.shared.clickDate = date
+        
+        AudioServicesPlaySystemSound(1519)
+        animateSquare()
+        setupDoneStyle()
+        
+        Goal.shared.day += 1
+        dayLabel.text = Goal.shared.destination
+    }
     
     @objc private func onForegroundAction() {
         print("Foreground!!")
@@ -188,8 +190,8 @@ class ThreeDayViewController: BaseViewController {
     private func alertSuccessThreeDay() {
         Goal.shared.isAlert = true
         
-        let titleText = "축하합니다!"
-        let messageText = "작심 \(Goal.shared.day)일을 성공했어요🥳"
+        let titleText = "성공"
+        let messageText = "축하합니다!\n작심 \(Goal.shared.day)일을 성공했어요🥳"
         
         let doneAction = UIAction { [weak self] _ in
             self?.dismiss(animated: false, completion: nil)
@@ -206,7 +208,7 @@ class ThreeDayViewController: BaseViewController {
             self?.showGoalViewController()
         }
         
-        let alertViewController = AlertViewController(titleText: titleText, messageText: messageText, doneText: "계속하기", cancelText: "그만하기", doneAction: doneAction, cancelAction: cancelAction)
+        let alertViewController = AlertViewController(titleText: titleText, messageText: messageText, doneText: "계속 도전하기", cancelText: "그만하기", doneAction: doneAction, cancelAction: cancelAction)
         present(alertViewController, animated: false, completion: nil)
     }
     

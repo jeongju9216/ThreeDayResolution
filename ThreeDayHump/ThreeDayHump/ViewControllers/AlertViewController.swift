@@ -27,38 +27,11 @@ class AlertViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        alertView.isLayoutMarginsRelativeArrangement = true
-        alertView.layoutMargins = UIEdgeInsets(top: 15.0, left: 0, bottom: 0, right: 0)
-        alertView.layer.cornerRadius = 10
-        
-        titleLabel.text = titleText
-        messageLabel.text = messageText
-        
-        cancelButton.layer.cornerRadius = 10
-        doneButton.layer.cornerRadius = 10
-        
-        switch alertType {
-        case .oneButton:
-            cancelButton.isHidden = true
-            doneButton.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMaxYCorner, .layerMaxXMaxYCorner)
-
-        case .twoButton:
-            cancelButton.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMaxYCorner)
-            doneButton.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMaxXMaxYCorner)
-        }
-                
-        if let doneAction = doneAction {
-            doneButton.addAction(doneAction, for: .touchUpInside)
-        }
-        
-        if let cancelAction = cancelAction {
-            cancelButton.addAction(cancelAction, for: .touchUpInside)
-        }
-        
-        doneButton.setTitle(doneText, for: .normal)
-        cancelButton.setTitle(cancelText, for: .normal)
+        initView()
+        setUpButtonAction()
     }
     
+    //MARK: - inits
     convenience init(titleText: String? = nil, messageText: String? = nil, doneText: String = "확인", doneAction: UIAction? = nil) {
         self.init()
 
@@ -85,5 +58,45 @@ class AlertViewController: UIViewController {
         self.cancelAction = cancelAction
         
         modalPresentationStyle = .overFullScreen
+    }
+    
+    //MARK: - Methods
+    private func initView() {
+        alertView.isLayoutMarginsRelativeArrangement = true
+        alertView.layoutMargins = UIEdgeInsets(top: 15.0, left: 0, bottom: 0, right: 0)
+        alertView.layer.cornerRadius = 10
+        
+        titleLabel.text = titleText
+        messageLabel.text = messageText
+        
+        initButton()
+    }
+    
+    private func initButton() {
+        doneButton.setTitle(doneText, for: .normal)
+        cancelButton.setTitle(cancelText, for: .normal)
+        
+        cancelButton.layer.cornerRadius = 10
+        doneButton.layer.cornerRadius = 10
+        
+        switch alertType {
+        case .oneButton:
+            cancelButton.isHidden = true
+            doneButton.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMaxYCorner, .layerMaxXMaxYCorner)
+
+        case .twoButton:
+            cancelButton.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMaxYCorner)
+            doneButton.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMaxXMaxYCorner)
+        }
+    }
+    
+    private func setUpButtonAction() {
+        if let doneAction = doneAction {
+            doneButton.addAction(doneAction, for: .touchUpInside)
+        }
+        
+        if let cancelAction = cancelAction {
+            cancelButton.addAction(cancelAction, for: .touchUpInside)
+        }
     }
 }
