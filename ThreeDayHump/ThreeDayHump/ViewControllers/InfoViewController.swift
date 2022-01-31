@@ -15,6 +15,9 @@ class InfoViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.title = "앱 정보"
+        self.navigationController?.navigationBar.tintColor = .white
+        
         let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
         versionLabel.text = "version \(version ?? "0.0.0")"
     }

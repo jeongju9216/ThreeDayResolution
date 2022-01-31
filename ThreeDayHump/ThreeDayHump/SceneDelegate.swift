@@ -28,7 +28,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let goalViewController = storyboard.instantiateViewController(withIdentifier: "GoalViewController")
         let threeDayViewController = storyboard.instantiateViewController(withIdentifier: "ThreeDayViewController")
-        let moreViewController = storyboard.instantiateViewController(withIdentifier: "MoreViewController")
+        
+        let navigation = storyboard.instantiateViewController(withIdentifier: "MoreNavigationController") as! UINavigationController
         
         if let goal = UserDefaults.standard.string(forKey: "goal"),
            !goal.isEmpty {
@@ -38,10 +39,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             Goal.shared.goal = goal
             Goal.shared.day = day
 
-            tabBarController?.setViewControllers([threeDayViewController, moreViewController], animated: false)
+            tabBarController?.setViewControllers([threeDayViewController, navigation], animated: false)
         } else {
             print("Goal is nil or Empty")
-            tabBarController?.setViewControllers([goalViewController, moreViewController], animated: false)
+            tabBarController?.setViewControllers([goalViewController, navigation], animated: false)
         }
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
