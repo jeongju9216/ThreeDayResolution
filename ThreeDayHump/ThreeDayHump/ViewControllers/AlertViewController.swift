@@ -31,6 +31,18 @@ class AlertViewController: UIViewController {
         setUpButtonAction()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        UIView.animate(withDuration: 0.1, animations: { [weak self] in
+            self?.alertView.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
+        }, completion: { _ in
+            UIView.animate(withDuration: 0.1) { [weak self] in
+                self?.alertView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+            }
+        })
+    }
+    
     //MARK: - inits
     convenience init(titleText: String? = nil, messageText: String? = nil, doneText: String = "확인", doneAction: UIAction? = nil) {
         self.init()
