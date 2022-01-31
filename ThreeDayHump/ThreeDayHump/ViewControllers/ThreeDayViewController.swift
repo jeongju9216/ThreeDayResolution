@@ -93,9 +93,7 @@ class ThreeDayViewController: BaseViewController {
         dayLabel.text = Goal.shared.destination
     }
     
-    @objc private func onForegroundAction() {
-        print("Foreground!!")
-        
+    @objc private func onForegroundAction() {        
         if checkAlreadyDone() {
             setupDoneStyle()
         } else {

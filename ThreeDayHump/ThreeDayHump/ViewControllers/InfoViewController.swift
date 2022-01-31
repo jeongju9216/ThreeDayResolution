@@ -18,19 +18,28 @@ class InfoViewController: UIViewController {
         self.title = "앱 정보"
         self.navigationController?.navigationBar.tintColor = .white
         
-        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
-        versionLabel.text = "version \(version ?? "0.0.0")"
+        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
+        let appStoreVersion = checkAppVersion()
+        
+        print("version: \(version), appStoreVersion: \(appStoreVersion)")
+        
+        versionLabel.text = "현재 버전: \(version)\n최신 버전: \(appStoreVersion)"
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func checkAppVersion() -> String {
+        let bundleID = "com.jeong9216.ThreeDayHump"
+        guard let url = URL(string: "http://itunes.apple.com/kr/lookup?bundleId=\(bundleID)"),
+              let data = try? Data(contentsOf: url),
+              let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any],
+              let results = json["results"] as? [[String: Any]],
+              let appStoreVersion = results[0]["version"] as? String else {
+                  return ""
+              }
+                
+        return appStoreVersion
     }
-    */
+}
 
+enum VersionError: Error {
+    case invalidResponse, invalidBundleInfo
 }
