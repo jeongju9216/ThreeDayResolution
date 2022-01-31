@@ -13,9 +13,10 @@ class BaseViewController: UIViewController {
         let tabBarController = self.tabBarController
         
         let goalViewController = storyboard.instantiateViewController(withIdentifier: "GoalViewController")
-        let moreViewController = storyboard.instantiateViewController(withIdentifier: "MoreViewController")
         
-        tabBarController?.setViewControllers([goalViewController, moreViewController], animated: false)
+        let navigation = storyboard.instantiateViewController(withIdentifier: "MoreNavigationController") as! UINavigationController
+        
+        tabBarController?.setViewControllers([goalViewController, navigation], animated: false)
     }
     
     func showThreeDayViewController() {
@@ -23,9 +24,10 @@ class BaseViewController: UIViewController {
         let tabBarController = self.tabBarController
         
         let threeDayViewController = storyboard.instantiateViewController(withIdentifier: "ThreeDayViewController")
-        let moreViewController = storyboard.instantiateViewController(withIdentifier: "MoreViewController")
         
-        tabBarController?.setViewControllers([threeDayViewController, moreViewController], animated: false)
+        let navigation = storyboard.instantiateViewController(withIdentifier: "MoreNavigationController") as! UINavigationController
+        
+        tabBarController?.setViewControllers([threeDayViewController, navigation], animated: false)
     }
     
     

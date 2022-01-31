@@ -14,7 +14,7 @@ class MoreViewController: UIViewController {
     
     //MARK: - Properties
     let moreCellIdentifier: String = "moreCell"
-    let settings: [String] = ["정보"]
+    let settings: [String] = ["앱 정보"]
     
     //MARK: - Life Cycles
     override func viewDidLoad() {
@@ -43,5 +43,17 @@ extension MoreViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        print("indexPath: \(indexPath.row)")
+        var viewController = UIViewController()
+        switch indexPath.row {
+        case 0:
+            viewController = self.storyboard?.instantiateViewController(withIdentifier: "InfoViewController") as! InfoViewController
+        default:
+            print("Default")
+        }
+        print("viewController: \(viewController)")
+        
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
