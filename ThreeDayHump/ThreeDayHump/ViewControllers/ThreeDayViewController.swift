@@ -64,7 +64,7 @@ class ThreeDayViewController: BaseViewController {
     }
     
     @IBAction func onDoneClicked(_ sender: Any) {
-        if false && checkAlreadyDone() {
+        if checkAlreadyDone() {
             alert(message: "이미 완료했습니다.\n내일도 파이팅!")
         } else {
             addDay()
