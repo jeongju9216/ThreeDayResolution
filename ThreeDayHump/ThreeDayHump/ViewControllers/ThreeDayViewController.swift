@@ -60,20 +60,24 @@ class ThreeDayViewController: BaseViewController {
     
     //MARK: - IBActions
     @IBAction func onGiveUpClicked(_ sender: UIButton) {
+        AudioServicesPlaySystemSound(1519)
         alertGiveUp()
     }
     
     @IBAction func onDoneClicked(_ sender: Any) {
         if checkAlreadyDone() {
+            AudioServicesPlaySystemSound(1519)
             alert(message: "이미 완료했습니다.\n내일도 파이팅!")
         } else {
             addDay()
             
             let day = Goal.shared.day
             if day % 3 == 0 {
+                AudioServicesPlaySystemSound(1520)
                 fillAllSquares()
                 alertSuccessThreeDay()
             } else {
+                AudioServicesPlaySystemSound(1519)
                 fillSquares(day % 3)
                 alert(message: "작심 \(Goal.shared.day)일을 달성했어요.")
             }
@@ -85,7 +89,6 @@ class ThreeDayViewController: BaseViewController {
         let date = Date()
         Goal.shared.clickDate = date
         
-        AudioServicesPlaySystemSound(1519)
         animateSquare()
         setupDoneStyle()
         
