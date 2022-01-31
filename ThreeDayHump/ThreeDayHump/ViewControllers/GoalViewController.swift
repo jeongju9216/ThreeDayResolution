@@ -14,6 +14,8 @@ class GoalViewController: BaseViewController {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var goalTextField: UITextField!
     
+    private let maxGoalLength = 15
+    
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,10 +63,9 @@ extension GoalViewController: UITextFieldDelegate {
             startButton.isEnabled = true
         }
         
-        let maxLength = 11
         // 초과되는 텍스트 제거
         let newLength = text.count + string.count - range.length
-        return newLength <= maxLength
+        return newLength <= (maxGoalLength + 1)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
