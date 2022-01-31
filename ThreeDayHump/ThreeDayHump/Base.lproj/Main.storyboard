@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -243,7 +244,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="j14-J5-2wp">
-                                <rect key="frame" x="0.0" y="147.5" width="414" height="618.5"/>
+                                <rect key="frame" x="0.0" y="147.5" width="414" height="645.5"/>
                                 <color key="backgroundColor" name="MainColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="moreCell" textLabel="kIS-cN-pBS" style="IBUITableViewCellStyleDefault" id="LxN-Fo-bDo">
@@ -274,35 +275,53 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="version 1.0.0" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0YW-8a-NB7">
-                                <rect key="frame" x="313.5" y="786" width="80.5" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Dsf-pn-Alx"/>
                         <color key="backgroundColor" name="MainColor"/>
                         <constraints>
-                            <constraint firstItem="0YW-8a-NB7" firstAttribute="top" secondItem="j14-J5-2wp" secondAttribute="bottom" constant="20" id="0Jw-uD-u4I"/>
                             <constraint firstItem="j14-J5-2wp" firstAttribute="top" secondItem="Rk7-z7-8aq" secondAttribute="bottom" constant="20" id="C9f-96-K1i"/>
                             <constraint firstItem="j14-J5-2wp" firstAttribute="leading" secondItem="Dsf-pn-Alx" secondAttribute="leading" id="Iu2-UP-CHa"/>
                             <constraint firstItem="Rk7-z7-8aq" firstAttribute="top" secondItem="Dsf-pn-Alx" secondAttribute="top" constant="40" id="K0M-ue-cNC"/>
-                            <constraint firstItem="Dsf-pn-Alx" firstAttribute="trailing" secondItem="0YW-8a-NB7" secondAttribute="trailing" constant="20" id="Ssg-RP-fU4"/>
+                            <constraint firstItem="Dsf-pn-Alx" firstAttribute="bottom" secondItem="j14-J5-2wp" secondAttribute="bottom" constant="20" id="OEK-zk-IY4"/>
                             <constraint firstItem="Rk7-z7-8aq" firstAttribute="leading" secondItem="Dsf-pn-Alx" secondAttribute="leading" constant="20" id="WNd-Ya-mO0"/>
-                            <constraint firstItem="Dsf-pn-Alx" firstAttribute="bottom" secondItem="0YW-8a-NB7" secondAttribute="bottom" constant="10" id="oXv-sX-GR5"/>
                             <constraint firstItem="Dsf-pn-Alx" firstAttribute="trailing" secondItem="j14-J5-2wp" secondAttribute="trailing" id="q3e-Ag-OMX"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="설정" image="gearshape" catalog="system" selectedImage="gearshape.fill" id="oai-G4-VfU"/>
                     <connections>
                         <outlet property="tableView" destination="j14-J5-2wp" id="yFX-dq-WKo"/>
-                        <outlet property="versionLabel" destination="0YW-8a-NB7" id="nHt-Zw-oZE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eQg-VI-Lmk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2530.434782608696" y="407.8125"/>
+        </scene>
+        <!--Info View Controller-->
+        <scene sceneID="q74-cV-lsL">
+            <objects>
+                <viewController id="9vd-Pc-9Iz" customClass="InfoViewController" customModule="ThreeDayHump" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Nb-jT-62e">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="version 1.0.0" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nvl-ky-dOj">
+                                <rect key="frame" x="167" y="440" width="80.5" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hn6-9T-EG7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="versionLabel" destination="Nvl-ky-dOj" id="M8t-SU-hk8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yEH-En-la1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3391" y="408"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="bip-hY-ZFL">
@@ -349,5 +368,8 @@
         <namedColor name="TextFieldColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

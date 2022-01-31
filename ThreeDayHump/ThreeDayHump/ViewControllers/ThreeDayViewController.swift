@@ -159,8 +159,8 @@ class ThreeDayViewController: BaseViewController {
     
     private func resetGoalViews() {
         for i in 0..<3 {
-            dayViews[i].layer.cornerRadius = 5
-            dayViews[i].layer.borderWidth = 4
+            dayViews[i].layer.cornerRadius = 10
+            dayViews[i].layer.borderWidth = 5
             dayViews[i].layer.borderColor = UIColor.white.cgColor
             dayViews[i].layer.backgroundColor = .none
         }
