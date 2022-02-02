@@ -35,7 +35,7 @@ class InfoViewController: UIViewController {
               let appStoreVersion = results[0]["version"] as? String else {
                   return ""
               }
-                
+                        
         return appStoreVersion
     }
 }
