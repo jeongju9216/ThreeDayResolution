@@ -21,11 +21,11 @@ https://apps.apple.com/kr/app/작심삼일-원클릭-목표-달성/id1604163049
 
 # 앱 스크린샷
 <p float="left">
-  <img src="https://user-images.githubusercontent.com/89075274/152303460-630786a9-a073-4f20-972f-d083e100ef4f.jpg" width="180" />
-  <img src="https://user-images.githubusercontent.com/89075274/152303529-3ed9f5ad-a5b0-4ec8-978e-b195ac0c039a.jpg" width="180" /> 
-  <img src="https://user-images.githubusercontent.com/89075274/152303538-484898c7-e7ba-4768-a1c8-a332f7424465.jpg" width="180" />
-  <img src="https://user-images.githubusercontent.com/89075274/152303546-759f0c8a-b8e7-4f8e-8ad4-858cde44060d.jpg" width="180" /> 
-  <img src="https://user-images.githubusercontent.com/89075274/152303550-a2663213-785f-4d8c-a870-9d4fb17153e3.jpg" width="180" />
+  <img src="https://user-images.githubusercontent.com/89075274/152303460-630786a9-a073-4f20-972f-d083e100ef4f.jpg" width="150" />
+  <img src="https://user-images.githubusercontent.com/89075274/152303529-3ed9f5ad-a5b0-4ec8-978e-b195ac0c039a.jpg" width="150" /> 
+  <img src="https://user-images.githubusercontent.com/89075274/152303538-484898c7-e7ba-4768-a1c8-a332f7424465.jpg" width="150" />
+  <img src="https://user-images.githubusercontent.com/89075274/152303546-759f0c8a-b8e7-4f8e-8ad4-858cde44060d.jpg" width="150" /> 
+  <img src="https://user-images.githubusercontent.com/89075274/152303550-a2663213-785f-4d8c-a870-9d4fb17153e3.jpg" width="150" />
 </p>
 <br/><br/>
 
