@@ -21,11 +21,21 @@ https://apps.apple.com/kr/app/작심삼일-원클릭-목표-달성/id1604163049
 
 ## 스크린샷 📷
 <p float="left">
-  <img src="https://user-images.githubusercontent.com/89075274/152303460-630786a9-a073-4f20-972f-d083e100ef4f.jpg" width="150" />
-  <img src="https://user-images.githubusercontent.com/89075274/152303529-3ed9f5ad-a5b0-4ec8-978e-b195ac0c039a.jpg" width="150" /> 
-  <img src="https://user-images.githubusercontent.com/89075274/152303538-484898c7-e7ba-4768-a1c8-a332f7424465.jpg" width="150" />
-  <img src="https://user-images.githubusercontent.com/89075274/152303546-759f0c8a-b8e7-4f8e-8ad4-858cde44060d.jpg" width="150" /> 
-  <img src="https://user-images.githubusercontent.com/89075274/152303550-a2663213-785f-4d8c-a870-9d4fb17153e3.jpg" width="150" />
+  <img src="https://user-images.githubusercontent.com/89075274/152303460-630786a9-a073-4f20-972f-d083e100ef4f.jpg" width="120" />
+  <img src="https://user-images.githubusercontent.com/89075274/152303529-3ed9f5ad-a5b0-4ec8-978e-b195ac0c039a.jpg" width="120" /> 
+  <img src="https://user-images.githubusercontent.com/89075274/152303538-484898c7-e7ba-4768-a1c8-a332f7424465.jpg" width="120" />
+  <img src="https://user-images.githubusercontent.com/89075274/152303546-759f0c8a-b8e7-4f8e-8ad4-858cde44060d.jpg" width="120" /> 
+  <img src="https://user-images.githubusercontent.com/89075274/152303550-a2663213-785f-4d8c-a870-9d4fb17153e3.jpg" width="120" />
+  <img src="https://user-images.githubusercontent.com/89075274/152306349-bce84600-25ec-45c9-a14d-c2d273494275.png" width="120" />
+</p>
+
+<p float="left">
+  <img src="https://user-images.githubusercontent.com/89075274/152306583-6bccacf9-62bb-4f10-bfff-2deb41d9fba8.png" width="120" />
+  <img src="https://user-images.githubusercontent.com/89075274/152306592-939952ec-4685-4ba5-89d6-582f0099d902.png" width="120" /> 
+  <img src="https://user-images.githubusercontent.com/89075274/152306596-12474ac8-41ba-48a6-9327-ef0ddff7dafd.png" width="120" />
+  <img src="https://user-images.githubusercontent.com/89075274/152307107-8f783fd4-f9e5-4e9d-8276-a545f55ed61d.png" width="120" /> 
+  <img src="https://user-images.githubusercontent.com/89075274/152307201-ad965a49-3e5f-4b8b-bf1e-34a869b217e7.png" width="120" />
+  <img src="https://user-images.githubusercontent.com/89075274/152306598-f87f7575-3dce-43fe-8e79-341573c0f847.png" width="120" />
 </p>
 <br/><br/>
 
