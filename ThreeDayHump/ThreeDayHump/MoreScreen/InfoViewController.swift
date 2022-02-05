@@ -9,8 +9,10 @@ import UIKit
 
 class InfoViewController: UIViewController {
 
+    //MARK: - IBOutlets
     @IBOutlet weak var versionLabel: UILabel!
 
+    //MARK: - Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,22 +21,27 @@ class InfoViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = .white
         
         let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
-        let appStoreVersion = checkAppVersion()
+        let appStoreVersion = loadAppStoreVersion()
         
         print("version: \(version), appStoreVersion: \(appStoreVersion)")
         
         versionLabel.text = "현재 버전: \(version)\n최신 버전: \(appStoreVersion)"
     }
     
-    func checkAppVersion() -> String {
+    //MARK: - Methods
+    func loadAppStoreVersion() -> String {
         let bundleID = "com.jeong9216.ThreeDayHump"
-        guard let url = URL(string: "http://itunes.apple.com/kr/lookup?bundleId=\(bundleID)"),
+        let appStoreUrl = "http://itunes.apple.com/kr/lookup?bundleId=\(bundleID)"
+        guard let url = URL(string: appStoreUrl),
               let data = try? Data(contentsOf: url),
               let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any],
-              let results = json["results"] as? [[String: Any]],
-              let appStoreVersion = results[0]["version"] as? String else {
-                  return ""
-              }
+              let results = json["results"] as? [[String: Any]] else {
+            return ""
+        }
+        
+        guard let appStoreVersion = results[0]["version"] as? String else {
+            return ""
+        }
                         
         return appStoreVersion
     }
