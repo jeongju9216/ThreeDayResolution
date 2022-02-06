@@ -14,9 +14,17 @@ https://apps.apple.com/kr/app/작심삼일-원클릭-목표-달성/id1604163049
 
 ## 개발 일지 ✏️
 - 앱 소개 & 출시 소감 : https://jeong9216.tistory.com/212
-- 개발 일지 1 : https://jeong9216.tistory.com/203  
-- 개발 일지 2 : https://jeong9216.tistory.com/204
-- 업데이트 ing
+#### 개발 일지 1 (https://jeong9216.tistory.com/203)
+- 조건에 따라 Root ViewController 변경에 대한 고민
+
+#### 개발 일지 2 (https://jeong9216.tistory.com/204)
+- 다크 모드 대응하기
+- Alert 띄우기 & 버튼 위치 고민
+
+#### 개발 일지 3 (https://jeong9216.tistory.com/215)
+- Custom Popup 개발 과정
+
+#### 업데이트 ing
 <br/><br/>
 
 ## 스크린샷 📷
@@ -43,6 +51,7 @@ https://apps.apple.com/kr/app/작심삼일-원클릭-목표-달성/id1604163049
 - 싱글턴 패턴
 - UIKit / Swift 5
 - 라이브러리, 서버 사용 X
+<br/><br/>
 
 ## 업데이트 예정
 - 푸시 알림(하루 한 번)
