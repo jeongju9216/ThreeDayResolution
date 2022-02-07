@@ -18,7 +18,7 @@ https://apps.apple.com/kr/app/작심삼일-원클릭-목표-달성/id1604163049
 - 조건에 따라 Root ViewController 변경에 대한 고민
 
 #### 개발 일지 2 (https://jeong9216.tistory.com/204)
-- 다크 모드 대응하기
+- 다크 모드 버그 해결하기
 - Alert 띄우기 & 버튼 위치 고민
 
 #### 개발 일지 3 (https://jeong9216.tistory.com/215)
@@ -56,3 +56,4 @@ https://apps.apple.com/kr/app/작심삼일-원클릭-목표-달성/id1604163049
 ## 업데이트 예정
 - 푸시 알림(하루 한 번)
 - 위젯
+- 최신 버전 업데이트 버튼
