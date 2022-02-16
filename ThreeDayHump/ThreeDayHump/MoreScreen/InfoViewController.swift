@@ -14,7 +14,8 @@ class InfoViewController: UIViewController {
     @IBOutlet weak var updateButton: UIButton!
     
     var version: String = "0.0.0", appStoreVersion: String = "0.0.0"
-    let appStoreUrl = "http://itunes.apple.com/kr/lookup?bundleId=com.jeong9216.ThreeDayHump"
+    let appleID = "1604163049"
+    let bundleID = "com.jeong9216.ThreeDayHump"
     
     //MARK: - Life Cycles
     override func viewDidLoad() {
@@ -46,7 +47,19 @@ class InfoViewController: UIViewController {
     
     //MARK: - Methods
     func openAppStore() {
+        let appStoreOpenUrlString = "itms-apps://itunes.apple.com/app/apple-store/\(appleID)"
+        guard let url = URL(string: appStoreOpenUrlString) else {
+            print("invalid app store url")
+            return
+        }
         
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            return
+        } else {
+            print("can't open app store url")
+            return
+        }
     }
     
     func isNeedUpdate() -> Bool {
@@ -60,7 +73,8 @@ class InfoViewController: UIViewController {
     }
     
     func loadAppStoreVersion() -> String {
-        
+        let appStoreUrl = "http://itunes.apple.com/kr/lookup?bundleId=\(bundleID)"
+
         guard let url = URL(string: appStoreUrl),
               let data = try? Data(contentsOf: url),
               let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any],
@@ -77,6 +91,7 @@ class InfoViewController: UIViewController {
     
     //MARK: - @IBAction
     @IBAction func clickedUpdateButton(_ sender: UIButton) {
+        openAppStore()
     }
 }
 
