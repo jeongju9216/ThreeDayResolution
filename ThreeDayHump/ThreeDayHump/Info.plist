@@ -8,9 +8,7 @@
 	<false/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>GowunBatang-Bold.ttf</string>
 		<string>BMHANNAProOTF.otf.ttf</string>
-		<string>BMYEONSUNG_otf.otf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

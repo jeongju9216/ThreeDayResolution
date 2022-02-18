@@ -37,12 +37,12 @@ class ThreeDayViewController: BaseViewController {
         // Do any additional setup after loading the view.
         NotificationCenter.default.addObserver(self, selector: #selector(onForegroundAction), name: UIApplication.willEnterForegroundNotification, object: nil)
 
-        initView()
+        setupViews()
         
         resetGoalViews()
-        updateSquares()
+        paintSquares()
         
-        if checkAlreadyDone() {
+        if isDoneAlready() {
             setupDoneStyle()
         } else {
             setupNotDoneStyle()
@@ -59,27 +59,32 @@ class ThreeDayViewController: BaseViewController {
     }
     
     //MARK: - IBActions
-    @IBAction func onGiveUpClicked(_ sender: UIButton) {
+    @IBAction func clickedGiveUpButton(_ sender: UIButton) {
         AudioServicesPlaySystemSound(1519)
         alertGiveUp()
     }
     
-    @IBAction func onDoneClicked(_ sender: Any) {
-        if checkAlreadyDone() {
+    @IBAction func clickedDoneButton(_ sender: Any) {
+        if isDoneAlready() {
             AudioServicesPlaySystemSound(1519)
             alert(message: "이미 완료했습니다.\n내일도 파이팅!")
         } else {
             addDay()
             
             let day = Goal.shared.day
+            var fillCount: Int
             if day % 3 == 0 {
                 AudioServicesPlaySystemSound(1520)
-                fillAllSquares()
+                fillCount = 3
                 alertSuccessThreeDay()
             } else {
                 AudioServicesPlaySystemSound(1519)
-                fillSquares(day % 3)
+                fillCount = day % 3
                 alert(message: "작심 \(Goal.shared.day)일을 달성했어요.")
+            }
+            
+            for i in 0 ..< fillCount {
+                dayViews[i].backgroundColor = .white
             }
         }
     }
@@ -97,7 +102,7 @@ class ThreeDayViewController: BaseViewController {
     }
     
     @objc private func onForegroundAction() {        
-        if checkAlreadyDone() {
+        if isDoneAlready() {
             setupDoneStyle()
         } else {
             setupNotDoneStyle()
@@ -105,7 +110,7 @@ class ThreeDayViewController: BaseViewController {
     }
     
     
-    private func initView() {
+    private func setupViews() {
         goalLabel.text = Goal.shared.goal ?? ""
         dayLabel.text = Goal.shared.destination
 
@@ -113,7 +118,7 @@ class ThreeDayViewController: BaseViewController {
         doneButton.createShadow()
     }
     
-    private func checkAlreadyDone() -> Bool {
+    private func isDoneAlready() -> Bool {
         guard let clickDate = UserDefaults.standard.object(forKey: "clickDate") as? Date else {
             return false
         }
@@ -149,13 +154,15 @@ class ThreeDayViewController: BaseViewController {
         })
     }
     
-    private func updateSquares() {
+    private func paintSquares() {
         if Goal.shared.day > 0 {
-            let fillCount = Goal.shared.day % 3
+            var fillCount = Goal.shared.day % 3
             if fillCount == 0 && Goal.shared.isAlert {
-                fillAllSquares()
-            } else {
-                fillSquares(fillCount)
+                fillCount = 3
+            }
+            
+            for i in 0 ..< fillCount {
+                dayViews[i].backgroundColor = .white
             }
         }
     }
@@ -166,18 +173,6 @@ class ThreeDayViewController: BaseViewController {
             dayViews[i].layer.borderWidth = 5
             dayViews[i].layer.borderColor = UIColor.white.cgColor
             dayViews[i].layer.backgroundColor = .none
-        }
-    }
-    
-    private func fillAllSquares() {
-        for i in 0 ..< 3 {
-            dayViews[i].backgroundColor = .white
-        }
-    }
-    
-    private func fillSquares(_ number: Int) {
-        for i in 0 ..< number {
-            dayViews[i].backgroundColor = .white
         }
     }
     

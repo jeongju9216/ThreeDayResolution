@@ -20,7 +20,7 @@ class GoalViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        initViews()
+        setupViews()
         
         goalTextField.delegate = self
     }
@@ -42,7 +42,7 @@ class GoalViewController: BaseViewController {
     }
     
     //MARK: - Methods
-    private func initViews() {
+    private func setupViews() {
         goalBackgroundView.layer.cornerRadius = 15
 
         startButton.layer.cornerRadius = 5
@@ -73,14 +73,4 @@ extension GoalViewController: UITextFieldDelegate {
         return true
     }
     
-}
-
-extension UITextView {
-    func centerVerticalText() {
-        let fitSize = CGSize(width: bounds.width, height: CGFloat.greatestFiniteMagnitude)
-        let size = sizeThatFits(fitSize)
-        let calculate = (bounds.size.height - size.height * zoomScale) / 2
-        let offset = max(1, calculate)
-        contentOffset.y = -offset
-    }
 }
