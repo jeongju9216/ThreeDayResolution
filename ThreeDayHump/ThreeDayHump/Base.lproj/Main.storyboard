@@ -179,7 +179,7 @@
                                     <color key="titleColor" name="LabelColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="onDoneClicked:" destination="b1h-ch-X3p" eventType="touchUpInside" id="Ccn-kF-aM2"/>
+                                    <action selector="clickedDoneButton:" destination="b1h-ch-X3p" eventType="touchUpInside" id="ukx-J1-FrM"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕하세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="euO-yq-i4c">
@@ -199,7 +199,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="28"/>
                                 </state>
                                 <connections>
-                                    <action selector="onGiveUpClicked:" destination="b1h-ch-X3p" eventType="touchUpInside" id="BXh-x6-w0V"/>
+                                    <action selector="clickedGiveUpButton:" destination="b1h-ch-X3p" eventType="touchUpInside" id="bpX-xV-fKc"/>
                                 </connections>
                             </button>
                         </subviews>
