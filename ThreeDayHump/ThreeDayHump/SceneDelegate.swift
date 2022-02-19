@@ -11,17 +11,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        
+        setupVersion()
         
         guard let sceneWindow = (scene as? UIWindowScene) else {
             return
         }
         
         window = UIWindow(windowScene: sceneWindow)
+        
+        setupRootViewController()
+        
+        window?.makeKeyAndVisible()
+    }
+    
+    func setupRootViewController() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
         let tabBarController = storyboard.instantiateViewController(withIdentifier: "TabBarController") as? UITabBarController
@@ -44,8 +52,31 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             print("Goal is nil or Empty")
             tabBarController?.setViewControllers([goalViewController, navigation], animated: false)
         }
+        
         window?.rootViewController = tabBarController
-        window?.makeKeyAndVisible()
+    }
+    
+    func setupVersion() {
+        BaseData.shared.version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
+        BaseData.shared.appStoreVersion = loadAppStoreVersion()
+        print("version: \(BaseData.shared.version) / appStoreVersion: \(BaseData.shared.appStoreVersion)")
+    }
+    
+    func loadAppStoreVersion() -> String {
+        let appStoreUrl = "http://itunes.apple.com/kr/lookup?bundleId=\(BaseData.shared.bundleID)"
+
+        guard let url = URL(string: appStoreUrl),
+              let data = try? Data(contentsOf: url),
+              let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any],
+              let results = json["results"] as? [[String: Any]] else {
+            return ""
+        }
+                
+        guard let appStoreVersion = results[0]["version"] as? String else {
+            return ""
+        }
+                        
+        return appStoreVersion
     }
     
     func sceneWillEnterForeground(_ scene: UIScene) {
