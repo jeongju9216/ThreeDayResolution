@@ -10,7 +10,8 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    let notificationCenter = UNUserNotificationCenter.current()
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
@@ -88,8 +89,35 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+        
+        print("\(#fileID) \(#line)-line, \(#function)")
+        sendNoti()
     }
 
-
+    func sendNoti() {
+        notificationCenter.removeAllPendingNotificationRequests()
+        
+        let content = UNMutableNotificationContent()
+        content.title = "작심삼일"
+        content.body = "오늘의 작심삼일을 기록하세요."
+        content.sound = .default
+        
+        let date = Date()
+        var dateComponents = Calendar.current.dateComponents([.hour, .minute, .second], from: date)
+        dateComponents.hour = 18
+        dateComponents.minute = 0
+        dateComponents.second = 0
+        
+        print("dateComponents: \(dateComponents)")
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        
+        notificationCenter.add(request) { (error) in
+            if error != nil {
+                
+            }
+        }
+    }
 }
 
