@@ -52,7 +52,7 @@ class InfoViewController: UIViewController {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
             return
         } else {
-            print("can't open app store url")
+            print("Can't open app store url")
             return
         }
     }

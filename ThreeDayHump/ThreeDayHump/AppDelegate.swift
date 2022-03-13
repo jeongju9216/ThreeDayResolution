@@ -6,16 +6,20 @@
 //
 
 import UIKit
+import UserNotifications
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         sleep(2)
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge],
+            completionHandler: {didAllow, Error in
+            print(didAllow)
+        })
         
         return true
     }
