@@ -91,26 +91,31 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
         
         print("\(#fileID) \(#line)-line, \(#function)")
-        sendNoti()
+        
+        if !Goal.shared.isDone {
+            if let goal = Goal.shared.goal {
+                notificationCenter.removeAllPendingNotificationRequests()
+                let body = "오늘의 \"\(goal)\" 도전도 해내셨나요?"
+                print("body: \(body)")
+                sendNoti(body: body, hour: 12)
+                sendNoti(body: body, hour: 18)
+            }
+        }
     }
 
-    func sendNoti() {
-        notificationCenter.removeAllPendingNotificationRequests()
-        
+    func sendNoti(body: String, hour: Int) {
         let content = UNMutableNotificationContent()
-        content.title = "작심삼일"
-        content.body = "오늘의 작심삼일을 기록하세요."
+        content.title = "작심 \(Goal.shared.day+1)일 도전 중!!"
+        content.body = body
         content.sound = .default
         
         let date = Date()
         var dateComponents = Calendar.current.dateComponents([.hour, .minute, .second], from: date)
-        dateComponents.hour = 18
+        dateComponents.hour = hour
         dateComponents.minute = 0
         dateComponents.second = 0
         
-        print("dateComponents: \(dateComponents)")
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-        
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         
         notificationCenter.add(request) { (error) in

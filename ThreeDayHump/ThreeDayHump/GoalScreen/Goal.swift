@@ -46,4 +46,14 @@ final class Goal {
             UserDefaults.standard.synchronize()
         }
     }
+    
+    var isDone: Bool {
+        get {
+            guard let clickDate = UserDefaults.standard.object(forKey: "clickDate") as? Date else {
+                return false
+            }
+            
+            return Calendar.current.isDateInToday(clickDate)
+        }
+    }
 }

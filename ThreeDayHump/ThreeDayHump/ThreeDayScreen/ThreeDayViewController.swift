@@ -42,7 +42,7 @@ class ThreeDayViewController: BaseViewController {
         resetGoalViews()
         paintSquares()
         
-        if isDoneAlready() {
+        if Goal.shared.isDone {
             setupDoneStyle()
         } else {
             setupNotDoneStyle()
@@ -65,7 +65,7 @@ class ThreeDayViewController: BaseViewController {
     }
     
     @IBAction func clickedDoneButton(_ sender: Any) {
-        if isDoneAlready() {
+        if Goal.shared.isDone {
             AudioServicesPlaySystemSound(1519)
             alert(message: "이미 완료했습니다.\n내일도 파이팅!")
         } else {
@@ -102,7 +102,7 @@ class ThreeDayViewController: BaseViewController {
     }
     
     @objc private func onForegroundAction() {        
-        if isDoneAlready() {
+        if Goal.shared.isDone {
             setupDoneStyle()
         } else {
             setupNotDoneStyle()
@@ -116,14 +116,6 @@ class ThreeDayViewController: BaseViewController {
 
         doneButton.layer.cornerRadius = 5
         doneButton.createShadow()
-    }
-    
-    private func isDoneAlready() -> Bool {
-        guard let clickDate = UserDefaults.standard.object(forKey: "clickDate") as? Date else {
-            return false
-        }
-        
-        return Calendar.current.isDateInToday(clickDate)
     }
     
     private func setupDoneStyle() {
