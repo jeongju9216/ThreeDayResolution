@@ -93,11 +93,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         print("\(#fileID) \(#line)-line, \(#function)")
         
         if !Goal.shared.isDone {
-            if let goal = Goal.shared.goal {
+            if let goal = Goal.shared.goal, !goal.isEmpty {
                 notificationCenter.removeAllPendingNotificationRequests()
-                let body = "오늘의 \"\(goal)\" 도전도 해내셨나요?"
-                print("body: \(body)")
-                sendNoti(body: body, hour: 12)
+                let body = "\(Goal.shared.day+1)일차 \"\(goal)\"에 도전하세요."
+                sendNoti(body: body, hour: 10)
                 sendNoti(body: body, hour: 18)
             }
         }
