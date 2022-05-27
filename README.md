@@ -24,7 +24,6 @@ https://apps.apple.com/kr/app/작심삼일-원클릭-목표-달성/id1604163049
 #### 개발 일지 3 (https://jeong9216.tistory.com/215)
 - Custom Popup 개발 과정
 
-#### 업데이트 ing
 <br/><br/>
 
 ## 스크린샷 📷
