@@ -125,8 +125,8 @@
 			isa = PBXGroup;
 			children = (
 				9B6CF90627AEB6CB007384B2 /* Base */,
-				9B6CF90327AEB5E5007384B2 /* ThreeDayScreen */,
 				9B6CF90227AEB5D0007384B2 /* GoalScreen */,
+				9B6CF90327AEB5E5007384B2 /* ThreeDayScreen */,
 				9B6CF90527AEB6BF007384B2 /* MoreScreen */,
 				9B6CF90427AEB6B1007384B2 /* Extensions */,
 				9BF6C21227871C4F00E486CE /* Fonts */,

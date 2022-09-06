@@ -84,37 +84,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the background to the foreground.
         // Use this method to undo the changes made on entering the background.
     }
-
-    func sceneDidEnterBackground(_ scene: UIScene) {
-        notificationCenter.removeAllPendingNotificationRequests()
-        if !Goal.shared.isDone {
-            if let goal = Goal.shared.goal, !goal.isEmpty {
-                sendNoti(body: "Noti 1", hour: 10)
-                sendNoti(body: "Noti 2", hour: 18)
-            }
-        }
-    }
-
-    func sendNoti(body: String, hour: Int) {
-        let content = UNMutableNotificationContent()
-        content.title = "작심 \(Goal.shared.day+1)일 도전 중!!"
-        content.body = body
-        content.sound = .default
-        
-        let date = Date()
-        var dateComponents = Calendar.current.dateComponents([.hour, .minute, .second], from: date)
-        dateComponents.hour = hour
-        dateComponents.minute = 0
-        dateComponents.second = 0
-        
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-        
-        notificationCenter.add(request) { (error) in
-            if error != nil {
-                
-            }
-        }
-    }
 }
 
