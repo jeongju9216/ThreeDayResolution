@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="BMHANNAProOTF.otf.ttf">
+            <string>BMHANNAProOTF</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--작심삼일-->
+        <scene sceneID="szs-V8-WNt">
+            <objects>
+                <viewController storyboardIdentifier="GoalViewController" id="xye-D0-tbs" customClass="GoalViewController" customModule="ThreeDayHump" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vx1-yh-AXH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Myq-6t-14r">
+                                <rect key="frame" x="121" y="263" width="172.5" height="29"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="목표를 정해보세요">
+                                        <attributes>
+                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="24" name="AppleSDGothicNeo-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tsJ-yG-QpI">
+                                <rect key="frame" x="20" y="306" width="374" height="60"/>
+                                <color key="backgroundColor" name="TextFieldColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="tsJ-yG-QpI" secondAttribute="height" multiplier="1:0.16" id="sCO-Xb-Wgc"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfQ-ED-iOZ">
+                                <rect key="frame" x="119.5" y="396" width="175" height="50"/>
+                                <color key="backgroundColor" name="TextFieldColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="tfQ-ED-iOZ" secondAttribute="height" multiplier="3.5:1" id="B0s-8f-3gb"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="175" id="eRZ-dQ-cAo"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="63.5" id="nCY-mE-c30"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BMHANNAProOTF" family="BM HANNA Pro OTF" pointSize="32"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="작심삼일 시작">
+                                    <color key="titleColor" name="MainColor"/>
+                                </state>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="작심삼일 시작">
+                                            <attributes>
+                                                <font key="NSFont" size="24" name="BMHANNAProOTF"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                    <color key="baseForegroundColor" name="LabelColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="clickedStartButton:" destination="xye-D0-tbs" eventType="touchUpInside" id="VZD-Uk-qw7"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="fD8-Ge-3iR">
+                                <rect key="frame" x="30" y="300.5" width="354" height="71"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fD8-Ge-3iR" secondAttribute="height" multiplier="1:0.2" id="eZm-6N-PmE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fhB-nM-NVv"/>
+                        <color key="backgroundColor" name="MainColor"/>
+                        <constraints>
+                            <constraint firstItem="tsJ-yG-QpI" firstAttribute="leading" secondItem="fhB-nM-NVv" secondAttribute="leading" constant="20" id="5jD-jl-8g6"/>
+                            <constraint firstItem="tsJ-yG-QpI" firstAttribute="top" secondItem="Myq-6t-14r" secondAttribute="bottom" constant="14" id="DWr-tC-3XB"/>
+                            <constraint firstItem="fhB-nM-NVv" firstAttribute="trailing" secondItem="tsJ-yG-QpI" secondAttribute="trailing" constant="20" id="TBS-4I-rQe"/>
+                            <constraint firstItem="tfQ-ED-iOZ" firstAttribute="top" secondItem="tsJ-yG-QpI" secondAttribute="bottom" constant="30" id="XVX-lP-MrI"/>
+                            <constraint firstItem="tsJ-yG-QpI" firstAttribute="trailing" secondItem="fD8-Ge-3iR" secondAttribute="trailing" constant="10" id="blS-Bp-0Mb"/>
+                            <constraint firstItem="fD8-Ge-3iR" firstAttribute="centerX" secondItem="tsJ-yG-QpI" secondAttribute="centerX" id="dOZ-JT-fnG"/>
+                            <constraint firstItem="tsJ-yG-QpI" firstAttribute="centerX" secondItem="Vx1-yh-AXH" secondAttribute="centerX" id="hCO-mC-qRd"/>
+                            <constraint firstItem="tsJ-yG-QpI" firstAttribute="centerY" secondItem="Vx1-yh-AXH" secondAttribute="centerY" constant="-112" id="nNe-x5-Ckz"/>
+                            <constraint firstItem="tfQ-ED-iOZ" firstAttribute="centerX" secondItem="Vx1-yh-AXH" secondAttribute="centerX" id="qkp-qw-aSe"/>
+                            <constraint firstItem="fD8-Ge-3iR" firstAttribute="centerY" secondItem="tsJ-yG-QpI" secondAttribute="centerY" id="rye-oi-tNe"/>
+                            <constraint firstItem="fD8-Ge-3iR" firstAttribute="leading" secondItem="tsJ-yG-QpI" secondAttribute="leading" constant="10" id="s7a-7W-suM"/>
+                            <constraint firstItem="Myq-6t-14r" firstAttribute="centerX" secondItem="Vx1-yh-AXH" secondAttribute="centerX" id="tM4-Y0-BEt"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="작심삼일" image="square.grid.2x2" catalog="system" selectedImage="square.grid.2x2.fill" id="KYG-vT-arF"/>
+                    <navigationItem key="navigationItem" id="QAk-MF-icT"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="goalBackgroundView" destination="tsJ-yG-QpI" id="5dK-r3-rEA"/>
+                        <outlet property="goalTextField" destination="fD8-Ge-3iR" id="ECr-cX-8gJ"/>
+                        <outlet property="startButton" destination="tfQ-ED-iOZ" id="yyo-a8-dUv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QmZ-L8-HNt" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="39" y="24"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="square.grid.2x2" catalog="system" width="128" height="114"/>
+        <image name="square.grid.2x2.fill" catalog="system" width="128" height="114"/>
+        <namedColor name="LabelColor">
+            <color red="0.0" green="0.71399998664855957" blue="0.84299999475479126" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MainColor">
+            <color red="0.0" green="0.71399998664855957" blue="0.84299999475479126" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="TextFieldColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
