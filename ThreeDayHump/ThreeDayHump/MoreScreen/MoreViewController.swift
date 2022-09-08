@@ -44,10 +44,10 @@ extension MoreViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        var viewController = UIViewController()
         switch indexPath.row {
         case 0:
-            viewController = self.storyboard?.instantiateViewController(withIdentifier: "InfoViewController") as! InfoViewController
+            let storyboard = UIStoryboard(name: "InfoViewController", bundle: Bundle.main)
+            let viewController = storyboard.instantiateViewController(withIdentifier: "InfoViewController")
             self.navigationController?.pushViewController(viewController, animated: true)
         case 1:
             guard let url = URL(string: "https://jeong9216.tistory.com/210") else {
