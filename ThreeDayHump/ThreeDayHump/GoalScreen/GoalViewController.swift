@@ -49,6 +49,14 @@ class GoalViewController: BaseViewController {
         startButton.createShadow()
     }
     
+    func showThreeDayViewController() {
+        let tabBarController = self.tabBarController
+        
+        let threeDayViewController = ThreeDayViewController.instantiate
+        let moreViewController = MoreViewController.instantiate
+
+        tabBarController?.setViewControllers([threeDayViewController, moreViewController], animated: false)
+    }
 }
 
 extension GoalViewController: UITextFieldDelegate {
