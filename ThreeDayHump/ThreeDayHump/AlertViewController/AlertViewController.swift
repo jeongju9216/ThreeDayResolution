@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AlertViewController: UIViewController {
+final class AlertViewController: UIViewController {
     
     //MARK: - IBOutlets
     @IBOutlet weak var alertView: UIStackView!
