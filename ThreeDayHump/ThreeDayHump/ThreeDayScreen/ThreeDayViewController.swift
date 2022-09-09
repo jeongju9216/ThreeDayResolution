@@ -8,7 +8,7 @@
 import UIKit
 import AVFoundation
 
-class ThreeDayViewController: BaseViewController {
+final class ThreeDayViewController: UIViewController {
     
     deinit {
         NotificationCenter.default.removeObserver(self)
