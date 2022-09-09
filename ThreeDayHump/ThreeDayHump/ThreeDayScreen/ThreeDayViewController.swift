@@ -109,30 +109,13 @@ class ThreeDayViewController: BaseViewController {
         }
     }
     
-    
-    private func setupViews() {
-        goalLabel.text = Goal.shared.goal ?? ""
-        dayLabel.text = Goal.shared.destination
-
-        doneButton.layer.cornerRadius = 5
-        doneButton.createShadow()
-    }
-    
-    private func setupDoneStyle() {
-        UIView.animate(withDuration: 0.05, animations: { [weak self] in
-            self?.doneButton.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
-        })
+    func showGoalViewController() {
+        let tabBarController = self.tabBarController
         
-        doneButton.removeShadow()
-        doneButton.backgroundColor = .none
-        doneButton.titleLabel?.textColor = UIColor(named: "TabColor")
-    }
-    
-    private func setupNotDoneStyle() {
-        doneButton.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-        doneButton.createShadow()
-        doneButton.backgroundColor = UIColor(named: "TextFieldColor")
-        doneButton.titleLabel?.textColor = UIColor(named: "LabelColor")
+        let goalViewController = GoalViewController.instantiate
+        let moreViewController = MoreViewController.instantiate
+        
+        tabBarController?.setViewControllers([goalViewController, moreViewController], animated: false)
     }
     
     private func animateSquare() {
@@ -168,6 +151,32 @@ class ThreeDayViewController: BaseViewController {
         }
     }
     
+    //MARK: - Setup
+    private func setupViews() {
+        goalLabel.text = Goal.shared.goal ?? ""
+        dayLabel.text = Goal.shared.destination
+
+        doneButton.layer.cornerRadius = 5
+        doneButton.createShadow()
+    }
+    
+    private func setupDoneStyle() {
+        UIView.animate(withDuration: 0.05, animations: { [weak self] in
+            self?.doneButton.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+        })
+        
+        doneButton.removeShadow()
+        doneButton.backgroundColor = .none
+        doneButton.titleLabel?.textColor = UIColor(named: "TabColor")
+    }
+    
+    private func setupNotDoneStyle() {
+        doneButton.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+        doneButton.createShadow()
+        doneButton.backgroundColor = UIColor(named: "TextFieldColor")
+        doneButton.titleLabel?.textColor = UIColor(named: "LabelColor")
+    }
+    
     private func alert(message: String) {
         let alertViewController = AlertViewController(titleText: "안내", messageText: message, doneText: "확인", doneAction: UIAction { [weak self] _ in
             self?.dismiss(animated: false, completion: nil)
@@ -178,8 +187,8 @@ class ThreeDayViewController: BaseViewController {
     private func alertSuccessThreeDay() {
         Goal.shared.isAlert = true
         
-        let titleText = "성공"
-        let messageText = "축하합니다!\n작심 \(Goal.shared.day)일을 성공했어요🥳"
+        let title = "성공"
+        let message = "축하합니다!\n작심 \(Goal.shared.day)일을 성공했어요🥳"
         
         let doneAction = UIAction { [weak self] _ in
             self?.dismiss(animated: false, completion: nil)
@@ -196,7 +205,7 @@ class ThreeDayViewController: BaseViewController {
             self?.showGoalViewController()
         }
         
-        let alertViewController = AlertViewController(titleText: titleText, messageText: messageText, doneText: "계속 도전하기", cancelText: "그만하기", doneAction: doneAction, cancelAction: cancelAction)
+        let alertViewController = AlertViewController(titleText: title, messageText: message, doneText: "계속 도전하기", cancelText: "그만하기", doneAction: doneAction, cancelAction: cancelAction)
         present(alertViewController, animated: false, completion: nil)
     }
     
@@ -218,4 +227,13 @@ class ThreeDayViewController: BaseViewController {
         let alertViewController = AlertViewController(titleText: titleText, messageText: messageText, doneText: "포기하기", cancelText: "취소", doneAction: doneAction, cancelAction: cancelAction)
         present(alertViewController, animated: false, completion: nil)
     }
+    
+    func resetUserDefaults() {
+        Goal.shared.goal = ""
+        Goal.shared.day = 0
+        
+        UserDefaults.standard.removeObject(forKey: "goal")
+        UserDefaults.standard.removeObject(forKey: "day")
+    }
+
 }
