@@ -32,26 +32,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func setupRootViewController() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-
         let tabBarController = storyboard.instantiateViewController(withIdentifier: "TabBarController") as? UITabBarController
         
-        let goalViewController = storyboard.instantiateViewController(withIdentifier: "GoalViewController")
-        let threeDayViewController = storyboard.instantiateViewController(withIdentifier: "ThreeDayViewController")
+        let goalViewController = GoalViewController.instantiate
+        let threeDayViewController = ThreeDayViewController.instantiate
+        let moreViewController = MoreViewController.instantiate
         
-        let navigation = storyboard.instantiateViewController(withIdentifier: "MoreNavigationController") as! UINavigationController
-        
-        if let goal = UserDefaults.standard.string(forKey: "goal"),
-           !goal.isEmpty {
+        if let goal = UserDefaults.standard.string(forKey: "goal"), !goal.isEmpty {
             let day = UserDefaults.standard.integer(forKey: "day")
             
             print("Goal: \(goal) / Day: \(day)")
             Goal.shared.goal = goal
             Goal.shared.day = day
 
-            tabBarController?.setViewControllers([threeDayViewController, navigation], animated: false)
+            tabBarController?.setViewControllers([threeDayViewController, moreViewController], animated: false)
         } else {
             print("Goal is nil or Empty")
-            tabBarController?.setViewControllers([goalViewController, navigation], animated: false)
+            tabBarController?.setViewControllers([goalViewController, moreViewController], animated: false)
         }
         
         window?.rootViewController = tabBarController
