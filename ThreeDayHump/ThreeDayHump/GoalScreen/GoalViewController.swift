@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GoalViewController: BaseViewController {
+final class GoalViewController: UIViewController {
 
     //MARK: - IBOutlets
     @IBOutlet weak var goalBackgroundView: UIView!
