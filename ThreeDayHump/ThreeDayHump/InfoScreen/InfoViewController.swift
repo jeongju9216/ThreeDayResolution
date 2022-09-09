@@ -7,7 +7,7 @@
 
 import UIKit
 
-class InfoViewController: UIViewController {
+class InfoViewController: BaseViewController {
 
     //MARK: - IBOutlets
     @IBOutlet weak var versionLabel: UILabel!
