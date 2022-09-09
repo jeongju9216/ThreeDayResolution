@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MoreViewController: BaseViewController {
+final class MoreViewController: UIViewController {
 
     //MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
@@ -23,7 +23,6 @@ class MoreViewController: BaseViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
-    
 }
 
 extension MoreViewController: UITableViewDelegate, UITableViewDataSource {
