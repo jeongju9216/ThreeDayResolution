@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MoreViewController: UIViewController {
+class MoreViewController: BaseViewController {
 
     //MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
@@ -19,8 +19,6 @@ class MoreViewController: UIViewController {
     //MARK: - Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -46,9 +44,8 @@ extension MoreViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch indexPath.row {
         case 0:
-            let storyboard = UIStoryboard(name: "InfoViewController", bundle: Bundle.main)
-            let viewController = storyboard.instantiateViewController(withIdentifier: "InfoViewController")
-            self.navigationController?.pushViewController(viewController, animated: true)
+            let viewController = InfoViewController.instantiate
+            self.present(viewController, animated: true)
         case 1:
             guard let url = URL(string: "https://jeong9216.tistory.com/210") else {
                 return

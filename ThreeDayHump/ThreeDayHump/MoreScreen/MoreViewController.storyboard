@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="RI9-cZ-Exo">
-                                <rect key="frame" x="0.0" y="108" width="414" height="754"/>
+                                <rect key="frame" x="0.0" y="84" width="414" height="729"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="moreCell" textLabel="6Tc-4z-fIb" style="IBUITableViewCellStyleDefault" id="UH2-1i-ZzF">
@@ -45,13 +45,15 @@
                         <viewLayoutGuide key="safeArea" id="xUx-AX-Xvs"/>
                         <color key="backgroundColor" name="MainColor"/>
                         <constraints>
-                            <constraint firstItem="RI9-cZ-Exo" firstAttribute="top" secondItem="xUx-AX-Xvs" secondAttribute="top" constant="20" id="QcG-hH-ceq"/>
+                            <constraint firstItem="RI9-cZ-Exo" firstAttribute="top" secondItem="xUx-AX-Xvs" secondAttribute="top" constant="40" id="QcG-hH-ceq"/>
                             <constraint firstItem="xUx-AX-Xvs" firstAttribute="bottom" secondItem="RI9-cZ-Exo" secondAttribute="bottom" id="gHR-yL-o3h"/>
                             <constraint firstItem="xUx-AX-Xvs" firstAttribute="trailing" secondItem="RI9-cZ-Exo" secondAttribute="trailing" id="la8-mu-ipb"/>
                             <constraint firstItem="RI9-cZ-Exo" firstAttribute="leading" secondItem="xUx-AX-Xvs" secondAttribute="leading" id="oQA-TP-QqN"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="설정" image="gearshape" catalog="system" selectedImage="gearshape.fill" id="drU-0C-Bh2"/>
                     <navigationItem key="navigationItem" title="설정" id="cJ2-RG-pKZ"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="RI9-cZ-Exo" id="nEa-st-tPX"/>
                     </connections>
@@ -59,31 +61,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QMG-Rh-op2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3440.579710144928" y="407.8125"/>
-        </scene>
-        <!--설정-->
-        <scene sceneID="BM8-Ch-ScG">
-            <objects>
-                <navigationController storyboardIdentifier="MoreNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="rs9-z9-sbp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="설정" image="gearshape" catalog="system" selectedImage="gearshape.fill" id="WKj-Af-Y75"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="hDI-fr-X1U">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                        <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="PGo-JG-UrN" kind="relationship" relationship="rootViewController" id="RtC-1s-4yP"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IHw-Yp-E9j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2530.434782608696" y="407.8125"/>
         </scene>
     </scenes>
     <resources>
