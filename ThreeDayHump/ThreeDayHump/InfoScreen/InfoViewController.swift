@@ -62,7 +62,3 @@ final class InfoViewController: UIViewController {
         openAppStore()
     }
 }
-
-enum VersionError: Error {
-    case invalidResponse, invalidBundleInfo
-}
