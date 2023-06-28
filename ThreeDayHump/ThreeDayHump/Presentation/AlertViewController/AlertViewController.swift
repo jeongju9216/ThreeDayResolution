@@ -7,6 +7,10 @@
 
 import UIKit
 
+enum AlertType: Int {
+    case oneButton, twoButton
+}
+
 final class AlertViewController: UIViewController {
     
     //MARK: - IBOutlets
