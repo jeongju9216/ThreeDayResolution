@@ -18,7 +18,6 @@
 		9B65DAE5278728DA00F01979 /* BMHANNAProOTF.otf.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B65DAE4278728DA00F01979 /* BMHANNAProOTF.otf.ttf */; };
 		9B6CF8FC27A53A76007384B2 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6CF8FA27A53A76007384B2 /* AlertViewController.swift */; };
 		9B6CF8FD27A53A76007384B2 /* AlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B6CF8FB27A53A76007384B2 /* AlertViewController.xib */; };
-		9B6CF8FF27A6E573007384B2 /* AlertType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6CF8FE27A6E573007384B2 /* AlertType.swift */; };
 		9B6CF90127A778F5007384B2 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6CF90027A778F5007384B2 /* InfoViewController.swift */; };
 		9B6CF90C27C0FC43007384B2 /* BaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6CF90B27C0FC43007384B2 /* BaseData.swift */; };
 		9BA9F7D52789889C00F9F86B /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA9F7D42789889C00F9F86B /* UIButton.swift */; };
@@ -42,7 +41,6 @@
 		9B65DAE4278728DA00F01979 /* BMHANNAProOTF.otf.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BMHANNAProOTF.otf.ttf; sourceTree = "<group>"; };
 		9B6CF8FA27A53A76007384B2 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		9B6CF8FB27A53A76007384B2 /* AlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertViewController.xib; sourceTree = "<group>"; };
-		9B6CF8FE27A6E573007384B2 /* AlertType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertType.swift; sourceTree = "<group>"; };
 		9B6CF90027A778F5007384B2 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		9B6CF90B27C0FC43007384B2 /* BaseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseData.swift; sourceTree = "<group>"; };
 		9BA9F7D42789889C00F9F86B /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
@@ -72,7 +70,6 @@
 			children = (
 				9B6CF8FA27A53A76007384B2 /* AlertViewController.swift */,
 				9B6CF8FB27A53A76007384B2 /* AlertViewController.xib */,
-				9B6CF8FE27A6E573007384B2 /* AlertType.swift */,
 			);
 			path = AlertViewController;
 			sourceTree = "<group>";
@@ -91,7 +88,6 @@
 			children = (
 				9BF6C2002781DC4800E486CE /* GoalViewController.swift */,
 				9B26C97928CA18E100B1D7EF /* GoalViewController.storyboard */,
-				9B1A0CF627891D360085B9CF /* Goal.swift */,
 			);
 			path = GoalScreen;
 			sourceTree = "<group>";
@@ -123,12 +119,78 @@
 			path = MoreScreen;
 			sourceTree = "<group>";
 		};
-		9B6CF90627AEB6CB007384B2 /* Base */ = {
+		9B83DC2E2A4C193B0073FBBC /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				9BF6C2022781DC4800E486CE /* Main.storyboard */,
+				9B6CF90227AEB5D0007384B2 /* GoalScreen */,
+				9B6CF90327AEB5E5007384B2 /* ThreeDayScreen */,
+				9B26C97E28CA203C00B1D7EF /* InfoScreen */,
+				9B6CF90527AEB6BF007384B2 /* MoreScreen */,
+				9B26C97D28CA201700B1D7EF /* AlertViewController */,
+				9B6CF90427AEB6B1007384B2 /* Extensions */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		9B83DC2F2A4C193F0073FBBC /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				9BF6C1FC2781DC4800E486CE /* AppDelegate.swift */,
+				9BF6C1FE2781DC4800E486CE /* SceneDelegate.swift */,
 				9B6CF90B27C0FC43007384B2 /* BaseData.swift */,
 			);
-			path = Base;
+			path = Application;
+			sourceTree = "<group>";
+		};
+		9B83DC302A4C19430073FBBC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9BF6C20A2781DC4900E486CE /* Info.plist */,
+				9BF6C21227871C4F00E486CE /* Fonts */,
+				9BF6C2072781DC4900E486CE /* LaunchScreen.storyboard */,
+				9BF6C2052781DC4900E486CE /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9B83DC322A4C6B2A0073FBBC /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				9B83DC332A4C6B2D0073FBBC /* Entity */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		9B83DC332A4C6B2D0073FBBC /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				9B1A0CF627891D360085B9CF /* Goal.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		9B83DC342A4C6B4F0073FBBC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9B83DC362A4C6B640073FBBC /* CoreData */,
+				9B83DC352A4C6B5D0073FBBC /* Repository */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		9B83DC352A4C6B5D0073FBBC /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		9B83DC362A4C6B640073FBBC /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		9BF6C1F02781DC4800E486CE = {
@@ -150,20 +212,11 @@
 		9BF6C1FB2781DC4800E486CE /* ThreeDayHump */ = {
 			isa = PBXGroup;
 			children = (
-				9B6CF90627AEB6CB007384B2 /* Base */,
-				9B26C97D28CA201700B1D7EF /* AlertViewController */,
-				9B6CF90227AEB5D0007384B2 /* GoalScreen */,
-				9B6CF90327AEB5E5007384B2 /* ThreeDayScreen */,
-				9B6CF90527AEB6BF007384B2 /* MoreScreen */,
-				9B26C97E28CA203C00B1D7EF /* InfoScreen */,
-				9B6CF90427AEB6B1007384B2 /* Extensions */,
-				9BF6C21227871C4F00E486CE /* Fonts */,
-				9BF6C1FC2781DC4800E486CE /* AppDelegate.swift */,
-				9BF6C1FE2781DC4800E486CE /* SceneDelegate.swift */,
-				9BF6C2022781DC4800E486CE /* Main.storyboard */,
-				9BF6C2052781DC4900E486CE /* Assets.xcassets */,
-				9BF6C2072781DC4900E486CE /* LaunchScreen.storyboard */,
-				9BF6C20A2781DC4900E486CE /* Info.plist */,
+				9B83DC302A4C19430073FBBC /* Resources */,
+				9B83DC2F2A4C193F0073FBBC /* Application */,
+				9B83DC2E2A4C193B0073FBBC /* Presentation */,
+				9B83DC322A4C6B2A0073FBBC /* Domain */,
+				9B83DC342A4C6B4F0073FBBC /* Data */,
 			);
 			path = ThreeDayHump;
 			sourceTree = "<group>";
@@ -262,7 +315,6 @@
 				9B6CF8FC27A53A76007384B2 /* AlertViewController.swift in Sources */,
 				9B26C98528CAC23000B1D7EF /* UIViewController.swift in Sources */,
 				9BA9F7D52789889C00F9F86B /* UIButton.swift in Sources */,
-				9B6CF8FF27A6E573007384B2 /* AlertType.swift in Sources */,
 				9B1A0CF727891D360085B9CF /* Goal.swift in Sources */,
 				9BF6C1FF2781DC4800E486CE /* SceneDelegate.swift in Sources */,
 			);
@@ -415,7 +467,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5VPZU4RB4D;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ThreeDayHump/Info.plist;
+				INFOPLIST_FILE = ThreeDayHump/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "작심삼일";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -446,7 +498,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5VPZU4RB4D;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ThreeDayHump/Info.plist;
+				INFOPLIST_FILE = ThreeDayHump/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "작심삼일";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
