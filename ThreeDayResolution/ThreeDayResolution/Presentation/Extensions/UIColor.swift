@@ -12,7 +12,11 @@ extension UIColor {
         UIColor(named: "MainColor") ?? .label
     }
     
-    static var tabBar: UIColor {
-        UIColor(named: "TabColor") ?? .systemBackground
+    static var tabBarItem: UIColor {
+        UIColor(named: "TabColor") ?? .label
+    }
+    
+    static var tabBackground: UIColor {
+        UIColor(named: "TabBackgroundColor") ?? .systemBackground
     }
 }
