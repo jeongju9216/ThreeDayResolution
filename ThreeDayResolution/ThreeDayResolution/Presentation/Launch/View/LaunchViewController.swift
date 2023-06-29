@@ -35,10 +35,10 @@ final class LaunchViewController: UIViewController {
     }
     
     private func goHomeVC() {
-        let navigationVC: UINavigationController = UINavigationController(rootViewController: MainTabBarViewController())
-        navigationVC.modalPresentationStyle = .fullScreen
+        let mainTabBarVC = MainTabBarViewController()
+        mainTabBarVC.modalPresentationStyle = .fullScreen
 
         dismiss(animated: false)
-        present(navigationVC, animated: false)
+        present(mainTabBarVC, animated: false)
     }
 }
