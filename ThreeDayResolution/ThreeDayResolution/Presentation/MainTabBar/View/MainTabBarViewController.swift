@@ -26,9 +26,22 @@ class MainTabBarViewController: UITabBarController {
     
     //MARK: - Setup
     private func setupUI() {
-        view.backgroundColor = .systemBackground
+        let appearance = UITabBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.shadowColor = UIColor.clear
+        appearance.backgroundColor = .systemBackground
+        
+        tabBar.standardAppearance = appearance
+        tabBar.scrollEdgeAppearance = appearance
+        
         tabBar.isTranslucent = false //탭바 불투명 해제
         tabBar.tintColor = .tabBar
+        
+        // set tabbar shadow
+        tabBar.layer.masksToBounds = false
+        tabBar.layer.shadowColor = UIColor.label.cgColor
+        tabBar.layer.shadowOpacity = 0.2
+        tabBar.layer.shadowRadius = 3
     }
 
     private func configurationViewControllers() {
