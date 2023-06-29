@@ -25,6 +25,9 @@
 		9B76390D2A4D61440099B94C /* GoalListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B76390C2A4D61440099B94C /* GoalListViewController.swift */; };
 		9B7639102A4D61700099B94C /* GoalListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B76390F2A4D61700099B94C /* GoalListViewModel.swift */; };
 		9B7639162A4D73C50099B94C /* GoalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7639152A4D73C50099B94C /* GoalListView.swift */; };
+		9B7639192A4D93990099B94C /* GoalListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7639182A4D93990099B94C /* GoalListCollectionViewCell.swift */; };
+		9B76391B2A4D93A50099B94C /* DefaultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B76391A2A4D93A50099B94C /* DefaultCollectionViewCell.swift */; };
+		9B76391E2A4D9C860099B94C /* UICollectionReusableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B76391D2A4D9C860099B94C /* UICollectionReusableView+Extension.swift */; };
 		9B83DC3A2A4D2C970073FBBC /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B83DC392A4D2C970073FBBC /* LaunchViewController.swift */; };
 		9B83DC3C2A4D2E5C0073FBBC /* LaunchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B83DC3B2A4D2E5C0073FBBC /* LaunchViewController.storyboard */; };
 		9B83DC3E2A4D33890073FBBC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B83DC3D2A4D33890073FBBC /* GoogleService-Info.plist */; };
@@ -60,6 +63,9 @@
 		9B76390C2A4D61440099B94C /* GoalListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalListViewController.swift; sourceTree = "<group>"; };
 		9B76390F2A4D61700099B94C /* GoalListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalListViewModel.swift; sourceTree = "<group>"; };
 		9B7639152A4D73C50099B94C /* GoalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalListView.swift; sourceTree = "<group>"; };
+		9B7639182A4D93990099B94C /* GoalListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalListCollectionViewCell.swift; sourceTree = "<group>"; };
+		9B76391A2A4D93A50099B94C /* DefaultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCollectionViewCell.swift; sourceTree = "<group>"; };
+		9B76391D2A4D9C860099B94C /* UICollectionReusableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionReusableView+Extension.swift"; sourceTree = "<group>"; };
 		9B83DC392A4D2C970073FBBC /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		9B83DC3B2A4D2E5C0073FBBC /* LaunchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchViewController.storyboard; sourceTree = "<group>"; };
 		9B83DC3D2A4D33890073FBBC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -131,6 +137,7 @@
 				9BA9F7D42789889C00F9F86B /* UIButton.swift */,
 				9B26C98428CAC23000B1D7EF /* UIViewController.swift */,
 				9B7639082A4D557D0099B94C /* UIColor.swift */,
+				9B76391D2A4D9C860099B94C /* UICollectionReusableView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -163,8 +170,8 @@
 		9B76390A2A4D60E20099B94C /* GoalList */ = {
 			isa = PBXGroup;
 			children = (
-				9B76390E2A4D61580099B94C /* ViewModel */,
 				9B76390B2A4D611B0099B94C /* View */,
+				9B76390E2A4D61580099B94C /* ViewModel */,
 			);
 			path = GoalList;
 			sourceTree = "<group>";
@@ -172,6 +179,7 @@
 		9B76390B2A4D611B0099B94C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9B7639172A4D91510099B94C /* Cell */,
 				9B76390C2A4D61440099B94C /* GoalListViewController.swift */,
 				9B7639152A4D73C50099B94C /* GoalListView.swift */,
 			);
@@ -184,6 +192,15 @@
 				9B76390F2A4D61700099B94C /* GoalListViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9B7639172A4D91510099B94C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9B7639182A4D93990099B94C /* GoalListCollectionViewCell.swift */,
+				9B76391A2A4D93A50099B94C /* DefaultCollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		9B83DC2E2A4C193B0073FBBC /* Presentation */ = {
@@ -452,6 +469,7 @@
 				9B83DC4E2A4D3A820073FBBC /* VersionData.swift in Sources */,
 				9B65DAE32787270000F01979 /* MoreViewController.swift in Sources */,
 				9B83DC512A4D3DCD0073FBBC /* Logger.swift in Sources */,
+				9B7639192A4D93990099B94C /* GoalListCollectionViewCell.swift in Sources */,
 				9B7639162A4D73C50099B94C /* GoalListView.swift in Sources */,
 				9BF6C1FD2781DC4800E486CE /* AppDelegate.swift in Sources */,
 				9B6CF8FC27A53A76007384B2 /* AlertViewController.swift in Sources */,
@@ -462,6 +480,8 @@
 				9B7639092A4D557D0099B94C /* UIColor.swift in Sources */,
 				9B76390D2A4D61440099B94C /* GoalListViewController.swift in Sources */,
 				9B26C98528CAC23000B1D7EF /* UIViewController.swift in Sources */,
+				9B76391E2A4D9C860099B94C /* UICollectionReusableView+Extension.swift in Sources */,
+				9B76391B2A4D93A50099B94C /* DefaultCollectionViewCell.swift in Sources */,
 				9BA9F7D52789889C00F9F86B /* UIButton.swift in Sources */,
 				9B1A0CF727891D360085B9CF /* Goal.swift in Sources */,
 				9BF6C1FF2781DC4800E486CE /* SceneDelegate.swift in Sources */,

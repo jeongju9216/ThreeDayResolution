@@ -19,4 +19,8 @@ extension UIColor {
     static var tabBackground: UIColor {
         UIColor(named: "TabBackgroundColor") ?? .systemBackground
     }
+    
+    static var textField: UIColor {
+        UIColor(named: "TextFieldColor") ?? .systemBackground
+    }
 }

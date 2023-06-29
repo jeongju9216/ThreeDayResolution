@@ -33,7 +33,7 @@ final class GoalViewController: UIViewController {
     //MARK: - IBActions
     @IBAction func clickedStartButton(_ sender: UIButton) {
         print("\(#fileID) \(#line)-line, \(#function)")
-        Goal.shared.goal = goalTextField.text ?? ""
+//        Goal.shared.goal = goalTextField.text ?? ""
         
         UserDefaults.standard.removeObject(forKey: "clickDate")
         UserDefaults.standard.synchronize()

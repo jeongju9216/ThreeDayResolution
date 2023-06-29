@@ -27,6 +27,9 @@ final class GoalListView: UIView {
         
         collectionView.backgroundColor = .main
         
+        collectionView.register(GoalListCollectionViewCell.self, forCellWithReuseIdentifier: GoalListCollectionViewCell.identifier)
+        collectionView.register(DefaultCollectionViewCell.self, forCellWithReuseIdentifier: DefaultCollectionViewCell.identifier)
+        
         return collectionView
     }()
     
@@ -59,14 +62,13 @@ final class GoalListView: UIView {
     private func createCollectionViewLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout { (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection in
             let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                  heightDimension: .absolute(220))
+                                                  heightDimension: .absolute(100))
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            item.contentInsets = .init(top: 0, leading: 5, bottom: 0, trailing: 5)
+            item.contentInsets = .init(top: 10, leading: 10, bottom: 10, trailing: 10)
             
             let group = NSCollectionLayoutGroup.vertical(layoutSize: itemSize, subitems: [item])
             
             let section = NSCollectionLayoutSection(group: group)
-            section.orthogonalScrollingBehavior = .continuous
             let sectionInset = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
             section.contentInsets = sectionInset
             
