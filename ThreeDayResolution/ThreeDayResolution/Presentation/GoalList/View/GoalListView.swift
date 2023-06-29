@@ -64,12 +64,22 @@ final class GoalListView: UIView {
     
     private func createCollectionViewLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout { (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection in
-            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                                  heightDimension: .absolute(100))
+            let itemWidth: CGFloat
+            if UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad {
+                itemWidth = 0.49
+            } else {
+                itemWidth = 1.0
+            }
+            
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(itemWidth),
+                                                  heightDimension: .fractionalHeight(1))
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
             item.contentInsets = .init(top: 10, leading: 0, bottom: 10, trailing: 0)
             
-            let group = NSCollectionLayoutGroup.vertical(layoutSize: itemSize, subitems: [item])
+            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                                   heightDimension: .absolute(100))
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item, item])
+            group.interItemSpacing = .fixed(20)
             
             let section = NSCollectionLayoutSection(group: group)
             let sectionInset = NSDirectionalEdgeInsets(top: 10, leading: 15, bottom: 40, trailing: 15)
