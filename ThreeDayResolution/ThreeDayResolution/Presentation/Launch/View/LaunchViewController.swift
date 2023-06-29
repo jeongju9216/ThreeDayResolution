@@ -35,7 +35,7 @@ final class LaunchViewController: UIViewController {
     }
     
     private func goHomeVC() {
-        let navigationVC: UINavigationController = UINavigationController(rootViewController: GoalViewController.instantiate)
+        let navigationVC: UINavigationController = UINavigationController(rootViewController: MainTabBarViewController())
         navigationVC.modalPresentationStyle = .fullScreen
 
         dismiss(animated: false)
