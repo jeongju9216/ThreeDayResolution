@@ -8,12 +8,12 @@
 import UIKit
 
 class MainTabBarViewController: UITabBarController {
-    typealias TabItem = (vc: UINavigationController, title: String, icon: String)
+    typealias TabItem = (vc: UIViewController, title: String, icon: String)
 
     //MARK: - Properties
     private let tabItems: [TabItem] = [
-        (UINavigationController(rootViewController: GoalViewController.instantiate), "작심삼일", "house"),
-        (UINavigationController(rootViewController: MoreViewController.instantiate), "설정", "play.circle"),
+        (UINavigationController(rootViewController: GoalViewController.instantiate), "홈", "square.grid.2x2.fill"),
+        (MoreViewController.instantiate, "설정", "gearshape.fill"),
     ]
 
     //MARK: - Life Cycles
@@ -21,11 +21,13 @@ class MainTabBarViewController: UITabBarController {
         super.viewDidLoad()
 
         setupUI()
+        configurationViewControllers()
     }
     
     //MARK: - Setup
     private func setupUI() {
-        view.backgroundColor = .main
+        view.backgroundColor = .systemBackground
+        tabBar.isTranslucent = false //탭바 불투명 해제
         tabBar.tintColor = .tabBar
     }
 

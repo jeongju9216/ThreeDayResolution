@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,10 +14,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--작심삼일-->
+        <!--Goal View Controller-->
         <scene sceneID="szs-V8-WNt">
             <objects>
-                <viewController storyboardIdentifier="GoalViewController" id="xye-D0-tbs" customClass="GoalViewController" customModule="ThreeDayHump" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GoalViewController" id="xye-D0-tbs" customClass="GoalViewController" customModule="ThreeDayResolution" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vx1-yh-AXH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -97,7 +97,6 @@
                             <constraint firstItem="Myq-6t-14r" firstAttribute="centerX" secondItem="Vx1-yh-AXH" secondAttribute="centerX" id="tM4-Y0-BEt"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="작심삼일" image="square.grid.2x2" catalog="system" selectedImage="square.grid.2x2.fill" id="KYG-vT-arF"/>
                     <navigationItem key="navigationItem" id="QAk-MF-icT"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -112,8 +111,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="square.grid.2x2" catalog="system" width="128" height="114"/>
-        <image name="square.grid.2x2.fill" catalog="system" width="128" height="114"/>
         <namedColor name="LabelColor">
             <color red="0.0" green="0.71399998664855957" blue="0.84299999475479126" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
