@@ -26,9 +26,12 @@ final class GoalListView: UIView {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         
         collectionView.backgroundColor = .main
+        collectionView.contentInset = .init(top: 20, left: 0, bottom: 0, right: 0) //상단 여백 추가
+        collectionView.showsVerticalScrollIndicator = false
         
         collectionView.register(GoalListCollectionViewCell.self, forCellWithReuseIdentifier: GoalListCollectionViewCell.identifier)
         collectionView.register(DefaultCollectionViewCell.self, forCellWithReuseIdentifier: DefaultCollectionViewCell.identifier)
+        collectionView.register(SectionHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeaderView.identifier)
         
         return collectionView
     }()
@@ -61,19 +64,19 @@ final class GoalListView: UIView {
     
     private func createCollectionViewLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout { (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection in
-            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
                                                   heightDimension: .absolute(100))
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            item.contentInsets = .init(top: 10, leading: 10, bottom: 10, trailing: 10)
+            item.contentInsets = .init(top: 10, leading: 0, bottom: 10, trailing: 0)
             
             let group = NSCollectionLayoutGroup.vertical(layoutSize: itemSize, subitems: [item])
             
             let section = NSCollectionLayoutSection(group: group)
-            let sectionInset = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+            let sectionInset = NSDirectionalEdgeInsets(top: 10, leading: 15, bottom: 40, trailing: 15)
             section.contentInsets = sectionInset
             
-            let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                    heightDimension: .estimated(30))
+            let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                                    heightDimension: .estimated(24))
             let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
                 layoutSize: headerSize,
                 elementKind: UICollectionView.elementKindSectionHeader,

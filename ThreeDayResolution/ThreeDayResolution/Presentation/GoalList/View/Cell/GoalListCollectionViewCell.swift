@@ -182,6 +182,7 @@ final class GoalListCollectionViewCell: UICollectionViewCell {
         lastCompletedDateLabel.text = goal.displayLastCompleteDate
         countLabel.text = "\(goal.count)일"
         
+        //오늘 완료한 목표는 회색으로 표시
         if goal.isCompleted {
             maskingView.isHidden = false
         }

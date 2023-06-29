@@ -28,6 +28,7 @@
 		9B7639192A4D93990099B94C /* GoalListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7639182A4D93990099B94C /* GoalListCollectionViewCell.swift */; };
 		9B76391B2A4D93A50099B94C /* DefaultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B76391A2A4D93A50099B94C /* DefaultCollectionViewCell.swift */; };
 		9B76391E2A4D9C860099B94C /* UICollectionReusableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B76391D2A4D9C860099B94C /* UICollectionReusableView+Extension.swift */; };
+		9B7639202A4DBEF40099B94C /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B76391F2A4DBEF40099B94C /* SectionHeaderView.swift */; };
 		9B83DC3A2A4D2C970073FBBC /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B83DC392A4D2C970073FBBC /* LaunchViewController.swift */; };
 		9B83DC3C2A4D2E5C0073FBBC /* LaunchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B83DC3B2A4D2E5C0073FBBC /* LaunchViewController.storyboard */; };
 		9B83DC3E2A4D33890073FBBC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B83DC3D2A4D33890073FBBC /* GoogleService-Info.plist */; };
@@ -66,6 +67,7 @@
 		9B7639182A4D93990099B94C /* GoalListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalListCollectionViewCell.swift; sourceTree = "<group>"; };
 		9B76391A2A4D93A50099B94C /* DefaultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCollectionViewCell.swift; sourceTree = "<group>"; };
 		9B76391D2A4D9C860099B94C /* UICollectionReusableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionReusableView+Extension.swift"; sourceTree = "<group>"; };
+		9B76391F2A4DBEF40099B94C /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		9B83DC392A4D2C970073FBBC /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		9B83DC3B2A4D2E5C0073FBBC /* LaunchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchViewController.storyboard; sourceTree = "<group>"; };
 		9B83DC3D2A4D33890073FBBC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 			children = (
 				9B7639182A4D93990099B94C /* GoalListCollectionViewCell.swift */,
 				9B76391A2A4D93A50099B94C /* DefaultCollectionViewCell.swift */,
+				9B76391F2A4DBEF40099B94C /* SectionHeaderView.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 				9B76391E2A4D9C860099B94C /* UICollectionReusableView+Extension.swift in Sources */,
 				9B76391B2A4D93A50099B94C /* DefaultCollectionViewCell.swift in Sources */,
 				9BA9F7D52789889C00F9F86B /* UIButton.swift in Sources */,
+				9B7639202A4DBEF40099B94C /* SectionHeaderView.swift in Sources */,
 				9B1A0CF727891D360085B9CF /* Goal.swift in Sources */,
 				9BF6C1FF2781DC4800E486CE /* SceneDelegate.swift in Sources */,
 			);
