@@ -21,7 +21,7 @@ final class InfoViewController: UIViewController {
         self.title = "앱 정보"
         self.navigationController?.navigationBar.tintColor = .white
         
-        versionLabel.text = "현재 버전: \(BaseData.shared.version)\n최신 버전: \(BaseData.shared.appStoreVersion)"
+        versionLabel.text = "현재 버전: \(BaseData.shared.currentVersion)\n최신 버전: \(BaseData.shared.lastetVersion)"
         
         createUpdateButton()
     }
@@ -42,8 +42,7 @@ final class InfoViewController: UIViewController {
     }
     
     func openAppStore() {
-        let appStoreOpenUrlString = "itms-apps://itunes.apple.com/app/apple-store/\(BaseData.shared.appleID)"
-        guard let url = URL(string: appStoreOpenUrlString) else {
+        guard let url = URL(string: BaseData.shared.appStoreOpenUrlString) else {
             print("invalid app store url")
             return
         }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,9 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashImage" translatesAutoresizingMaskIntoConstraints="NO" id="Rrl-ci-nKw">
-                                <rect key="frame" x="120" y="361" width="174" height="174"/>
+                                <rect key="frame" x="127" y="368" width="160" height="160"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Rrl-ci-nKw" secondAttribute="height" multiplier="1:1" id="0ao-JL-rXX"/>
+                                    <constraint firstAttribute="height" constant="160" id="9TT-C5-9BI"/>
+                                    <constraint firstAttribute="width" constant="160" id="t7i-iu-M0m"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -29,8 +30,6 @@
                         <constraints>
                             <constraint firstItem="Rrl-ci-nKw" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="1Nn-cq-ycv"/>
                             <constraint firstItem="Rrl-ci-nKw" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="2WL-Wa-Pe9"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Rrl-ci-nKw" secondAttribute="trailing" constant="120" id="Ynm-2D-ZU4"/>
-                            <constraint firstItem="Rrl-ci-nKw" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="pn8-dt-eoo"/>
                         </constraints>
                     </view>
                 </viewController>

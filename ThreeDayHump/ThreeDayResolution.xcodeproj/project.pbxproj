@@ -20,11 +20,18 @@
 		9B6CF8FD27A53A76007384B2 /* AlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B6CF8FB27A53A76007384B2 /* AlertViewController.xib */; };
 		9B6CF90127A778F5007384B2 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6CF90027A778F5007384B2 /* InfoViewController.swift */; };
 		9B6CF90C27C0FC43007384B2 /* BaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6CF90B27C0FC43007384B2 /* BaseData.swift */; };
+		9B83DC3A2A4D2C970073FBBC /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B83DC392A4D2C970073FBBC /* LaunchViewController.swift */; };
+		9B83DC3C2A4D2E5C0073FBBC /* LaunchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B83DC3B2A4D2E5C0073FBBC /* LaunchViewController.storyboard */; };
+		9B83DC3E2A4D33890073FBBC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B83DC3D2A4D33890073FBBC /* GoogleService-Info.plist */; };
+		9B83DC462A4D35E30073FBBC /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B83DC452A4D35E30073FBBC /* FirebaseService.swift */; };
+		9B83DC492A4D38580073FBBC /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 9B83DC482A4D38580073FBBC /* FirebaseDatabase */; };
+		9B83DC4C2A4D3A180073FBBC /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B83DC4B2A4D3A180073FBBC /* LaunchViewModel.swift */; };
+		9B83DC4E2A4D3A820073FBBC /* VersionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B83DC4D2A4D3A820073FBBC /* VersionData.swift */; };
+		9B83DC512A4D3DCD0073FBBC /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B83DC502A4D3DCD0073FBBC /* Logger.swift */; };
 		9BA9F7D52789889C00F9F86B /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA9F7D42789889C00F9F86B /* UIButton.swift */; };
 		9BF6C1FD2781DC4800E486CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF6C1FC2781DC4800E486CE /* AppDelegate.swift */; };
 		9BF6C1FF2781DC4800E486CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF6C1FE2781DC4800E486CE /* SceneDelegate.swift */; };
 		9BF6C2012781DC4800E486CE /* GoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF6C2002781DC4800E486CE /* GoalViewController.swift */; };
-		9BF6C2042781DC4800E486CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BF6C2022781DC4800E486CE /* Main.storyboard */; };
 		9BF6C2062781DC4900E486CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BF6C2052781DC4900E486CE /* Assets.xcassets */; };
 		9BF6C2092781DC4900E486CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BF6C2072781DC4900E486CE /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -43,12 +50,18 @@
 		9B6CF8FB27A53A76007384B2 /* AlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertViewController.xib; sourceTree = "<group>"; };
 		9B6CF90027A778F5007384B2 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		9B6CF90B27C0FC43007384B2 /* BaseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseData.swift; sourceTree = "<group>"; };
+		9B83DC392A4D2C970073FBBC /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		9B83DC3B2A4D2E5C0073FBBC /* LaunchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchViewController.storyboard; sourceTree = "<group>"; };
+		9B83DC3D2A4D33890073FBBC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9B83DC452A4D35E30073FBBC /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		9B83DC4B2A4D3A180073FBBC /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
+		9B83DC4D2A4D3A820073FBBC /* VersionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionData.swift; sourceTree = "<group>"; };
+		9B83DC502A4D3DCD0073FBBC /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		9BA9F7D42789889C00F9F86B /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
-		9BF6C1F92781DC4800E486CE /* ThreeDayHump.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThreeDayHump.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BF6C1F92781DC4800E486CE /* ThreeDayResolution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThreeDayResolution.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BF6C1FC2781DC4800E486CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BF6C1FE2781DC4800E486CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9BF6C2002781DC4800E486CE /* GoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewController.swift; sourceTree = "<group>"; };
-		9BF6C2032781DC4800E486CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9BF6C2052781DC4900E486CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BF6C2082781DC4900E486CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9BF6C20A2781DC4900E486CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B83DC492A4D38580073FBBC /* FirebaseDatabase in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,7 +136,7 @@
 		9B83DC2E2A4C193B0073FBBC /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				9BF6C2022781DC4800E486CE /* Main.storyboard */,
+				9B83DC372A4D2C480073FBBC /* Launch */,
 				9B6CF90227AEB5D0007384B2 /* GoalScreen */,
 				9B6CF90327AEB5E5007384B2 /* ThreeDayScreen */,
 				9B26C97E28CA203C00B1D7EF /* InfoScreen */,
@@ -139,6 +153,7 @@
 				9BF6C1FC2781DC4800E486CE /* AppDelegate.swift */,
 				9BF6C1FE2781DC4800E486CE /* SceneDelegate.swift */,
 				9B6CF90B27C0FC43007384B2 /* BaseData.swift */,
+				9B83DC4F2A4D3D8A0073FBBC /* Utils */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -146,10 +161,11 @@
 		9B83DC302A4C19430073FBBC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9BF6C20A2781DC4900E486CE /* Info.plist */,
 				9BF6C21227871C4F00E486CE /* Fonts */,
 				9BF6C2072781DC4900E486CE /* LaunchScreen.storyboard */,
 				9BF6C2052781DC4900E486CE /* Assets.xcassets */,
+				9BF6C20A2781DC4900E486CE /* Info.plist */,
+				9B83DC3D2A4D33890073FBBC /* GoogleService-Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -166,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				9B1A0CF627891D360085B9CF /* Goal.swift */,
+				9B83DC4D2A4D3A820073FBBC /* VersionData.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -173,8 +190,9 @@
 		9B83DC342A4C6B4F0073FBBC /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				9B83DC362A4C6B640073FBBC /* CoreData */,
 				9B83DC352A4C6B5D0073FBBC /* Repository */,
+				9B83DC362A4C6B640073FBBC /* CoreData */,
+				9B83DC422A4D35A90073FBBC /* Network */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -193,10 +211,68 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		9B83DC372A4D2C480073FBBC /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				9B83DC382A4D2C4F0073FBBC /* View */,
+				9B83DC4A2A4D3A0F0073FBBC /* ViewModel */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		9B83DC382A4D2C4F0073FBBC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9B83DC392A4D2C970073FBBC /* LaunchViewController.swift */,
+				9B83DC3B2A4D2E5C0073FBBC /* LaunchViewController.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9B83DC422A4D35A90073FBBC /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				9B83DC432A4D35CD0073FBBC /* Service */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		9B83DC432A4D35CD0073FBBC /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				9B83DC442A4D35D00073FBBC /* FirebaseService */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		9B83DC442A4D35D00073FBBC /* FirebaseService */ = {
+			isa = PBXGroup;
+			children = (
+				9B83DC452A4D35E30073FBBC /* FirebaseService.swift */,
+			);
+			path = FirebaseService;
+			sourceTree = "<group>";
+		};
+		9B83DC4A2A4D3A0F0073FBBC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9B83DC4B2A4D3A180073FBBC /* LaunchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9B83DC4F2A4D3D8A0073FBBC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9B83DC502A4D3DCD0073FBBC /* Logger.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		9BF6C1F02781DC4800E486CE = {
 			isa = PBXGroup;
 			children = (
-				9BF6C1FB2781DC4800E486CE /* ThreeDayHump */,
+				9BF6C1FB2781DC4800E486CE /* ThreeDayResolution */,
 				9BF6C1FA2781DC4800E486CE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -204,21 +280,21 @@
 		9BF6C1FA2781DC4800E486CE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9BF6C1F92781DC4800E486CE /* ThreeDayHump.app */,
+				9BF6C1F92781DC4800E486CE /* ThreeDayResolution.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9BF6C1FB2781DC4800E486CE /* ThreeDayHump */ = {
+		9BF6C1FB2781DC4800E486CE /* ThreeDayResolution */ = {
 			isa = PBXGroup;
 			children = (
-				9B83DC302A4C19430073FBBC /* Resources */,
 				9B83DC2F2A4C193F0073FBBC /* Application */,
 				9B83DC2E2A4C193B0073FBBC /* Presentation */,
 				9B83DC322A4C6B2A0073FBBC /* Domain */,
 				9B83DC342A4C6B4F0073FBBC /* Data */,
+				9B83DC302A4C19430073FBBC /* Resources */,
 			);
-			path = ThreeDayHump;
+			path = ThreeDayResolution;
 			sourceTree = "<group>";
 		};
 		9BF6C21227871C4F00E486CE /* Fonts */ = {
@@ -232,9 +308,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9BF6C1F82781DC4800E486CE /* ThreeDayHump */ = {
+		9BF6C1F82781DC4800E486CE /* ThreeDayResolution */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9BF6C20D2781DC4900E486CE /* Build configuration list for PBXNativeTarget "ThreeDayHump" */;
+			buildConfigurationList = 9BF6C20D2781DC4900E486CE /* Build configuration list for PBXNativeTarget "ThreeDayResolution" */;
 			buildPhases = (
 				9BF6C1F52781DC4800E486CE /* Sources */,
 				9BF6C1F62781DC4800E486CE /* Frameworks */,
@@ -244,9 +320,12 @@
 			);
 			dependencies = (
 			);
-			name = ThreeDayHump;
+			name = ThreeDayResolution;
+			packageProductDependencies = (
+				9B83DC482A4D38580073FBBC /* FirebaseDatabase */,
+			);
 			productName = ThreeDayHump;
-			productReference = 9BF6C1F92781DC4800E486CE /* ThreeDayHump.app */;
+			productReference = 9BF6C1F92781DC4800E486CE /* ThreeDayResolution.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -264,7 +343,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9BF6C1F42781DC4800E486CE /* Build configuration list for PBXProject "ThreeDayHump" */;
+			buildConfigurationList = 9BF6C1F42781DC4800E486CE /* Build configuration list for PBXProject "ThreeDayResolution" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -273,11 +352,14 @@
 				Base,
 			);
 			mainGroup = 9BF6C1F02781DC4800E486CE;
+			packageReferences = (
+				9B83DC472A4D38580073FBBC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 9BF6C1FA2781DC4800E486CE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9BF6C1F82781DC4800E486CE /* ThreeDayHump */,
+				9BF6C1F82781DC4800E486CE /* ThreeDayResolution */,
 			);
 		};
 /* End PBXProject section */
@@ -289,11 +371,12 @@
 			files = (
 				9B26C97C28CA1B3600B1D7EF /* ThreeDayViewController.storyboard in Resources */,
 				9B26C97A28CA18E100B1D7EF /* GoalViewController.storyboard in Resources */,
+				9B83DC3C2A4D2E5C0073FBBC /* LaunchViewController.storyboard in Resources */,
 				9BF6C2092781DC4900E486CE /* LaunchScreen.storyboard in Resources */,
 				9B65DAE5278728DA00F01979 /* BMHANNAProOTF.otf.ttf in Resources */,
 				9BF6C2062781DC4900E486CE /* Assets.xcassets in Resources */,
-				9BF6C2042781DC4800E486CE /* Main.storyboard in Resources */,
 				9B6CF8FD27A53A76007384B2 /* AlertViewController.xib in Resources */,
+				9B83DC3E2A4D33890073FBBC /* GoogleService-Info.plist in Resources */,
 				9B26C98328CA231900B1D7EF /* MoreViewController.storyboard in Resources */,
 				9B26C98128CA204C00B1D7EF /* InfoViewController.storyboard in Resources */,
 			);
@@ -310,9 +393,14 @@
 				9B6CF90127A778F5007384B2 /* InfoViewController.swift in Sources */,
 				9B6CF90C27C0FC43007384B2 /* BaseData.swift in Sources */,
 				9B1A0CF42789190C0085B9CF /* ThreeDayViewController.swift in Sources */,
+				9B83DC4E2A4D3A820073FBBC /* VersionData.swift in Sources */,
 				9B65DAE32787270000F01979 /* MoreViewController.swift in Sources */,
+				9B83DC512A4D3DCD0073FBBC /* Logger.swift in Sources */,
 				9BF6C1FD2781DC4800E486CE /* AppDelegate.swift in Sources */,
 				9B6CF8FC27A53A76007384B2 /* AlertViewController.swift in Sources */,
+				9B83DC462A4D35E30073FBBC /* FirebaseService.swift in Sources */,
+				9B83DC3A2A4D2C970073FBBC /* LaunchViewController.swift in Sources */,
+				9B83DC4C2A4D3A180073FBBC /* LaunchViewModel.swift in Sources */,
 				9B26C98528CAC23000B1D7EF /* UIViewController.swift in Sources */,
 				9BA9F7D52789889C00F9F86B /* UIButton.swift in Sources */,
 				9B1A0CF727891D360085B9CF /* Goal.swift in Sources */,
@@ -323,14 +411,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		9BF6C2022781DC4800E486CE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9BF6C2032781DC4800E486CE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9BF6C2072781DC4900E486CE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -465,13 +545,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5VPZU4RB4D;
+				DEVELOPMENT_TEAM = WPX8MV29XR;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ThreeDayHump/Resources/Info.plist;
+				INFOPLIST_FILE = ThreeDayResolution/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "작심삼일";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
@@ -480,7 +559,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jeong9216.ThreeDayHump;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -496,13 +575,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5VPZU4RB4D;
+				DEVELOPMENT_TEAM = WPX8MV29XR;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ThreeDayHump/Resources/Info.plist;
+				INFOPLIST_FILE = ThreeDayResolution/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "작심삼일";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
@@ -511,7 +589,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jeong9216.ThreeDayHump;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -523,7 +601,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9BF6C1F42781DC4800E486CE /* Build configuration list for PBXProject "ThreeDayHump" */ = {
+		9BF6C1F42781DC4800E486CE /* Build configuration list for PBXProject "ThreeDayResolution" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9BF6C20B2781DC4900E486CE /* Debug */,
@@ -532,7 +610,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9BF6C20D2781DC4900E486CE /* Build configuration list for PBXNativeTarget "ThreeDayHump" */ = {
+		9BF6C20D2781DC4900E486CE /* Build configuration list for PBXNativeTarget "ThreeDayResolution" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9BF6C20E2781DC4900E486CE /* Debug */,
@@ -542,6 +620,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9B83DC472A4D38580073FBBC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9B83DC482A4D38580073FBBC /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B83DC472A4D38580073FBBC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9BF6C1F12781DC4800E486CE /* Project object */;
 }
