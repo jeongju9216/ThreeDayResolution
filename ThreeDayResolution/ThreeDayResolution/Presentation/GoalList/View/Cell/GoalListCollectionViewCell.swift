@@ -51,7 +51,7 @@ final class GoalListCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         
-        label.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 18)
+        label.font = UIFont.appleSDGothicNeoFont(ofSize: 18)
         label.adjustsFontSizeToFitWidth = true //글자 크기 유동적으로 변경
         label.numberOfLines = 1
         
@@ -75,7 +75,7 @@ final class GoalListCollectionViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         
         label.textColor = .white
-        label.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 18)
+        label.font = UIFont.appleSDGothicNeoFont(ofSize: 18)
         label.adjustsFontSizeToFitWidth = true //글자 크기 유동적으로 변경
         label.textAlignment = .center
         label.numberOfLines = 1

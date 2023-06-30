@@ -14,7 +14,7 @@ class SectionHeaderView: UICollectionReusableView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         
-        label.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 24)
+        label.font = UIFont.appleSDGothicNeoFont(ofSize: 24)
         label.textColor = .white
         
         return label
