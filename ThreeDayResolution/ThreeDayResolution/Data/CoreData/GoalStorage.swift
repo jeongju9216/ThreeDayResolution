@@ -29,6 +29,19 @@ struct GoalStorage {
         try context.save()
     }
     
+    func update(goal: Goal) throws {
+        let context = CoreDataStorage.shared.context
+        
+        let filter = filteredRequestWith(goal: goal.goal, createdAt: goal.createdAt)
+        if let item = try context.fetch(filter).compactMap({ $0 as? EntityType }).first {
+            item.count = Int32(goal.count)
+            item.lastCompletedDate = goal.lastCompletedDate
+            item.isBookmarked = goal.isBookmarked
+        }
+        
+        try context.save()
+    }
+    
     func delete(goal: Goal) throws {
         let context = CoreDataStorage.shared.context
         
