@@ -20,7 +20,8 @@ final class ThreeDayViewController: UIViewController {
     @IBOutlet weak var thirdView: UIView!
     
     //MARK: - Properties
-    private let viewModel: ThreeDayViewModel = ThreeDayViewModel(updateUseCase: .init())
+    private let viewModel: ThreeDayViewModel = ThreeDayViewModel(updateUseCase: .init(),
+                                                                 deleteUseCase: .init())
     private lazy var dayViews: [UIView] = [firstView, secondView, thirdView]
     var goal = Goal(goal: "", createdAt: .init())
     
@@ -175,8 +176,12 @@ final class ThreeDayViewController: UIViewController {
         let message = "작심 \(goal.count)일입니다.\n여기에서 포기하시겠습니까?"
 
         let doneAction = UIAction { [weak self] _ in
-            self?.dismiss(animated: false, completion: nil) //알람 VC 삭제
-            self?.navigationController?.popViewController(animated: true) //ThreeDayVC 삭제
+            guard let self = self else { return }
+            
+            self.viewModel.action(.delete(goal))
+            
+            self.dismiss(animated: false, completion: nil) //알람 VC 삭제
+            self.navigationController?.popViewController(animated: true) //ThreeDayVC 삭제
         }
 
         let cancelAction = UIAction { [weak self] _ in
