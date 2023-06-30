@@ -13,7 +13,7 @@ class MainTabBarViewController: UITabBarController {
     //MARK: - Properties
     private let tabItems: [TabItem] = [
         (UINavigationController(rootViewController: GoalListViewController()), "홈", "square.grid.2x2.fill"),
-        (NewGoalViewController.instantiate, "새로운 목표", "plus.app"),
+        (UINavigationController(rootViewController: NewGoalViewController.instantiate), "새로운 목표", "plus.app"),
         (MoreViewController.instantiate, "설정", "gearshape.fill"),
     ]
 
