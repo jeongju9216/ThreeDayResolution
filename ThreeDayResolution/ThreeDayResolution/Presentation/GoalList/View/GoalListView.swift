@@ -43,7 +43,7 @@ final class GoalListView: UIView {
         label.text = "도전 중인 목표가 없습니다.\n새로운 목표에 도전하세요."
         label.numberOfLines = 2
         label.textColor = .tabBarItem
-        label.font = UIFont.appleSDGothicNeoFont(ofSize: 18)
+        label.font = UIFont.appleSDGothicNeoFont(ofSize: 18, weight: .regular)
         label.textAlignment = .center
         
         return label
@@ -79,8 +79,8 @@ final class GoalListView: UIView {
     private func setupEmptyLabel() {
         addSubview(emptyLabel)
         NSLayoutConstraint.activate([
-            emptyLabel.centerXAnchor.constraint(equalTo: collectionView.centerXAnchor),
-            emptyLabel.centerYAnchor.constraint(equalTo: collectionView.centerYAnchor)
+            emptyLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            emptyLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }
     
