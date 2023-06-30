@@ -51,27 +51,35 @@ final class AlertViewController: UIViewController {
     convenience init(titleText: String? = nil, messageText: String? = nil, doneText: String = "확인", doneAction: UIAction? = nil) {
         self.init()
 
+        let dismissAction = UIAction { _ in
+            self.dismiss(animated: false)
+        }
+        
         self.titleText = titleText
         self.messageText = messageText
         self.alertType = .oneButton
         self.doneText = doneText
-        self.doneAction = doneAction
+        self.doneAction = doneAction ?? dismissAction
         
         modalPresentationStyle = .overFullScreen
     }
     
-    convenience init(titleText: String? = nil, messageText: String? = nil, doneText: String = "확인", cancelText: String = "취소", doneAction: UIAction? = nil, cancelAction: UIAction? = nil) {
+    convenience init(titleText: String? = nil, messageText: String? = nil, doneText: String = "확인", doneAction: UIAction? = nil, cancelText: String = "취소", cancelAction: UIAction? = nil) {
         self.init()
+        
+        let dismissAction = UIAction { _ in
+            self.dismiss(animated: false)
+        }
         
         self.titleText = titleText
         self.messageText = messageText
         self.alertType = .twoButton
         
         self.doneText = doneText
-        self.doneAction = doneAction
+        self.doneAction = doneAction ?? dismissAction
         
         self.cancelText = cancelText
-        self.cancelAction = cancelAction
+        self.cancelAction = cancelAction ?? dismissAction
         
         modalPresentationStyle = .overFullScreen
     }
