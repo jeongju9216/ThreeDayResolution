@@ -56,7 +56,9 @@ final class GoalListViewController: UIViewController {
         navigationController?.navigationBar.scrollEdgeAppearance = navigationBarAppearance
         
         //네비게이션바 아이템 적용
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "작심 0일", style: .done, target: self, action: nil)
+        let runCount = UserDefaults.standard.integer(forKey: RunAppKey.runCountKey.rawValue)
+        Logger.log("RunCount: \(runCount)")
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "작심 \(runCount)일", style: .done, target: self, action: nil)
         navigationItem.rightBarButtonItems = [
             UIBarButtonItem(image: UIImage(systemName: "plus.app.fill"), style: .done, target: self, action: #selector(goGoalVC)),
         ]

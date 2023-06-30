@@ -25,6 +25,7 @@ final class LaunchViewController: UIViewController {
             let state = await viewModel.launch()
             switch state.state {
             case .ok:
+                countingRun()
                 goHomeVC()
             case .fail:
                 alert(message: state.notice, doneAction: UIAction { _ in
@@ -43,8 +44,14 @@ final class LaunchViewController: UIViewController {
     }
     
     private func countingRun() {
-        let lastRunDate = viewModel.fetchLastRunDate()
-        if Calendar.current.isDateInToday(lastRunDate) {
+        if let lastRunDate = viewModel.fetchLastRunDate() {
+            Logger.log("lastRunDate: \(lastRunDate)")
+            //하루에 한 번 추가
+            if !Calendar.current.isDateInToday(lastRunDate) {
+                viewModel.saveRunDate()
+            }
+        } else {
+            Logger.log("First Run App")
             viewModel.saveRunDate()
         }
     }
