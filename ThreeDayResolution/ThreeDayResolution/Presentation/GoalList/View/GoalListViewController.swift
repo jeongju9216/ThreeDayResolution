@@ -73,8 +73,10 @@ final class GoalListViewController: UIViewController {
     
     //MARK: - Methods
     @objc private func goGoalVC() {
-        let goalVC = NewGoalViewController.instantiate
-        navigationController?.pushViewController(goalVC, animated: true)
+        if let goalVC = NewGoalViewController.instantiate as? NewGoalViewController {
+            goalVC.newGoalViewControllerDelegate = self
+            present(goalVC, animated: true)
+        }
     }
     
     @objc private func showInfoVC() {
@@ -82,7 +84,7 @@ final class GoalListViewController: UIViewController {
         present(infoVC, animated: true)
     }
     
-    private func goThreeDayVC(goal: Goal) {
+    func goThreeDayVC(goal: Goal) {
         guard let threeDayVC = ThreeDayViewController.instantiate as? ThreeDayViewController else {
             return
         }
@@ -187,4 +189,9 @@ extension GoalListViewController: UICollectionViewDataSource {
         
         return headerCell
     }
+}
+
+//MARK: - NewGaolViewControllerDelegate
+extension GoalListViewController: NewGoalViewControllerDelegate {
+
 }
