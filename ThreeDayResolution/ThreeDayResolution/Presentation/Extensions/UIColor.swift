@@ -23,4 +23,8 @@ extension UIColor {
     static var textField: UIColor {
         UIColor(named: "TextFieldColor") ?? .systemBackground
     }
+    
+    static var buttonTitleColor: UIColor {
+        UIColor(named: "ButtonTitleColor") ?? .systemBackground
+    }
 }

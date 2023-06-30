@@ -26,54 +26,56 @@ final class ThreeDayViewController: UIViewController {
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        NotificationCenter.default.addObserver(self, selector: #selector(onForegroundAction), name: UIApplication.willEnterForegroundNotification, object: nil)
 
         setupUI()
         
         resetGoalViews()
         paintSquares()
         
-//        if Goal.shared.isDone {
-//            setupDoneStyle()
-//        } else {
-//            setupNotDoneStyle()
-//        }
+        if goal.isCompleted {
+            applyCompleteStyle()
+        } else {
+            applyNotCompleteStyle()
+        }
     }
     
     //MARK: - Actions
-    @IBAction func clickedGiveUpButton(_ sender: UIButton) {
-        AudioServicesPlaySystemSound(1519)
+    @objc private func giveUp() {
+        Logger.log("Click Give Up")
+        
+        weakVibration()
         alertGiveUp()
     }
     
     @IBAction func clickedDoneButton(_ sender: Any) {
-//        if Goal.shared.isDone {
-//            AudioServicesPlaySystemSound(1519)
-//            alert(message: "이미 완료했습니다.\n내일도 파이팅!")
-//        } else {
-//            addDay()
-//
-//            let day = Goal.shared.day
-//            var fillCount: Int
-//            if day % 3 == 0 {
-//                AudioServicesPlaySystemSound(1520)
-//                fillCount = 3
-//                alertSuccessThreeDay()
-//            } else {
-//                AudioServicesPlaySystemSound(1519)
-//                fillCount = day % 3
-//                alert(message: "작심 \(Goal.shared.day)일을 달성했어요.")
-//            }
-//
-//            for i in 0 ..< fillCount {
-//                dayViews[i].backgroundColor = .white
-//            }
-//        }
+        if goal.isCompleted {
+            weakVibration()
+            alert(message: "오늘은 이미 해내셨어요.\n내일도 파이팅!")
+        } else {
+            completeGoal()
+
+            let day = goal.count
+            var fillCount: Int
+            if day % 3 == 0 {
+                strongVibration()
+                fillCount = 3
+                alertSuccessThreeDayResolution()
+            } else {
+                weakVibration()
+                fillCount = day % 3
+                alert(message: "작심 \(day)일을 달성했어요.")
+            }
+
+            for i in 0..<fillCount {
+                dayViews[i].backgroundColor = .white
+            }
+        }
     }
     
     //MARK: - Setup
     private func setupUI() {
+        setupNavigationBar()
+        
         goalLabel.text = goal.goal
         dayLabel.text = goal.displayCount
         
@@ -81,7 +83,14 @@ final class ThreeDayViewController: UIViewController {
         doneButton.createShadow()
     }
     
-    private func setupDoneStyle() {
+    private func setupNavigationBar() {
+        navigationItem.rightBarButtonItems = [
+            UIBarButtonItem(image: UIImage(systemName: "flag.fill"), style: .done, target: self, action: #selector(giveUp)),
+        ]
+    }
+    
+    //MARK: - Methods
+    private func applyCompleteStyle() {
         UIView.animate(withDuration: 0.05, animations: { [weak self] in
             self?.doneButton.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
         })
@@ -91,64 +100,45 @@ final class ThreeDayViewController: UIViewController {
         doneButton.titleLabel?.textColor = UIColor(named: "TabColor")
     }
     
-    private func setupNotDoneStyle() {
+    private func applyNotCompleteStyle() {
         doneButton.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
         doneButton.createShadow()
-        doneButton.backgroundColor = UIColor(named: "TextFieldColor")
-        doneButton.titleLabel?.textColor = UIColor(named: "LabelColor")
+        doneButton.backgroundColor = .textField
+        doneButton.titleLabel?.textColor = .buttonTitleColor
     }
-    
-    //MARK: - Methods
-    private func addDay() {
-        let date = Date()
-//        Goal.shared.clickDate = date
-        
+
+    private func completeGoal() {
+        //마지막 달성 날짜를 현재로 설정
         animateSquare()
-        setupDoneStyle()
+        applyCompleteStyle()
         
-//        Goal.shared.day += 1
-//        dayLabel.text = Goal.shared.destination
-    }
-    
-    @objc private func onForegroundAction() {        
-//        if Goal.shared.isDone {
-//            setupDoneStyle()
-//        } else {
-//            setupNotDoneStyle()
-//        }
-    }
-    
-    func showGoalViewController() {
-        let tabBarController = self.tabBarController
-        
-        let goalViewController = NewGoalViewController.instantiate
-        let moreViewController = MoreViewController.instantiate
-        
-        tabBarController?.setViewControllers([goalViewController, moreViewController], animated: false)
+        goal.lastCompletedDate = Date()
+        goal.count += 1
+        dayLabel.text = goal.displayCount
     }
     
     private func animateSquare() {
-//        let animateIndex = Goal.shared.day % 3
-//        UIView.animate(withDuration: 0.1, animations: { [weak self] in
-//            self?.dayViews[animateIndex].transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
-//        }, completion: { _ in
-//            UIView.animate(withDuration: 0.1) { [weak self] in
-//                self?.dayViews[animateIndex].transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-//            }
-//        })
+        let animateIndex = goal.count % 3
+        UIView.animate(withDuration: 0.1, animations: { [weak self] in
+            self?.dayViews[animateIndex].transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+        }, completion: { _ in
+            UIView.animate(withDuration: 0.1) { [weak self] in
+                self?.dayViews[animateIndex].transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+            }
+        })
     }
     
     private func paintSquares() {
-//        if Goal.shared.day > 0 {
-//            var fillCount = Goal.shared.day % 3
-//            if fillCount == 0 && Goal.shared.isAlert {
-//                fillCount = 3
-//            }
-//
-//            for i in 0 ..< fillCount {
-//                dayViews[i].backgroundColor = .white
-//            }
-//        }
+        if goal.count > 0 {
+            var fillCount = goal.count % 3
+            if fillCount == 0 && goal.isCompleted {
+                fillCount = 3
+            }
+
+            for i in 0..<fillCount {
+                dayViews[i].backgroundColor = .white
+            }
+        }
     }
     
     private func resetGoalViews() {
@@ -160,63 +150,43 @@ final class ThreeDayViewController: UIViewController {
         }
     }
     
-    private func alert(message: String) {
-        let alertViewController = AlertViewController(titleText: "안내", messageText: message, doneText: "확인", doneAction: UIAction { [weak self] _ in
+    private func alertSuccessThreeDayResolution() {
+        let title = "성공"
+        let message = "축하합니다!\n작심 \(goal.count)일을 성공했어요🥳"
+
+        let doneAction = UIAction { [weak self] _ in
             self?.dismiss(animated: false, completion: nil)
-        })
-        present(alertViewController, animated: false, completion: nil)
-    }
-    
-    private func alertSuccessThreeDay() {
-//        Goal.shared.isAlert = true
-//
-//        let title = "성공"
-//        let message = "축하합니다!\n작심 \(Goal.shared.day)일을 성공했어요🥳"
-//
-//        let doneAction = UIAction { [weak self] _ in
-//            self?.dismiss(animated: false, completion: nil)
-//
-//            Goal.shared.isAlert = false
-//            self?.resetGoalViews()
-//        }
-//
-//        let cancelAction = UIAction { [weak self] _ in
-//            self?.dismiss(animated: false, completion: nil)
-//
-//            Goal.shared.isAlert = false
-//            self?.resetUserDefaults()
-//            self?.showGoalViewController()
-//        }
-//
-//        let alertViewController = AlertViewController(titleText: title, messageText: message, doneText: "계속 도전하기", cancelText: "그만하기", doneAction: doneAction, cancelAction: cancelAction)
-//        present(alertViewController, animated: false, completion: nil)
+        }
+
+        let cancelAction = UIAction { [weak self] _ in
+            self?.dismiss(animated: false, completion: nil)
+            self?.navigationController?.popViewController(animated: true) //ThreeDayVC 삭제
+        }
+        
+        alert(title: title, message: message, doneTitle: "계속 도전하기", doneAction: doneAction, cancelTitle: "그만하기", cancelAction: cancelAction)
     }
     
     private func alertGiveUp() {
-//        let titleText = "경고"
-//        let messageText = "작심 \(Goal.shared.day)일입니다.\n여기에서 포기하시겠습니까?"
-//
-//        let doneAction = UIAction { [weak self] _ in
-//            self?.dismiss(animated: false, completion: nil)
-//
-//            self?.resetUserDefaults()
-//            self?.showGoalViewController()
-//        }
-//
-//        let cancelAction = UIAction { [weak self] _ in
-//            self?.dismiss(animated: false, completion: nil)
-//        }
-//
-//        let alertViewController = AlertViewController(titleText: titleText, messageText: messageText, doneText: "포기하기", cancelText: "취소", doneAction: doneAction, cancelAction: cancelAction)
-//        present(alertViewController, animated: false, completion: nil)
+        let title = "경고"
+        let message = "작심 \(goal.count)일입니다.\n여기에서 포기하시겠습니까?"
+
+        let doneAction = UIAction { [weak self] _ in
+            self?.dismiss(animated: false, completion: nil) //알람 VC 삭제
+            self?.navigationController?.popViewController(animated: true) //ThreeDayVC 삭제
+        }
+
+        let cancelAction = UIAction { [weak self] _ in
+            self?.dismiss(animated: false, completion: nil) //알람 VC 삭제
+        }
+
+        alert(title: title, message: message, doneTitle: "포기", doneAction: doneAction, cancelAction: cancelAction)
     }
     
-    func resetUserDefaults() {
-//        Goal.shared.goal = ""
-//        Goal.shared.day = 0
-//
-//        UserDefaults.standard.removeObject(forKey: "goal")
-//        UserDefaults.standard.removeObject(forKey: "day")
+    private func strongVibration() {
+        AudioServicesPlaySystemSound(1520) //강한 진동
     }
-
+    
+    private func weakVibration() {
+        AudioServicesPlaySystemSound(1519)
+    }
 }
