@@ -44,15 +44,18 @@ final class LaunchViewController: UIViewController {
     }
     
     private func countingRun() {
-        if let lastRunDate = viewModel.fetchLastRunDate() {
-            Logger.log("lastRunDate: \(lastRunDate)")
-            //하루에 한 번 추가
+        if let lastRunDate = BaseData.shared.lastRunDate {
+            print("lastRunDate: \(lastRunDate)")
+            //하루동안 접속이 없었다면 runCount +1
             if !Calendar.current.isDateInToday(lastRunDate) {
-                viewModel.saveRunDate()
+                BaseData.shared.lastRunDate = Date()
+                BaseData.shared.runCount += 1
             }
         } else {
+            //첫 실행
             Logger.log("First Run App")
-            viewModel.saveRunDate()
+            BaseData.shared.lastRunDate = Date()
+            BaseData.shared.runCount = 1
         }
     }
 }

@@ -7,18 +7,7 @@
 
 import Foundation
 
-enum RunAppKey: String {
-    case runDateKey = "Rundate"
-    case runCountKey = "RunCount"
-}
-
 struct LaunchViewModel {
-    
-    private let runDateKey = "RunDate"
-    private let runCountKey = "RunCount"
-    
-    //MARK: - Properties
-    init() { }
     
     //MARK: - Methods
     func launch() async -> StateData {
@@ -30,18 +19,6 @@ struct LaunchViewModel {
         await fetchPolicyURL()
         
         return serverStateData
-    }
-    
-    func fetchLastRunDate() -> Date? {
-        let date = UserDefaults.standard.object(forKey: RunAppKey.runDateKey.rawValue) as? Date
-        return date
-    }
-    
-    func saveRunDate() {
-        UserDefaults.standard.set(Date(), forKey: RunAppKey.runDateKey.rawValue)
-        
-        let runCount = UserDefaults.standard.integer(forKey: RunAppKey.runCountKey.rawValue) + 1
-        UserDefaults.standard.set(runCount, forKey: RunAppKey.runCountKey.rawValue)
     }
     
     private func getServerStateData() async -> StateData {
