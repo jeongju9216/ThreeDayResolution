@@ -29,7 +29,7 @@ final class ThreeDayViewController: UIViewController {
         // Do any additional setup after loading the view.
         NotificationCenter.default.addObserver(self, selector: #selector(onForegroundAction), name: UIApplication.willEnterForegroundNotification, object: nil)
 
-        setupViews()
+        setupUI()
         
         resetGoalViews()
         paintSquares()
@@ -41,16 +41,7 @@ final class ThreeDayViewController: UIViewController {
 //        }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        //alert 상태에서 앱을 재시작했을 때 Alert
-//        if Goal.shared.isAlert {
-//            alertSuccessThreeDay()
-//        }
-    }
-    
-    //MARK: - IBActions
+    //MARK: - Actions
     @IBAction func clickedGiveUpButton(_ sender: UIButton) {
         AudioServicesPlaySystemSound(1519)
         alertGiveUp()
@@ -79,6 +70,32 @@ final class ThreeDayViewController: UIViewController {
 //                dayViews[i].backgroundColor = .white
 //            }
 //        }
+    }
+    
+    //MARK: - Setup
+    private func setupUI() {
+        goalLabel.text = goal.goal
+        dayLabel.text = goal.displayCount
+        
+        doneButton.layer.cornerRadius = 5
+        doneButton.createShadow()
+    }
+    
+    private func setupDoneStyle() {
+        UIView.animate(withDuration: 0.05, animations: { [weak self] in
+            self?.doneButton.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+        })
+        
+        doneButton.removeShadow()
+        doneButton.backgroundColor = .none
+        doneButton.titleLabel?.textColor = UIColor(named: "TabColor")
+    }
+    
+    private func setupNotDoneStyle() {
+        doneButton.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+        doneButton.createShadow()
+        doneButton.backgroundColor = UIColor(named: "TextFieldColor")
+        doneButton.titleLabel?.textColor = UIColor(named: "LabelColor")
     }
     
     //MARK: - Methods
@@ -141,32 +158,6 @@ final class ThreeDayViewController: UIViewController {
             dayViews[i].layer.borderColor = UIColor.white.cgColor
             dayViews[i].layer.backgroundColor = .none
         }
-    }
-    
-    //MARK: - Setup
-    private func setupViews() {
-//        goalLabel.text = Goal.shared.goal ?? ""
-//        dayLabel.text = Goal.shared.destination
-
-        doneButton.layer.cornerRadius = 5
-        doneButton.createShadow()
-    }
-    
-    private func setupDoneStyle() {
-        UIView.animate(withDuration: 0.05, animations: { [weak self] in
-            self?.doneButton.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
-        })
-        
-        doneButton.removeShadow()
-        doneButton.backgroundColor = .none
-        doneButton.titleLabel?.textColor = UIColor(named: "TabColor")
-    }
-    
-    private func setupNotDoneStyle() {
-        doneButton.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-        doneButton.createShadow()
-        doneButton.backgroundColor = UIColor(named: "TextFieldColor")
-        doneButton.titleLabel?.textColor = UIColor(named: "LabelColor")
     }
     
     private func alert(message: String) {

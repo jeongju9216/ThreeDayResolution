@@ -31,6 +31,7 @@
 		9B7639202A4DBEF40099B94C /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B76391F2A4DBEF40099B94C /* SectionHeaderView.swift */; };
 		9B7639242A4E70060099B94C /* NewGoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7639232A4E70060099B94C /* NewGoalViewModel.swift */; };
 		9B7639262A4E78000099B94C /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7639252A4E78000099B94C /* UIFont.swift */; };
+		9B76392A2A4E83B80099B94C /* ThreeDayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7639292A4E83B80099B94C /* ThreeDayViewModel.swift */; };
 		9B83DC3A2A4D2C970073FBBC /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B83DC392A4D2C970073FBBC /* LaunchViewController.swift */; };
 		9B83DC3C2A4D2E5C0073FBBC /* LaunchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B83DC3B2A4D2E5C0073FBBC /* LaunchViewController.storyboard */; };
 		9B83DC3E2A4D33890073FBBC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B83DC3D2A4D33890073FBBC /* GoogleService-Info.plist */; };
@@ -72,6 +73,7 @@
 		9B76391F2A4DBEF40099B94C /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		9B7639232A4E70060099B94C /* NewGoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoalViewModel.swift; sourceTree = "<group>"; };
 		9B7639252A4E78000099B94C /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		9B7639292A4E83B80099B94C /* ThreeDayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeDayViewModel.swift; sourceTree = "<group>"; };
 		9B83DC392A4D2C970073FBBC /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		9B83DC3B2A4D2E5C0073FBBC /* LaunchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchViewController.storyboard; sourceTree = "<group>"; };
 		9B83DC3D2A4D33890073FBBC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -128,13 +130,13 @@
 			path = NewGoal;
 			sourceTree = "<group>";
 		};
-		9B6CF90327AEB5E5007384B2 /* ThreeDayScreen */ = {
+		9B6CF90327AEB5E5007384B2 /* ThreeDay */ = {
 			isa = PBXGroup;
 			children = (
-				9B1A0CF32789190C0085B9CF /* ThreeDayViewController.swift */,
-				9B26C97B28CA1B3600B1D7EF /* ThreeDayViewController.storyboard */,
+				9B7639272A4E839A0099B94C /* View */,
+				9B7639282A4E83A80099B94C /* ViewModel */,
 			);
-			path = ThreeDayScreen;
+			path = ThreeDay;
 			sourceTree = "<group>";
 		};
 		9B6CF90427AEB6B1007384B2 /* Extensions */ = {
@@ -186,9 +188,9 @@
 		9B76390B2A4D611B0099B94C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9B7639172A4D91510099B94C /* Cell */,
 				9B76390C2A4D61440099B94C /* GoalListViewController.swift */,
 				9B7639152A4D73C50099B94C /* GoalListView.swift */,
+				9B7639172A4D91510099B94C /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -228,6 +230,23 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		9B7639272A4E839A0099B94C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9B1A0CF32789190C0085B9CF /* ThreeDayViewController.swift */,
+				9B26C97B28CA1B3600B1D7EF /* ThreeDayViewController.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9B7639282A4E83A80099B94C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9B7639292A4E83B80099B94C /* ThreeDayViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		9B83DC2E2A4C193B0073FBBC /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,7 +254,7 @@
 				9B7639042A4D53660099B94C /* MainTabBar */,
 				9B76390A2A4D60E20099B94C /* GoalList */,
 				9B6CF90227AEB5D0007384B2 /* NewGoal */,
-				9B6CF90327AEB5E5007384B2 /* ThreeDayScreen */,
+				9B6CF90327AEB5E5007384B2 /* ThreeDay */,
 				9B26C97E28CA203C00B1D7EF /* InfoScreen */,
 				9B6CF90527AEB6BF007384B2 /* MoreScreen */,
 				9B26C97D28CA201700B1D7EF /* AlertViewController */,
@@ -490,6 +509,7 @@
 				9B6CF90127A778F5007384B2 /* InfoViewController.swift in Sources */,
 				9B6CF90C27C0FC43007384B2 /* BaseData.swift in Sources */,
 				9B7639072A4D53870099B94C /* MainTabBarViewController.swift in Sources */,
+				9B76392A2A4E83B80099B94C /* ThreeDayViewModel.swift in Sources */,
 				9B1A0CF42789190C0085B9CF /* ThreeDayViewController.swift in Sources */,
 				9B83DC4E2A4D3A820073FBBC /* VersionData.swift in Sources */,
 				9B65DAE32787270000F01979 /* MoreViewController.swift in Sources */,
