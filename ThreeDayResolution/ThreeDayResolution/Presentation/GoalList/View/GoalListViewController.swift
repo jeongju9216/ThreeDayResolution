@@ -71,11 +71,20 @@ final class GoalListViewController: UIViewController {
         let goalVC = NewGoalViewController.instantiate
         navigationController?.pushViewController(goalVC, animated: true)
     }
+    
+    private func goThreeDayVC(goal: Goal) {
+        guard let threeDayVC = ThreeDayViewController.instantiate as? ThreeDayViewController else {
+            return
+        }
+        
+        threeDayVC.goal = goal
+        navigationController?.pushViewController(threeDayVC, animated: true)
+    }
 }
 
 extension GoalListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        Logger.log("clicked: \(indexPath.row)")
+        goThreeDayVC(goal: testArr[indexPath.row])
     }
 }
 
