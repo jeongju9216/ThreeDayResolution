@@ -6,24 +6,16 @@
 //
 
 import UIKit
+import Combine
 
 final class GoalListViewController: UIViewController {
     
-    //MARK: - Properties
-    private let viewModel: GoalListViewModel = GoalListViewModel()
-    private var testArr: [Goal] = [
-        Goal(goal: "TEST3", count: 3, createdAt: .init(), lastCompletedDate: .init(timeIntervalSinceNow: 0)),
-        Goal(goal: "TEST1", count: 1, createdAt: .init(), lastCompletedDate: .init(timeIntervalSinceNow: -86400)),
-        Goal(goal: "TEST2", count: 2, createdAt: .init(), lastCompletedDate: .init(timeIntervalSinceNow: 0)),
-        Goal(goal: "TEST3", count: 2, createdAt: .init(), lastCompletedDate: .init(timeIntervalSinceNow: -10000000)),
-        Goal(goal: "TEST4", count: 0, createdAt: .init())
-    ]
-    
-    private var bookmarkedList: [Goal] = []
-    
-    
     //MARK: - Views
     private let goalListView: GoalListView = GoalListView()
+    
+    //MARK: - Properties
+    private let viewModel: GoalListViewModel = GoalListViewModel(fetchUseCase: FetchGoalUseCase())
+    private var cancellables: Set<AnyCancellable> = []
     
     //MARK: - Life Cycles
     override func loadView() {
@@ -32,8 +24,29 @@ final class GoalListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupUI()
+        bind()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        Task {
+            viewModel.action(.fetch)
+        }
+    }
+    
+    private func bind() {
+        viewModel.$goals
+            .sink { [weak self] goals in
+                self?.goalListView.collectionView.reloadData()
+            }.store(in: &cancellables)
+        
+        viewModel.$bookmarkedGoals
+            .sink { [weak self] bookmarkedGoals in
+                self?.goalListView.collectionView.reloadData()
+            }.store(in: &cancellables)
     }
     
     //MARK: - Setup
@@ -52,7 +65,7 @@ final class GoalListViewController: UIViewController {
         //네비게이션바 아이템 적용
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "작심 0일", style: .done, target: self, action: nil)
         navigationItem.rightBarButtonItems = [
-            UIBarButtonItem(image: UIImage(systemName: "plus.app"), style: .done, target: self, action: #selector(goGoalVC)),
+            UIBarButtonItem(image: UIImage(systemName: "plus.app.fill"), style: .done, target: self, action: #selector(goGoalVC)),
         ]
         
         //네비게이션바 아이템 색상 적용
@@ -82,13 +95,24 @@ final class GoalListViewController: UIViewController {
 
 extension GoalListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        goThreeDayVC(goal: testArr[indexPath.row])
+        var section = indexPath.section
+        if viewModel.bookmarkedGoals.isEmpty {
+            section += 1
+        }
+        
+        switch GoalListSections(rawValue: section) {
+        case .bookmark:
+            goThreeDayVC(goal: viewModel.bookmarkedGoals[indexPath.row])
+        case .goal:
+            goThreeDayVC(goal: viewModel.goals[indexPath.row])
+        default: break
+        }
     }
 }
 
 extension GoalListViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        if bookmarkedList.isEmpty {
+        if viewModel.bookmarkedGoals.isEmpty {
             return 1
         } else {
             return 2
@@ -96,14 +120,17 @@ extension GoalListViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if bookmarkedList.isEmpty {
-            return testArr.count
-        } else {
-            if section == 0 {
-                return bookmarkedList.count
-            } else {
-                return testArr.count
-            }
+        var section = section
+        if viewModel.bookmarkedGoals.isEmpty {
+            section += 1
+        }
+        
+        switch GoalListSections(rawValue: section) {
+        case .bookmark:
+            return viewModel.bookmarkedGoals.count
+        case .goal:
+            return viewModel.goals.count
+        default: return 0
         }
     }
     
@@ -113,14 +140,17 @@ extension GoalListViewController: UICollectionViewDataSource {
             return defaultCell
         }
         
-        if bookmarkedList.isEmpty {
-            cell.configuration(goal: testArr[indexPath.row])
-        } else {
-            if indexPath.section == 0 {
-                cell.configuration(goal: bookmarkedList[indexPath.row])
-            } else {
-                cell.configuration(goal: testArr[indexPath.row])
-            }
+        var section = indexPath.section
+        if viewModel.bookmarkedGoals.isEmpty {
+            section += 1
+        }
+        
+        switch GoalListSections(rawValue: section) {
+        case .bookmark:
+            cell.configuration(goal: viewModel.bookmarkedGoals[indexPath.row])
+        case .goal:
+            cell.configuration(goal: viewModel.goals[indexPath.row])
+        default: break
         }
         
         return cell
@@ -139,13 +169,22 @@ extension GoalListViewController: UICollectionViewDataSource {
             return defaultCell
         }
         
-        
-        if bookmarkedList.isEmpty {
-            headerCell.configuration("목표")
-        } else {
-            headerCell.configuration(indexPath.section == 0 ? "즐겨찾기" : "목표")
+        var section = indexPath.section
+        if viewModel.bookmarkedGoals.isEmpty {
+            section += 1
         }
         
+        switch GoalListSections(rawValue: section) {
+        case .bookmark:
+            if viewModel.bookmarkedGoals.isEmpty {
+                headerCell.configuration("")
+            } else {
+                headerCell.configuration(GoalListSections.bookmark.title)
+            }
+        case .goal:
+            headerCell.configuration(GoalListSections.goal.title)
+        default: break
+        }
         
         return headerCell
     }

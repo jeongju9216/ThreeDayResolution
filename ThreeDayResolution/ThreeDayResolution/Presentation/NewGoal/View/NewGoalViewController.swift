@@ -17,8 +17,8 @@ final class NewGoalViewController: UIViewController {
     @IBOutlet weak var tipLabel: UILabel!
     
     //MARK: - Properties
+    private let viewModel: NewGoalViewModel = NewGoalViewModel(saveUseCase: .init())
     private let maxGoalLength = 15
-    private let viewModel: NewGoalViewModel = NewGoalViewModel()
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
@@ -122,7 +122,7 @@ final class NewGoalViewController: UIViewController {
     }
     
     private func saveGoal(with goal: Goal) {
-        
+        viewModel.action(.save(goal))
     }
     
     private func enableStartButton() {

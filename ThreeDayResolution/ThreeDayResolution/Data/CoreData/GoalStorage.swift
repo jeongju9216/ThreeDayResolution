@@ -18,6 +18,7 @@ struct GoalStorage {
         let request = EntityType.fetchRequest()
         
         let contentEntities = try context.fetch(request)
+                
         return contentEntities.compactMap { toModel($0) }
     }
     
@@ -25,6 +26,7 @@ struct GoalStorage {
         let context = CoreDataStorage.shared.context
         
         let entity = toEntity(goal, context: context)
+        Logger.log("Save: \(entity)")
         
         try context.save()
     }
@@ -55,7 +57,7 @@ struct GoalStorage {
 
     private func filteredRequestWith(goal: String, createdAt: Date) -> NSFetchRequest<NSFetchRequestResult> {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
-        fetchRequest.predicate = NSPredicate(format: "goal == %@ && createdAt == %@", "\(goal)", "\(createdAt)")
+        fetchRequest.predicate = NSPredicate(format: "goal == %@ && createdAt == %@", "\(goal)", createdAt as NSDate)
         return fetchRequest
     }
 
@@ -76,15 +78,14 @@ extension GoalStorage {
     
     private func toModel(_ entity: EntityType) -> Goal? {
         guard let goal = entity.goal,
-              let createdAt = entity.createdAt,
-              let lastCompletedDate = entity.lastCompletedDate else {
+              let createdAt = entity.createdAt else {
             return nil
         }
         
         return .init(goal: goal,
                      count: Int(entity.count),
                      createdAt: createdAt,
-                     lastCompletedDate: lastCompletedDate,
+                     lastCompletedDate: entity.lastCompletedDate,
                      isBookmarked: entity.isBookmarked)
     }
 }
