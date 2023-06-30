@@ -9,9 +9,6 @@ import Foundation
 
 struct LaunchViewModel {
     
-    //MARK: - Properties
-    init() { }
-    
     //MARK: - Methods
     func launch() async -> StateData {
         let serverStateData: StateData = await getServerStateData()

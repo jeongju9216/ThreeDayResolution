@@ -36,6 +36,19 @@ final class GoalListView: UIView {
         return collectionView
     }()
     
+    private var emptyLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        label.text = "도전 중인 목표가 없습니다.\n새로운 목표에 도전하세요."
+        label.numberOfLines = 2
+        label.textColor = .white
+        label.font = UIFont.appleSDGothicNeoFont(ofSize: 21)
+        label.textAlignment = .center
+        
+        return label
+    }()
+    
     //MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -51,6 +64,7 @@ final class GoalListView: UIView {
         self.backgroundColor = .main
         
         setupCollectionView()
+        setupEmptyLabel()
     }
     
     private func setupCollectionView() {
@@ -60,6 +74,25 @@ final class GoalListView: UIView {
             collectionView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor),
             collectionView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor)
         ])
+    }
+    
+    private func setupEmptyLabel() {
+        addSubview(emptyLabel)
+        NSLayoutConstraint.activate([
+            emptyLabel.centerXAnchor.constraint(equalTo: collectionView.centerXAnchor),
+            emptyLabel.centerYAnchor.constraint(equalTo: collectionView.centerYAnchor)
+        ])
+    }
+    
+    //MARK: - Methods
+    func showEmptyUI() {
+        collectionView.isHidden = true
+        emptyLabel.isHidden = false
+    }
+    
+    func showListUI() {
+        collectionView.isHidden = false
+        emptyLabel.isHidden = true
     }
     
     private func createCollectionViewLayout() -> UICollectionViewLayout {

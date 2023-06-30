@@ -74,6 +74,18 @@ final class ThreeDayViewController: UIViewController {
         }
     }
     
+    @objc private func clickedBookmarkedButton() {
+        goal.isBookmarked.toggle()
+    
+        if goal.isBookmarked {
+            navigationItem.rightBarButtonItems?.last?.image = UIImage(systemName: "star.fill")
+        } else {
+            navigationItem.rightBarButtonItems?.last?.image = UIImage(systemName: "star")
+        }
+        
+        viewModel.action(.update(goal))
+    }
+    
     //MARK: - Setup
     private func setupUI() {
         setupNavigationBar()
@@ -87,8 +99,10 @@ final class ThreeDayViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
+        let bookmarkedImage: UIImage? = goal.isBookmarked ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
         navigationItem.rightBarButtonItems = [
             UIBarButtonItem(image: UIImage(systemName: "flag.fill"), style: .done, target: self, action: #selector(giveUp)),
+            UIBarButtonItem(image: bookmarkedImage, style: .done, target: self, action: #selector(clickedBookmarkedButton)),
         ]
     }
     

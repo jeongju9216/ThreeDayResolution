@@ -15,7 +15,6 @@ final class GoalListViewController: UIViewController {
     
     //MARK: - Properties
     private let viewModel: GoalListViewModel = GoalListViewModel(fetchUseCase: FetchGoalUseCase())
-    private var cancellables: Set<AnyCancellable> = []
     
     //MARK: - Life Cycles
     override func loadView() {
@@ -26,7 +25,6 @@ final class GoalListViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
-        bind()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,19 +32,14 @@ final class GoalListViewController: UIViewController {
         
         Task {
             viewModel.action(.fetch)
+            
+            if viewModel.isEmptyList {
+                goalListView.showEmptyUI()
+            } else {
+                goalListView.collectionView.reloadData()
+                goalListView.showListUI()
+            }
         }
-    }
-    
-    private func bind() {
-        viewModel.$goals
-            .sink { [weak self] goals in
-                self?.goalListView.collectionView.reloadData()
-            }.store(in: &cancellables)
-        
-        viewModel.$bookmarkedGoals
-            .sink { [weak self] bookmarkedGoals in
-                self?.goalListView.collectionView.reloadData()
-            }.store(in: &cancellables)
     }
     
     //MARK: - Setup
@@ -63,7 +56,7 @@ final class GoalListViewController: UIViewController {
         navigationController?.navigationBar.scrollEdgeAppearance = navigationBarAppearance
         
         //네비게이션바 아이템 적용
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "작심 0일", style: .done, target: self, action: nil)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "작심 \(BaseData.shared.runCount)일", style: .done, target: self, action: nil)
         navigationItem.rightBarButtonItems = [
             UIBarButtonItem(image: UIImage(systemName: "plus.app.fill"), style: .done, target: self, action: #selector(goGoalVC)),
         ]

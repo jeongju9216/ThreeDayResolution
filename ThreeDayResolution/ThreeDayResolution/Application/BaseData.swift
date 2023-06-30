@@ -7,6 +7,11 @@
 
 import Foundation
 
+enum RunAppKey: String {
+    case runDateKey = "Rundate"
+    case runCountKey = "RunCount"
+}
+
 final class BaseData {
     static var shared = BaseData()
     private init() { }
@@ -22,6 +27,23 @@ final class BaseData {
     var forcedUpdateVersion = "" //강제 업데이트 버전
     
     var policyURL: String = ""
+    
+    var lastRunDate: Date? {
+        get {
+            UserDefaults.standard.object(forKey: RunAppKey.runDateKey.rawValue) as? Date
+        }
+        set(newValue) {
+            UserDefaults.standard.set(newValue, forKey: RunAppKey.runDateKey.rawValue)
+        }
+    }
+    var runCount: Int {
+        get {
+            UserDefaults.standard.integer(forKey: RunAppKey.runCountKey.rawValue)
+        }
+        set(newValue) {
+            UserDefaults.standard.set(newValue, forKey: RunAppKey.runCountKey.rawValue)
+        }
+    }
 }
 
 extension BaseData {
