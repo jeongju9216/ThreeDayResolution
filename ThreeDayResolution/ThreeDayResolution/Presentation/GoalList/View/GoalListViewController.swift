@@ -65,7 +65,7 @@ final class GoalListViewController: UIViewController {
         //네비게이션바 아이템 적용
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "작심 0일", style: .done, target: self, action: nil)
         navigationItem.rightBarButtonItems = [
-            UIBarButtonItem(image: UIImage(systemName: "plus.app"), style: .done, target: self, action: #selector(goGoalVC)),
+            UIBarButtonItem(image: UIImage(systemName: "plus.app.fill"), style: .done, target: self, action: #selector(goGoalVC)),
         ]
         
         //네비게이션바 아이템 색상 적용
