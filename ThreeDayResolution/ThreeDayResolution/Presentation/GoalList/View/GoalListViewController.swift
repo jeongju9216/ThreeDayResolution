@@ -15,7 +15,6 @@ final class GoalListViewController: UIViewController {
     
     //MARK: - Properties
     private let viewModel: GoalListViewModel = GoalListViewModel(fetchUseCase: FetchGoalUseCase())
-    private var cancellables: Set<AnyCancellable> = []
     
     //MARK: - Life Cycles
     override func loadView() {
@@ -26,7 +25,6 @@ final class GoalListViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
-        bind()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,19 +32,14 @@ final class GoalListViewController: UIViewController {
         
         Task {
             viewModel.action(.fetch)
+            
+            if viewModel.isEmptyList {
+                goalListView.showEmptyUI()
+            } else {
+                goalListView.collectionView.reloadData()
+                goalListView.showListUI()
+            }
         }
-    }
-    
-    private func bind() {
-        viewModel.$goals
-            .sink { [weak self] goals in
-                self?.goalListView.collectionView.reloadData()
-            }.store(in: &cancellables)
-        
-        viewModel.$bookmarkedGoals
-            .sink { [weak self] bookmarkedGoals in
-                self?.goalListView.collectionView.reloadData()
-            }.store(in: &cancellables)
     }
     
     //MARK: - Setup

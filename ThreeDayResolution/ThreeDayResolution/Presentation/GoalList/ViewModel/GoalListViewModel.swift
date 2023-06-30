@@ -14,8 +14,11 @@ enum GoalListViewModelActions {
 
 final class GoalListViewModel {
     private let fetchUseCase: FetchGoalUseCase
-    @Published private(set) var goals: [Goal] = []
-    @Published private(set) var bookmarkedGoals: [Goal] = []
+    private(set) var goals: [Goal] = []
+    private(set) var bookmarkedGoals: [Goal] = []
+    var isEmptyList: Bool {
+        return goals.isEmpty && bookmarkedGoals.isEmpty
+    }
     
     init(fetchUseCase: FetchGoalUseCase) {
         self.fetchUseCase = fetchUseCase
@@ -35,8 +38,6 @@ extension GoalListViewModel {
             let result = try fetchUseCase.excute()
             goals = result.filter { !$0.isBookmarked }
             bookmarkedGoals = result.filter { $0.isBookmarked }
-            
-            print("fetch result: \(result)")
         } catch {
             goals = []
         }
