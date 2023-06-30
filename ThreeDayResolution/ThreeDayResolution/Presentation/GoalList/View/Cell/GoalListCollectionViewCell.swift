@@ -123,7 +123,7 @@ final class GoalListCollectionViewCell: UICollectionViewCell {
         
         //그림자
         contentView.layer.masksToBounds = false
-        contentView.layer.shadowOpacity = 0.8
+        contentView.layer.shadowOpacity = 0.3
         contentView.layer.shadowRadius = 5
         contentView.layer.shadowOffset = .zero
         contentView.layer.shadowColor = UIColor.darkGray.cgColor

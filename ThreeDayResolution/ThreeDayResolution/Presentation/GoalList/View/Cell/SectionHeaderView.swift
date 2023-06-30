@@ -15,7 +15,7 @@ class SectionHeaderView: UICollectionReusableView {
         label.translatesAutoresizingMaskIntoConstraints = false
         
         label.font = UIFont.appleSDGothicNeoFont(ofSize: 24)
-        label.textColor = .white
+        label.textColor = .tabBarItem
         
         return label
     }()

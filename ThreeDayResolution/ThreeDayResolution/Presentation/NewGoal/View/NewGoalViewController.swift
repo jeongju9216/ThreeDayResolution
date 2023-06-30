@@ -52,7 +52,7 @@ final class NewGoalViewController: UIViewController {
     }
     
     private func setupStartButton() {
-        startButton.setTitleColor(.main, for: .normal)
+        startButton.setTitleColor(.buttonTitleColor, for: .normal)
         startButton.setTitleColor(.lightGray, for: .disabled)
         startButton.layer.cornerRadius = 5
         startButton.createShadow()

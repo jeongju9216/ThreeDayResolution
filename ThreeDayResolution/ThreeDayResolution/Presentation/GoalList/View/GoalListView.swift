@@ -25,7 +25,7 @@ final class GoalListView: UIView {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createCollectionViewLayout())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         
-        collectionView.backgroundColor = .main
+        collectionView.backgroundColor = .tabBackground
         collectionView.contentInset = .init(top: 20, left: 0, bottom: 0, right: 0) //상단 여백 추가
         collectionView.showsVerticalScrollIndicator = false
         
@@ -42,8 +42,8 @@ final class GoalListView: UIView {
         
         label.text = "도전 중인 목표가 없습니다.\n새로운 목표에 도전하세요."
         label.numberOfLines = 2
-        label.textColor = .white
-        label.font = UIFont.appleSDGothicNeoFont(ofSize: 21)
+        label.textColor = .tabBarItem
+        label.font = UIFont.appleSDGothicNeoFont(ofSize: 18)
         label.textAlignment = .center
         
         return label
@@ -61,7 +61,7 @@ final class GoalListView: UIView {
     
     //MARK: - Setup
     private func setupUI() {
-        self.backgroundColor = .main
+        self.backgroundColor = .tabBackground
         
         setupCollectionView()
         setupEmptyLabel()
@@ -71,8 +71,8 @@ final class GoalListView: UIView {
         addSubview(collectionView)
         NSLayoutConstraint.activate([
             collectionView.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor),
-            collectionView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor),
-            collectionView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor)
+            collectionView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
     
