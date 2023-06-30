@@ -111,7 +111,7 @@ final class GoalListCollectionViewCell: UICollectionViewCell {
     }
     
     private func resetUI() {
-        maskingView.isHidden = true
+        unmasking()
         completeImageView.image = nil
         titleLabel.text = ""
         lastCompletedDateLabel.text = ""
@@ -201,5 +201,15 @@ final class GoalListCollectionViewCell: UICollectionViewCell {
         countLabel.alpha = 0.5
         
         contentView.layer.shadowOpacity = 0
+    }
+    
+    private func unmasking() {
+        maskingView.isHidden = true
+        
+        completeImageView.alpha = 1
+        labelStackView.alpha = 1
+        countLabel.alpha = 1
+        
+        contentView.layer.shadowOpacity = 0.8
     }
 }
