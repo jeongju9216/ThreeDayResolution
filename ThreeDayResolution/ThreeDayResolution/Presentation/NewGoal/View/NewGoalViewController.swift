@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol NewGoalViewControllerDelegate: AnyObject {
+    func goThreeDayVC(goal: Goal)
+}
+
 final class NewGoalViewController: UIViewController {
 
     //MARK: - Views
@@ -19,6 +23,7 @@ final class NewGoalViewController: UIViewController {
     //MARK: - Properties
     private let viewModel: NewGoalViewModel = NewGoalViewModel(saveUseCase: .init())
     private let maxGoalLength = 15
+    weak var newGoalViewControllerDelegate: NewGoalViewControllerDelegate?
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
@@ -35,7 +40,16 @@ final class NewGoalViewController: UIViewController {
     
     //MARK: - IBActions
     @IBAction func clickedStartButton(_ sender: UIButton) {
-        goThreeDayVC()
+        guard let goalText = goalTextField.text else {
+            return
+        }
+
+        let goal = Goal(goal: goalText, createdAt: Date())
+        saveGoal(with: goal)
+
+        dismiss(animated: true) { [weak self] in
+            self?.newGoalViewControllerDelegate?.goThreeDayVC(goal: goal)
+        }
     }
     
     //MARK: - Setup
@@ -107,20 +121,6 @@ final class NewGoalViewController: UIViewController {
     }
     
     //MARK: - Methods
-    private func goThreeDayVC() {
-        guard let goalText = goalTextField.text,
-              let threeDayVC = ThreeDayViewController.instantiate as? ThreeDayViewController else {
-            return
-        }
-        
-        let goal = Goal(goal: goalText, createdAt: .init())
-        
-        saveGoal(with: goal)
-        
-        threeDayVC.goal = goal
-        navigationController?.pushViewController(threeDayVC, animated: true)
-    }
-    
     private func saveGoal(with goal: Goal) {
         viewModel.action(.save(goal))
     }
