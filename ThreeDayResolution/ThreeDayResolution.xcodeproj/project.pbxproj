@@ -11,16 +11,12 @@
 		9B1A0CF727891D360085B9CF /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1A0CF627891D360085B9CF /* Goal.swift */; };
 		9B26C97A28CA18E100B1D7EF /* NewGoalViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B26C97928CA18E100B1D7EF /* NewGoalViewController.storyboard */; };
 		9B26C97C28CA1B3600B1D7EF /* ThreeDayViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B26C97B28CA1B3600B1D7EF /* ThreeDayViewController.storyboard */; };
-		9B26C98128CA204C00B1D7EF /* InfoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B26C98028CA204C00B1D7EF /* InfoViewController.storyboard */; };
-		9B26C98328CA231900B1D7EF /* MoreViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B26C98228CA231900B1D7EF /* MoreViewController.storyboard */; };
 		9B26C98528CAC23000B1D7EF /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B26C98428CAC23000B1D7EF /* UIViewController.swift */; };
-		9B65DAE32787270000F01979 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B65DAE22787270000F01979 /* MoreViewController.swift */; };
 		9B65DAE5278728DA00F01979 /* BMHANNAProOTF.otf.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B65DAE4278728DA00F01979 /* BMHANNAProOTF.otf.ttf */; };
 		9B6CF8FC27A53A76007384B2 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6CF8FA27A53A76007384B2 /* AlertViewController.swift */; };
 		9B6CF8FD27A53A76007384B2 /* AlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B6CF8FB27A53A76007384B2 /* AlertViewController.xib */; };
 		9B6CF90127A778F5007384B2 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6CF90027A778F5007384B2 /* InfoViewController.swift */; };
 		9B6CF90C27C0FC43007384B2 /* BaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6CF90B27C0FC43007384B2 /* BaseData.swift */; };
-		9B7639072A4D53870099B94C /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7639062A4D53870099B94C /* MainTabBarViewController.swift */; };
 		9B7639092A4D557D0099B94C /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7639082A4D557D0099B94C /* UIColor.swift */; };
 		9B76390D2A4D61440099B94C /* GoalListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B76390C2A4D61440099B94C /* GoalListViewController.swift */; };
 		9B7639102A4D61700099B94C /* GoalListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B76390F2A4D61700099B94C /* GoalListViewModel.swift */; };
@@ -39,6 +35,7 @@
 		9B7639392A4EA0450099B94C /* GoalRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7639382A4EA0450099B94C /* GoalRepositoryProtocol.swift */; };
 		9B76393B2A4EA12C0099B94C /* GoalUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B76393A2A4EA12C0099B94C /* GoalUseCaseProtocol.swift */; };
 		9B76393D2A4EA4D70099B94C /* GoalUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B76393C2A4EA4D70099B94C /* GoalUseCase.swift */; };
+		9B7639402A4EC9650099B94C /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B76393F2A4EC9650099B94C /* InfoView.swift */; };
 		9B83DC3A2A4D2C970073FBBC /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B83DC392A4D2C970073FBBC /* LaunchViewController.swift */; };
 		9B83DC3C2A4D2E5C0073FBBC /* LaunchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B83DC3B2A4D2E5C0073FBBC /* LaunchViewController.storyboard */; };
 		9B83DC3E2A4D33890073FBBC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B83DC3D2A4D33890073FBBC /* GoogleService-Info.plist */; };
@@ -60,16 +57,12 @@
 		9B1A0CF627891D360085B9CF /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		9B26C97928CA18E100B1D7EF /* NewGoalViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewGoalViewController.storyboard; sourceTree = "<group>"; };
 		9B26C97B28CA1B3600B1D7EF /* ThreeDayViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ThreeDayViewController.storyboard; sourceTree = "<group>"; };
-		9B26C98028CA204C00B1D7EF /* InfoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InfoViewController.storyboard; sourceTree = "<group>"; };
-		9B26C98228CA231900B1D7EF /* MoreViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MoreViewController.storyboard; sourceTree = "<group>"; };
 		9B26C98428CAC23000B1D7EF /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
-		9B65DAE22787270000F01979 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		9B65DAE4278728DA00F01979 /* BMHANNAProOTF.otf.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BMHANNAProOTF.otf.ttf; sourceTree = "<group>"; };
 		9B6CF8FA27A53A76007384B2 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		9B6CF8FB27A53A76007384B2 /* AlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertViewController.xib; sourceTree = "<group>"; };
 		9B6CF90027A778F5007384B2 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		9B6CF90B27C0FC43007384B2 /* BaseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseData.swift; sourceTree = "<group>"; };
-		9B7639062A4D53870099B94C /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		9B7639082A4D557D0099B94C /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		9B76390C2A4D61440099B94C /* GoalListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalListViewController.swift; sourceTree = "<group>"; };
 		9B76390F2A4D61700099B94C /* GoalListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalListViewModel.swift; sourceTree = "<group>"; };
@@ -88,6 +81,7 @@
 		9B7639382A4EA0450099B94C /* GoalRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalRepositoryProtocol.swift; sourceTree = "<group>"; };
 		9B76393A2A4EA12C0099B94C /* GoalUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalUseCaseProtocol.swift; sourceTree = "<group>"; };
 		9B76393C2A4EA4D70099B94C /* GoalUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalUseCase.swift; sourceTree = "<group>"; };
+		9B76393F2A4EC9650099B94C /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		9B83DC392A4D2C970073FBBC /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		9B83DC3B2A4D2E5C0073FBBC /* LaunchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchViewController.storyboard; sourceTree = "<group>"; };
 		9B83DC3D2A4D33890073FBBC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -129,8 +123,7 @@
 		9B26C97E28CA203C00B1D7EF /* InfoScreen */ = {
 			isa = PBXGroup;
 			children = (
-				9B6CF90027A778F5007384B2 /* InfoViewController.swift */,
-				9B26C98028CA204C00B1D7EF /* InfoViewController.storyboard */,
+				9B76393E2A4EC9540099B94C /* View */,
 			);
 			path = InfoScreen;
 			sourceTree = "<group>";
@@ -163,31 +156,6 @@
 				9B7639252A4E78000099B94C /* UIFont.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		9B6CF90527AEB6BF007384B2 /* MoreScreen */ = {
-			isa = PBXGroup;
-			children = (
-				9B65DAE22787270000F01979 /* MoreViewController.swift */,
-				9B26C98228CA231900B1D7EF /* MoreViewController.storyboard */,
-			);
-			path = MoreScreen;
-			sourceTree = "<group>";
-		};
-		9B7639042A4D53660099B94C /* MainTabBar */ = {
-			isa = PBXGroup;
-			children = (
-				9B7639052A4D53720099B94C /* View */,
-			);
-			path = MainTabBar;
-			sourceTree = "<group>";
-		};
-		9B7639052A4D53720099B94C /* View */ = {
-			isa = PBXGroup;
-			children = (
-				9B7639062A4D53870099B94C /* MainTabBarViewController.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		9B76390A2A4D60E20099B94C /* GoalList */ = {
@@ -294,16 +262,23 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
+		9B76393E2A4EC9540099B94C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9B6CF90027A778F5007384B2 /* InfoViewController.swift */,
+				9B76393F2A4EC9650099B94C /* InfoView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		9B83DC2E2A4C193B0073FBBC /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
 				9B83DC372A4D2C480073FBBC /* Launch */,
-				9B7639042A4D53660099B94C /* MainTabBar */,
 				9B76390A2A4D60E20099B94C /* GoalList */,
 				9B6CF90227AEB5D0007384B2 /* NewGoal */,
 				9B6CF90327AEB5E5007384B2 /* ThreeDay */,
 				9B26C97E28CA203C00B1D7EF /* InfoScreen */,
-				9B6CF90527AEB6BF007384B2 /* MoreScreen */,
 				9B26C97D28CA201700B1D7EF /* AlertViewController */,
 				9B6CF90427AEB6B1007384B2 /* Extensions */,
 			);
@@ -546,8 +521,6 @@
 				9BF6C2062781DC4900E486CE /* Assets.xcassets in Resources */,
 				9B6CF8FD27A53A76007384B2 /* AlertViewController.xib in Resources */,
 				9B83DC3E2A4D33890073FBBC /* GoogleService-Info.plist in Resources */,
-				9B26C98328CA231900B1D7EF /* MoreViewController.storyboard in Resources */,
-				9B26C98128CA204C00B1D7EF /* InfoViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,14 +535,13 @@
 				9B6CF90127A778F5007384B2 /* InfoViewController.swift in Sources */,
 				9B76393D2A4EA4D70099B94C /* GoalUseCase.swift in Sources */,
 				9B76392F2A4E998E0099B94C /* CoreData.xcdatamodeld in Sources */,
+				9B7639402A4EC9650099B94C /* InfoView.swift in Sources */,
 				9B6CF90C27C0FC43007384B2 /* BaseData.swift in Sources */,
-				9B7639072A4D53870099B94C /* MainTabBarViewController.swift in Sources */,
 				9B76392A2A4E83B80099B94C /* ThreeDayViewModel.swift in Sources */,
 				9B1A0CF42789190C0085B9CF /* ThreeDayViewController.swift in Sources */,
 				9B76392C2A4E99700099B94C /* CoreDataStorage.swift in Sources */,
 				9B76393B2A4EA12C0099B94C /* GoalUseCaseProtocol.swift in Sources */,
 				9B83DC4E2A4D3A820073FBBC /* VersionData.swift in Sources */,
-				9B65DAE32787270000F01979 /* MoreViewController.swift in Sources */,
 				9B83DC512A4D3DCD0073FBBC /* Logger.swift in Sources */,
 				9B7639192A4D93990099B94C /* GoalListCollectionViewCell.swift in Sources */,
 				9B7639162A4D73C50099B94C /* GoalListView.swift in Sources */,
