@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -22,17 +23,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Myq-6t-14r">
-                                <rect key="frame" x="121" y="263" width="172.5" height="29"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="목표를 정해보세요">
-                                        <attributes>
-                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="24" name="AppleSDGothicNeo-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="새로운 목표" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Myq-6t-14r">
+                                <rect key="frame" x="152" y="263" width="110.5" height="29"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tsJ-yG-QpI">
@@ -50,23 +44,11 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="175" id="eRZ-dQ-cAo"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="63.5" id="nCY-mE-c30"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="BMHANNAProOTF" family="BM HANNA Pro OTF" pointSize="32"/>
+                                <fontDescription key="fontDescription" name="BMHANNAProOTF" family="BM Hanna Pro" pointSize="24"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="작심삼일 시작">
-                                    <color key="titleColor" name="MainColor"/>
+                                    <color key="titleColor" name="LabelColor"/>
                                 </state>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="작심삼일 시작">
-                                            <attributes>
-                                                <font key="NSFont" size="24" name="BMHANNAProOTF"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                    <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
-                                    <color key="baseForegroundColor" name="LabelColor"/>
-                                </buttonConfiguration>
                                 <connections>
                                     <action selector="clickedStartButton:" destination="xye-D0-tbs" eventType="touchUpInside" id="VZD-Uk-qw7"/>
                                 </connections>
@@ -79,12 +61,19 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(0/15)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1W-it-7IG">
+                                <rect key="frame" x="355.5" y="376.5" width="38.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" systemColor="systemBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fhB-nM-NVv"/>
                         <color key="backgroundColor" name="MainColor"/>
                         <constraints>
                             <constraint firstItem="tsJ-yG-QpI" firstAttribute="leading" secondItem="fhB-nM-NVv" secondAttribute="leading" constant="20" id="5jD-jl-8g6"/>
                             <constraint firstItem="tsJ-yG-QpI" firstAttribute="top" secondItem="Myq-6t-14r" secondAttribute="bottom" constant="14" id="DWr-tC-3XB"/>
+                            <constraint firstItem="d1W-it-7IG" firstAttribute="top" secondItem="fD8-Ge-3iR" secondAttribute="bottom" constant="5" id="SnS-Ak-Vtn"/>
                             <constraint firstItem="fhB-nM-NVv" firstAttribute="trailing" secondItem="tsJ-yG-QpI" secondAttribute="trailing" constant="20" id="TBS-4I-rQe"/>
                             <constraint firstItem="tfQ-ED-iOZ" firstAttribute="top" secondItem="tsJ-yG-QpI" secondAttribute="bottom" constant="30" id="XVX-lP-MrI"/>
                             <constraint firstItem="tsJ-yG-QpI" firstAttribute="trailing" secondItem="fD8-Ge-3iR" secondAttribute="trailing" constant="10" id="blS-Bp-0Mb"/>
@@ -94,6 +83,7 @@
                             <constraint firstItem="tfQ-ED-iOZ" firstAttribute="centerX" secondItem="Vx1-yh-AXH" secondAttribute="centerX" id="qkp-qw-aSe"/>
                             <constraint firstItem="fD8-Ge-3iR" firstAttribute="centerY" secondItem="tsJ-yG-QpI" secondAttribute="centerY" id="rye-oi-tNe"/>
                             <constraint firstItem="fD8-Ge-3iR" firstAttribute="leading" secondItem="tsJ-yG-QpI" secondAttribute="leading" constant="10" id="s7a-7W-suM"/>
+                            <constraint firstItem="fhB-nM-NVv" firstAttribute="trailing" secondItem="d1W-it-7IG" secondAttribute="trailing" constant="20" id="sr6-xn-E2C"/>
                             <constraint firstItem="Myq-6t-14r" firstAttribute="centerX" secondItem="Vx1-yh-AXH" secondAttribute="centerX" id="tM4-Y0-BEt"/>
                         </constraints>
                     </view>
@@ -103,6 +93,7 @@
                         <outlet property="goalBackgroundView" destination="tsJ-yG-QpI" id="5dK-r3-rEA"/>
                         <outlet property="goalTextField" destination="fD8-Ge-3iR" id="ECr-cX-8gJ"/>
                         <outlet property="startButton" destination="tfQ-ED-iOZ" id="yyo-a8-dUv"/>
+                        <outlet property="textCountLabel" destination="d1W-it-7IG" id="IuY-ad-LIo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QmZ-L8-HNt" sceneMemberID="firstResponder"/>
@@ -120,5 +111,8 @@
         <namedColor name="TextFieldColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

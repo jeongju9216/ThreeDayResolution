@@ -13,6 +13,7 @@ final class NewGoalViewController: UIViewController {
     @IBOutlet weak var goalBackgroundView: UIView!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var goalTextField: UITextField!
+    @IBOutlet weak var textCountLabel: UILabel!
     
     private let maxGoalLength = 15
     
@@ -43,8 +44,12 @@ final class NewGoalViewController: UIViewController {
     
     //MARK: - Methods
     private func setupViews() {
+        textCountLabel.text = "(0/\(maxGoalLength))"
+        
         goalBackgroundView.layer.cornerRadius = 15
 
+        startButton.setTitleColor(.main, for: .normal)
+        startButton.setTitleColor(.lightGray, for: .disabled)
         startButton.layer.cornerRadius = 5
         startButton.createShadow()
     }
@@ -66,6 +71,7 @@ extension NewGoalViewController: UITextFieldDelegate {
         }
         
         if text.count == 1 && string.isEmpty {
+            
             startButton.isEnabled = false
         } else {
             startButton.isEnabled = true
@@ -73,6 +79,7 @@ extension NewGoalViewController: UITextFieldDelegate {
         
         // 초과되는 텍스트 제거
         let newLength = text.count + string.count - range.length
+        textCountLabel.text = "(\(min(newLength, maxGoalLength))/\(maxGoalLength))"
         return newLength <= (maxGoalLength + 1)
     }
     
