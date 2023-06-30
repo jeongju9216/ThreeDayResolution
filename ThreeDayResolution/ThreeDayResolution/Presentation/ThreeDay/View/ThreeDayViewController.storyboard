@@ -82,9 +82,6 @@
                                     </attributedString>
                                     <color key="titleColor" name="LabelColor"/>
                                 </state>
-                                <connections>
-                                    <action selector="clickedDoneButton:" destination="uJl-Z5-msg" eventType="touchUpInside" id="H2S-Xo-oOE"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕하세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKl-ah-fai">
                                 <rect key="frame" x="20" y="68" width="374" height="29"/>
@@ -113,7 +110,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="dayLabel" destination="6ba-i7-gZ2" id="1BM-8G-ibw"/>
-                        <outlet property="doneButton" destination="fCg-V7-GwP" id="izx-0u-zFE"/>
+                        <outlet property="doneButton" destination="fCg-V7-GwP" id="tS5-03-R3y"/>
                         <outlet property="firstView" destination="3X5-Ba-d6c" id="1Uh-H9-Teu"/>
                         <outlet property="goalLabel" destination="cKl-ah-fai" id="kdM-Ki-Rf6"/>
                         <outlet property="secondView" destination="wsh-ju-eQU" id="7i7-aX-pek"/>

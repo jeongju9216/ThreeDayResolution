@@ -20,6 +20,7 @@ final class ThreeDayViewController: UIViewController {
     @IBOutlet weak var thirdView: UIView!
     
     //MARK: - Properties
+    private let viewModel: ThreeDayViewModel = ThreeDayViewModel(updateUseCase: .init())
     private lazy var dayViews: [UIView] = [firstView, secondView, thirdView]
     var goal = Goal(goal: "", createdAt: .init())
     
@@ -47,13 +48,13 @@ final class ThreeDayViewController: UIViewController {
         alertGiveUp()
     }
     
-    @IBAction func clickedDoneButton(_ sender: Any) {
+    @objc private func clickedDoneButton() {
         if goal.isCompleted {
             weakVibration()
             alert(message: "오늘은 이미 해내셨어요.\n내일도 파이팅!")
         } else {
             completeGoal()
-
+            
             let day = goal.count
             var fillCount: Int
             if day % 3 == 0 {
@@ -79,6 +80,7 @@ final class ThreeDayViewController: UIViewController {
         goalLabel.text = goal.goal
         dayLabel.text = goal.displayCount
         
+        doneButton.addTarget(self, action: #selector(clickedDoneButton), for: .touchUpInside)
         doneButton.layer.cornerRadius = 5
         doneButton.createShadow()
     }
@@ -115,6 +117,8 @@ final class ThreeDayViewController: UIViewController {
         goal.lastCompletedDate = Date()
         goal.count += 1
         dayLabel.text = goal.displayCount
+        
+        viewModel.action(.update(goal))
     }
     
     private func animateSquare() {
