@@ -9,10 +9,6 @@ import UIKit
 import AVFoundation
 
 final class ThreeDayViewController: UIViewController {
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
 
     //MARK: - IBOutlets
     @IBOutlet weak var goalLabel: UILabel!
@@ -25,11 +21,7 @@ final class ThreeDayViewController: UIViewController {
     
     //MARK: - Properties
     private lazy var dayViews: [UIView] = [firstView, secondView, thirdView]
-    private let dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        return formatter
-    }()
+    var goal = Goal(goal: "", createdAt: .init())
     
     //MARK: - Life Cycle
     override func viewDidLoad() {

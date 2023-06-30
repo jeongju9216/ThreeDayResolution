@@ -108,12 +108,20 @@ final class NewGoalViewController: UIViewController {
     
     //MARK: - Methods
     private func goThreeDayVC() {
-        let threeDayVC = ThreeDayViewController.instantiate
+        guard let goalText = goalTextField.text,
+              let threeDayVC = ThreeDayViewController.instantiate as? ThreeDayViewController else {
+            return
+        }
         
+        let goal = Goal(goal: goalText, createdAt: .init())
+        
+        saveGoal(with: goal)
+        
+        threeDayVC.goal = goal
         navigationController?.pushViewController(threeDayVC, animated: true)
     }
     
-    private func saveGoal() {
+    private func saveGoal(with goal: Goal) {
         
     }
     
