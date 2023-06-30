@@ -9,6 +9,9 @@ import Foundation
 
 struct LaunchViewModel {
     
+    private let runDateKey = "RunDate"
+    private let runCountKey = "RunCount"
+    
     //MARK: - Properties
     init() { }
     
@@ -22,6 +25,18 @@ struct LaunchViewModel {
         await fetchPolicyURL()
         
         return serverStateData
+    }
+    
+    func fetchLastRunDate() -> Date {
+        let date = UserDefaults.standard.object(forKey: runDateKey) as! Date
+        return date
+    }
+    
+    func saveRunDate() {
+        UserDefaults.standard.set(Date(), forKey: runDateKey)
+        
+        let runCount = UserDefaults.standard.integer(forKey: runCountKey) + 1
+        UserDefaults.standard.set(runCount, forKey: runCountKey)
     }
     
     private func getServerStateData() async -> StateData {

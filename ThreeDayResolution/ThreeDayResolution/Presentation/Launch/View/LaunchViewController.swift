@@ -10,7 +10,7 @@ import UIKit
 final class LaunchViewController: UIViewController {
     
     //MARK: - Properties
-    private var launchVM: LaunchViewModel = LaunchViewModel()
+    private var viewModel: LaunchViewModel = LaunchViewModel()
     
     //MARK: - Life Cycles
     override func viewDidLoad() {
@@ -22,7 +22,7 @@ final class LaunchViewController: UIViewController {
     //MARK: - Methods
     private func launch() {
         Task {
-            let state = await launchVM.launch()
+            let state = await viewModel.launch()
             switch state.state {
             case .ok:
                 goHomeVC()
@@ -40,5 +40,12 @@ final class LaunchViewController: UIViewController {
 
         dismiss(animated: false)
         present(mainTabBarVC, animated: false)
+    }
+    
+    private func countingRun() {
+        let lastRunDate = viewModel.fetchLastRunDate()
+        if Calendar.current.isDateInToday(lastRunDate) {
+            viewModel.saveRunDate()
+        }
     }
 }
