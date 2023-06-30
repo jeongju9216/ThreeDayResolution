@@ -16,11 +16,12 @@ final class GoalListCollectionViewCell: UICollectionViewCell {
         
         view.layer.cornerRadius = 10
         view.backgroundColor = .black
-        view.alpha = 0.5
+        view.alpha = 0.3
         
         return view
     }()
     
+    //왼쪽 칸 이미지
     private var completeImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -30,6 +31,7 @@ final class GoalListCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
+    //제목, 마지막 달성 날짜 label 스택
     private lazy var labelStackView: UIStackView = {
         let stackView: UIStackView = .init(arrangedSubviews: [titleLabel, lastCompletedDateLabel])
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -44,6 +46,7 @@ final class GoalListCollectionViewCell: UICollectionViewCell {
         return stackView
     }()
     
+    //제목 label
     private var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -55,6 +58,7 @@ final class GoalListCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
+    //마지막 달성 날짜 label
     private var lastCompletedDateLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -65,6 +69,7 @@ final class GoalListCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
+    //달성 횟수 label
     private var countLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -121,7 +126,7 @@ final class GoalListCollectionViewCell: UICollectionViewCell {
         contentView.layer.shadowOpacity = 0.8
         contentView.layer.shadowRadius = 5
         contentView.layer.shadowOffset = .zero
-        contentView.layer.shadowColor = UIColor.gray.cgColor
+        contentView.layer.shadowColor = UIColor.darkGray.cgColor
         
         //모서리 둥글게
         contentView.layer.cornerRadius = 10
@@ -184,7 +189,17 @@ final class GoalListCollectionViewCell: UICollectionViewCell {
         
         //오늘 완료한 목표는 회색으로 표시
         if goal.isCompleted {
-            maskingView.isHidden = false
+            maskingCompleteGoal()
         }
+    }
+    
+    private func maskingCompleteGoal() {
+        maskingView.isHidden = false
+        
+        completeImageView.alpha = 0.5
+        labelStackView.alpha = 0.5
+        countLabel.alpha = 0.5
+        
+        contentView.layer.shadowOpacity = 0
     }
 }
