@@ -27,7 +27,7 @@ final class LaunchViewController: UIViewController {
             case .ok:
                 goHomeVC()
             case .fail:
-                alert(meesgae: state.notice, doneAction: UIAction { _ in
+                alert(message: state.notice, doneAction: UIAction { _ in
                     exit(0)
                 })
             }

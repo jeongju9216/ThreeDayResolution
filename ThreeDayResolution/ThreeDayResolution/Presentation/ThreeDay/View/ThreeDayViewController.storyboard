@@ -87,25 +87,11 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕하세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKl-ah-fai">
-                                <rect key="frame" x="20" y="76" width="374" height="29"/>
+                                <rect key="frame" x="20" y="68" width="374" height="29"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f29-Mq-ghR">
-                                <rect key="frame" x="354" y="74.5" width="32" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="f29-Mq-ghR" secondAttribute="height" multiplier="1:1" id="op9-GP-uvo"/>
-                                </constraints>
-                                <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="flag.fill" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="28"/>
-                                </state>
-                                <connections>
-                                    <action selector="clickedGiveUpButton:" destination="uJl-Z5-msg" eventType="touchUpInside" id="Fzd-De-2NT"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qxF-Cf-YQe"/>
                         <color key="backgroundColor" name="MainColor"/>
@@ -114,11 +100,9 @@
                             <constraint firstItem="fCg-V7-GwP" firstAttribute="centerX" secondItem="eML-me-q42" secondAttribute="centerX" id="1Zy-uL-2mf"/>
                             <constraint firstItem="qxF-Cf-YQe" firstAttribute="trailing" secondItem="cKl-ah-fai" secondAttribute="trailing" constant="20" id="3xf-LE-1ih"/>
                             <constraint firstItem="zaB-xm-k7V" firstAttribute="centerY" secondItem="eML-me-q42" secondAttribute="centerY" constant="-50" id="9ob-Ov-JVm"/>
-                            <constraint firstItem="qxF-Cf-YQe" firstAttribute="trailing" secondItem="f29-Mq-ghR" secondAttribute="trailing" constant="28" id="BJn-qz-Udy"/>
                             <constraint firstItem="cKl-ah-fai" firstAttribute="centerX" secondItem="eML-me-q42" secondAttribute="centerX" id="Izp-KJ-pee"/>
                             <constraint firstItem="6ba-i7-gZ2" firstAttribute="centerX" secondItem="eML-me-q42" secondAttribute="centerX" id="PCU-hM-7gP"/>
-                            <constraint firstItem="f29-Mq-ghR" firstAttribute="centerY" secondItem="cKl-ah-fai" secondAttribute="centerY" id="RWB-XF-Yro"/>
-                            <constraint firstItem="cKl-ah-fai" firstAttribute="top" secondItem="qxF-Cf-YQe" secondAttribute="top" constant="28" id="TZY-zk-WgL"/>
+                            <constraint firstItem="cKl-ah-fai" firstAttribute="top" secondItem="qxF-Cf-YQe" secondAttribute="top" constant="20" id="TZY-zk-WgL"/>
                             <constraint firstItem="fCg-V7-GwP" firstAttribute="top" secondItem="zaB-xm-k7V" secondAttribute="bottom" constant="70" id="VOo-Pp-X0k"/>
                             <constraint firstItem="zaB-xm-k7V" firstAttribute="top" secondItem="6ba-i7-gZ2" secondAttribute="bottom" constant="25" id="b79-su-MKx"/>
                             <constraint firstItem="fCg-V7-GwP" firstAttribute="centerX" secondItem="eML-me-q42" secondAttribute="centerX" id="hPt-0j-MTW"/>
@@ -143,7 +127,6 @@
     </scenes>
     <resources>
         <image name="SmileImage" width="92.5" height="92.5"/>
-        <image name="flag.fill" catalog="system" width="128" height="121"/>
         <namedColor name="LabelColor">
             <color red="0.0" green="0.71399998664855957" blue="0.84299999475479126" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

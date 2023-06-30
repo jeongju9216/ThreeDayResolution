@@ -27,6 +27,10 @@ extension Goal {
         return Calendar.current.isDateInToday(lastCompletedDate)
     }
     
+    var displayCount: String {
+        return "\(count)일"
+    }
+    
     var displayLastCompleteDate: String {
         guard let lastCompletedDate = lastCompletedDate else {
             return "달성 기록 없음"

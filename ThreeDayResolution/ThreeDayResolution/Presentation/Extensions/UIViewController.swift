@@ -18,11 +18,23 @@ extension UIViewController {
 }
 
 extension UIViewController {
-    func alert(title: String = "안내", meesgae: String, doneTitle: String = "확인", doneAction: UIAction? = nil) {
+    func alert(title: String = "안내", message: String, doneTitle: String = "확인", doneAction: UIAction? = nil) {
         let alertVC = AlertViewController(titleText: title,
-                                          messageText: meesgae,
+                                          messageText: message,
                                           doneText: doneTitle,
                                           doneAction: doneAction)
+        present(alertVC, animated: false, completion: nil)
+    }
+    
+    func alert(title: String = "안내", message: String, doneTitle: String = "확인", doneAction: UIAction? = nil, cancelTitle: String = "취소", cancelAction: UIAction? = nil) {
+        let alertVC = AlertViewController(
+            titleText: title,
+            messageText: message,
+            doneText: doneTitle,
+            doneAction: doneAction,
+            cancelText: cancelTitle,
+            cancelAction: cancelAction
+        )
         present(alertVC, animated: false, completion: nil)
     }
 }
