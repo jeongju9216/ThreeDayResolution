@@ -14,10 +14,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Goal View Controller-->
+        <!--New Goal View Controller-->
         <scene sceneID="szs-V8-WNt">
             <objects>
-                <viewController storyboardIdentifier="GoalViewController" id="xye-D0-tbs" customClass="GoalViewController" customModule="ThreeDayResolution" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewGoalViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xye-D0-tbs" customClass="NewGoalViewController" customModule="ThreeDayResolution" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vx1-yh-AXH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

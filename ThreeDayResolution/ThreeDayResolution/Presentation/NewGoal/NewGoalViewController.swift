@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  NewGoalViewController.swift
 //  ThreeDayHump
 //
 //  Created by 유정주 on 2022/01/02.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class GoalViewController: UIViewController {
+final class NewGoalViewController: UIViewController {
 
     //MARK: - IBOutlets
     @IBOutlet weak var goalBackgroundView: UIView!
@@ -59,7 +59,7 @@ final class GoalViewController: UIViewController {
     }
 }
 
-extension GoalViewController: UITextFieldDelegate {
+extension NewGoalViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else {
             return false

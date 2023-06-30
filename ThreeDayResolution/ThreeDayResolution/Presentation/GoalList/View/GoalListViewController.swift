@@ -54,7 +54,7 @@ final class GoalListViewController: UIViewController {
         //네비게이션바 아이템 적용
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "작심 0일", style: .done, target: self, action: nil)
         navigationItem.rightBarButtonItems = [
-            UIBarButtonItem(image: UIImage(systemName: "plus.app"), style: .done, target: self, action: nil),
+            UIBarButtonItem(image: UIImage(systemName: "plus.app"), style: .done, target: self, action: #selector(goGoalVC)),
         ]
         
         //네비게이션바 아이템 색상 적용
@@ -64,6 +64,12 @@ final class GoalListViewController: UIViewController {
     private func setupCollectionView() {
         goalListView.collectionView.delegate = self
         goalListView.collectionView.dataSource = self
+    }
+    
+    //MARK: - Methods
+    @objc private func goGoalVC() {
+        let goalVC = NewGoalViewController.instantiate
+        navigationController?.pushViewController(goalVC, animated: true)
     }
 }
 

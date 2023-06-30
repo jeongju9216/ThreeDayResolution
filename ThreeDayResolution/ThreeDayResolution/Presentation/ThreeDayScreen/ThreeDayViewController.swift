@@ -112,7 +112,7 @@ final class ThreeDayViewController: UIViewController {
     func showGoalViewController() {
         let tabBarController = self.tabBarController
         
-        let goalViewController = GoalViewController.instantiate
+        let goalViewController = NewGoalViewController.instantiate
         let moreViewController = MoreViewController.instantiate
         
         tabBarController?.setViewControllers([goalViewController, moreViewController], animated: false)
