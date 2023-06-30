@@ -59,6 +59,7 @@ final class GoalListViewController: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "작심 \(BaseData.shared.runCount)일", style: .done, target: self, action: nil)
         navigationItem.rightBarButtonItems = [
             UIBarButtonItem(image: UIImage(systemName: "plus.app.fill"), style: .done, target: self, action: #selector(goGoalVC)),
+            UIBarButtonItem(image: UIImage(systemName: "info.square"), style: .done, target: self, action: #selector(showInfoVC)),
         ]
         
         //네비게이션바 아이템 색상 적용
@@ -74,6 +75,11 @@ final class GoalListViewController: UIViewController {
     @objc private func goGoalVC() {
         let goalVC = NewGoalViewController.instantiate
         navigationController?.pushViewController(goalVC, animated: true)
+    }
+    
+    @objc private func showInfoVC() {
+        let infoVC = InfoViewController()
+        present(infoVC, animated: true)
     }
     
     private func goThreeDayVC(goal: Goal) {

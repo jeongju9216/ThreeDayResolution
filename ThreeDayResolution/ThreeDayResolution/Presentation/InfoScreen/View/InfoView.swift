@@ -48,10 +48,10 @@ final class InfoView: UIView {
     private var versionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.numberOfLines = 0
         
+        label.numberOfLines = 0
         label.text = "현재 버전 : \(BaseData.shared.currentVersion)\n최신 버전 : \(BaseData.shared.lastetVersion)"
-        label.font = UIFont.appleSDGothicNeoFont(ofSize: 16)
+        label.font = UIFont.appleSDGothicNeoFont(ofSize: 16, weight: .regular)
         
         return label
     }()
@@ -73,25 +73,14 @@ final class InfoView: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         
-        let title: String = BaseData.shared.isNeedUpdate ? "최신 버전으로 업데이트" : "최신 버전"
+        let title = BaseData.shared.isNeedUpdate ? "최신 버전으로 업데이트" : "최신 버전"
         
-        button.clipsToBounds = true
         button.layer.masksToBounds = true
-        
-        button.setBackgroundColor(UIColor.main, for: .normal)
         button.layer.cornerRadius = 20 //heigth: 40 고정
         
+        button.backgroundColor = .main
         button.setTitle(title, for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        
-        button.setTitleColor(.white, for: .normal)
-        button.setTitleColor(.lightGray, for: .highlighted)
-        
-        if UITraitCollection.current.userInterfaceStyle == .light {
-            button.setTitleColor(.white, for: .disabled)
-        } else {
-            button.setTitleColor(.lightGray, for: .disabled)
-        }
+        button.titleLabel?.font = UIFont.appleSDGothicNeoFont(ofSize: 18)
         
         button.isEnabled = BaseData.shared.isNeedUpdate
 
@@ -114,6 +103,8 @@ final class InfoView: UIView {
     
     //MARK: - Setup
     private func setupUI() {
+        backgroundColor = .systemBackground
+        
         setupCloseButton()
         setupIconImage()
         setupTitleLabel()
@@ -159,13 +150,11 @@ final class InfoView: UIView {
     
     private func setupUpdateButton() {
         addSubview(updateButton)
-        
-        let width = min(self.frame.width - 80, 800)
         NSLayoutConstraint.activate([
-            updateButton.widthAnchor.constraint(equalToConstant: width),
+            updateButton.widthAnchor.constraint(equalToConstant: 340),
             updateButton.heightAnchor.constraint(equalToConstant: 40),
-            versionLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            versionLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20)
+            updateButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+            updateButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20)
         ])
     }
     
