@@ -26,7 +26,7 @@ final class LaunchViewController: UIViewController {
             switch state.state {
             case .ok:
                 countingRun()
-                goHomeVC()
+                goFirstVC()
             case .fail:
                 alert(message: state.notice, doneAction: UIAction { _ in
                     exit(0)
@@ -35,12 +35,12 @@ final class LaunchViewController: UIViewController {
         }
     }
     
-    private func goHomeVC() {
-        let mainTabBarVC = MainTabBarViewController()
-        mainTabBarVC.modalPresentationStyle = .fullScreen
+    private func goFirstVC() {
+        let firstVC = UINavigationController(rootViewController: GoalListViewController())
+        firstVC.modalPresentationStyle = .fullScreen
 
         dismiss(animated: false)
-        present(mainTabBarVC, animated: false)
+        present(firstVC, animated: false)
     }
     
     private func countingRun() {
