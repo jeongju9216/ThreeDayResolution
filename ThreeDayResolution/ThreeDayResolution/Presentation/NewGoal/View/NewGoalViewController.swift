@@ -43,7 +43,7 @@ final class NewGoalViewController: UIViewController {
         setupNavigationBar()
         setupTipLabel()
         textCountLabel.text = "(0/\(maxGoalLength))"
-        goalBackgroundView.layer.cornerRadius = 15
+        goalBackgroundView.layer.cornerRadius = 10
         setupStartButton()
     }
     
