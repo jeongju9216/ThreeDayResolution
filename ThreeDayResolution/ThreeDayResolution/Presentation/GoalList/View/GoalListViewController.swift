@@ -12,16 +12,14 @@ final class GoalListViewController: UIViewController {
     //MARK: - Properties
     private let viewModel: GoalListViewModel = GoalListViewModel()
     private var testArr: [Goal] = [
+        Goal(goal: "TEST3", count: 3, createdAt: .init(), lastCompletedDate: .init(timeIntervalSinceNow: 0)),
         Goal(goal: "TEST1", count: 1, createdAt: .init(), lastCompletedDate: .init(timeIntervalSinceNow: -86400)),
-        Goal(goal: "TEST2", count: 200, createdAt: .init(), lastCompletedDate: .init(timeIntervalSinceNow: 0)),
-        Goal(goal: "TEST3", count: 30, createdAt: .init(), lastCompletedDate: .init(timeIntervalSinceNow: -10000000)),
+        Goal(goal: "TEST2", count: 2, createdAt: .init(), lastCompletedDate: .init(timeIntervalSinceNow: 0)),
+        Goal(goal: "TEST3", count: 2, createdAt: .init(), lastCompletedDate: .init(timeIntervalSinceNow: -10000000)),
         Goal(goal: "TEST4", count: 0, createdAt: .init())
     ]
     
-    private var bookmarkedList: [Goal] = [
-        Goal(goal: "BK TEST1", count: 1, createdAt: .init(), lastCompletedDate: .init(timeIntervalSinceNow: -86400), isBookmarked: true),
-        Goal(goal: "BK TEST2", count: 200, createdAt: .init(), lastCompletedDate: .init(timeIntervalSinceNow: 0), isBookmarked: true),
-    ]
+    private var bookmarkedList: [Goal] = []
     
     
     //MARK: - Views
@@ -115,7 +113,15 @@ extension GoalListViewController: UICollectionViewDataSource {
             return defaultCell
         }
         
-        cell.configuration(goal: testArr[indexPath.row])
+        if bookmarkedList.isEmpty {
+            cell.configuration(goal: testArr[indexPath.row])
+        } else {
+            if indexPath.section == 0 {
+                cell.configuration(goal: bookmarkedList[indexPath.row])
+            } else {
+                cell.configuration(goal: testArr[indexPath.row])
+            }
+        }
         
         return cell
     }
