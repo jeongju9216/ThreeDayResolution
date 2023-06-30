@@ -32,6 +32,9 @@
 		9B7639242A4E70060099B94C /* NewGoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7639232A4E70060099B94C /* NewGoalViewModel.swift */; };
 		9B7639262A4E78000099B94C /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7639252A4E78000099B94C /* UIFont.swift */; };
 		9B76392A2A4E83B80099B94C /* ThreeDayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7639292A4E83B80099B94C /* ThreeDayViewModel.swift */; };
+		9B76392C2A4E99700099B94C /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B76392B2A4E99700099B94C /* CoreDataStorage.swift */; };
+		9B76392F2A4E998E0099B94C /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B76392D2A4E998E0099B94C /* CoreData.xcdatamodeld */; };
+		9B7639312A4E9BED0099B94C /* GoalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7639302A4E9BED0099B94C /* GoalStorage.swift */; };
 		9B83DC3A2A4D2C970073FBBC /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B83DC392A4D2C970073FBBC /* LaunchViewController.swift */; };
 		9B83DC3C2A4D2E5C0073FBBC /* LaunchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B83DC3B2A4D2E5C0073FBBC /* LaunchViewController.storyboard */; };
 		9B83DC3E2A4D33890073FBBC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B83DC3D2A4D33890073FBBC /* GoogleService-Info.plist */; };
@@ -74,6 +77,9 @@
 		9B7639232A4E70060099B94C /* NewGoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoalViewModel.swift; sourceTree = "<group>"; };
 		9B7639252A4E78000099B94C /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		9B7639292A4E83B80099B94C /* ThreeDayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeDayViewModel.swift; sourceTree = "<group>"; };
+		9B76392B2A4E99700099B94C /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
+		9B76392E2A4E998E0099B94C /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
+		9B7639302A4E9BED0099B94C /* GoalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalStorage.swift; sourceTree = "<group>"; };
 		9B83DC392A4D2C970073FBBC /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		9B83DC3B2A4D2E5C0073FBBC /* LaunchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchViewController.storyboard; sourceTree = "<group>"; };
 		9B83DC3D2A4D33890073FBBC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -323,6 +329,9 @@
 		9B83DC362A4C6B640073FBBC /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				9B7639302A4E9BED0099B94C /* GoalStorage.swift */,
+				9B76392B2A4E99700099B94C /* CoreDataStorage.swift */,
+				9B76392D2A4E998E0099B94C /* CoreData.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -507,10 +516,12 @@
 			files = (
 				9BF6C2012781DC4800E486CE /* NewGoalViewController.swift in Sources */,
 				9B6CF90127A778F5007384B2 /* InfoViewController.swift in Sources */,
+				9B76392F2A4E998E0099B94C /* CoreData.xcdatamodeld in Sources */,
 				9B6CF90C27C0FC43007384B2 /* BaseData.swift in Sources */,
 				9B7639072A4D53870099B94C /* MainTabBarViewController.swift in Sources */,
 				9B76392A2A4E83B80099B94C /* ThreeDayViewModel.swift in Sources */,
 				9B1A0CF42789190C0085B9CF /* ThreeDayViewController.swift in Sources */,
+				9B76392C2A4E99700099B94C /* CoreDataStorage.swift in Sources */,
 				9B83DC4E2A4D3A820073FBBC /* VersionData.swift in Sources */,
 				9B65DAE32787270000F01979 /* MoreViewController.swift in Sources */,
 				9B83DC512A4D3DCD0073FBBC /* Logger.swift in Sources */,
@@ -521,6 +532,7 @@
 				9B83DC462A4D35E30073FBBC /* FirebaseService.swift in Sources */,
 				9B83DC3A2A4D2C970073FBBC /* LaunchViewController.swift in Sources */,
 				9B7639242A4E70060099B94C /* NewGoalViewModel.swift in Sources */,
+				9B7639312A4E9BED0099B94C /* GoalStorage.swift in Sources */,
 				9B83DC4C2A4D3A180073FBBC /* LaunchViewModel.swift in Sources */,
 				9B7639102A4D61700099B94C /* GoalListViewModel.swift in Sources */,
 				9B7639262A4E78000099B94C /* UIFont.swift in Sources */,
@@ -767,6 +779,19 @@
 			productName = FirebaseDatabase;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		9B76392D2A4E998E0099B94C /* CoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9B76392E2A4E998E0099B94C /* CoreData.xcdatamodel */,
+			);
+			currentVersion = 9B76392E2A4E998E0099B94C /* CoreData.xcdatamodel */;
+			path = CoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9BF6C1F12781DC4800E486CE /* Project object */;
 }
