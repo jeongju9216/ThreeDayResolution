@@ -8,6 +8,7 @@
 import UIKit
 import GoogleMobileAds
 import AdSupport
+import AppTrackingTransparency
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,10 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseService.shared.initFirebase()
         
-        //구글 광고 초기화
-        GADMobileAds.sharedInstance().start()
-        Logger.log("advertisingIdentifier: \(ASIdentifierManager.shared().advertisingIdentifier)")
-        
+        ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+            //구글 광고 초기화
+            GADMobileAds.sharedInstance().start()
+        })
+
         return true
     }
 
