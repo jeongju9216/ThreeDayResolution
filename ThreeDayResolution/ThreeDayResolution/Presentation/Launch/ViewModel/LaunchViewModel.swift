@@ -45,7 +45,7 @@ struct LaunchViewModel {
     }
     
     private func fetchAdID() async {
-//        BaseData.shared.adUnitID = await FirebaseService.shared.fetchAdID()
-        BaseData.shared.adUnitID = "ca-app-pub-3940256099942544/6300978111" //테스트
+        BaseData.shared.adUnitID = await FirebaseService.shared.fetchAdID()
+//        BaseData.shared.adUnitID = "ca-app-pub-3940256099942544/6300978111" //테스트
     }
 }
