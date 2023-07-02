@@ -6,7 +6,8 @@
 //
 
 import UIKit
-import UserNotifications
+import GoogleMobileAds
+import AdSupport
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         FirebaseService.shared.initFirebase()
+        
+        //구글 광고 초기화
+        GADMobileAds.sharedInstance().start()
+        Logger.log("advertisingIdentifier: \(ASIdentifierManager.shared().advertisingIdentifier)")
         
         return true
     }

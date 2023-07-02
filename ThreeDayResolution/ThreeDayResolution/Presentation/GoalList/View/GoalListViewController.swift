@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import GoogleMobileAds
 
 final class GoalListViewController: UIViewController {
     
@@ -46,6 +47,8 @@ final class GoalListViewController: UIViewController {
     private func setupUI() {
         setupNavigationBar()
         setupCollectionView()
+        
+        setupBannerView()
     }
     
     private func setupNavigationBar() {
@@ -69,6 +72,12 @@ final class GoalListViewController: UIViewController {
     private func setupCollectionView() {
         goalListView.collectionView.delegate = self
         goalListView.collectionView.dataSource = self
+    }
+    
+    private func setupBannerView() {
+        goalListView.bannerView.rootViewController = self
+        goalListView.bannerView.load(GADRequest())
+        goalListView.bannerView.delegate = self
     }
     
     //MARK: - Methods
@@ -194,4 +203,11 @@ extension GoalListViewController: UICollectionViewDataSource {
 //MARK: - NewGaolViewControllerDelegate
 extension GoalListViewController: NewGoalViewControllerDelegate {
 
+}
+
+//MARK: -
+extension GoalListViewController: GADBannerViewDelegate {
+    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+        goalListView.bannerView.showSmoothly()
+    }
 }

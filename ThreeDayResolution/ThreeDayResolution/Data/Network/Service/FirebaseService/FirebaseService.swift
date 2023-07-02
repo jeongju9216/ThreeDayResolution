@@ -85,4 +85,17 @@ final class FirebaseService {
         
         return policyURL
     }
+    
+    func fetchAdID() async -> String {
+        var snapshot: DataSnapshot?
+        do {
+            snapshot = try await firebaseRef.child("adUnitID").getData()
+        } catch {
+            Logger.error(error.localizedDescription)
+        }
+        
+        let adUnitID = snapshot?.value as? String ?? ""
+        
+        return adUnitID
+    }
 }
