@@ -47,6 +47,8 @@ final class GoalListView: UIView {
         label.font = UIFont.appleSDGothicNeoFont(ofSize: 18, weight: .regular)
         label.textAlignment = .center
         
+        label.isHidden = true
+        
         return label
     }()
     
