@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 enum GoalListSections: Int, CaseIterable {
     case bookmark, goal
@@ -49,6 +50,9 @@ final class GoalListView: UIView {
         return label
     }()
     
+    //애드몹 광고
+    var bannerView: GADBannerView = .createBannerView()
+    
     //MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -65,6 +69,7 @@ final class GoalListView: UIView {
         
         setupCollectionView()
         setupEmptyLabel()
+        setBannerView()
     }
     
     private func setupCollectionView() {
@@ -81,6 +86,16 @@ final class GoalListView: UIView {
         NSLayoutConstraint.activate([
             emptyLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             emptyLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
+        ])
+    }
+    
+    private func setBannerView() {
+        addSubview(bannerView)
+        NSLayoutConstraint.activate([
+            bannerView.widthAnchor.constraint(equalToConstant: GADAdSizeBanner.size.width),
+            bannerView.heightAnchor.constraint(equalToConstant: GADAdSizeBanner.size.height),
+            bannerView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            bannerView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
         ])
     }
     

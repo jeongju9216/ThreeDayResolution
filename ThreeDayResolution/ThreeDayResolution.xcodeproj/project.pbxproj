@@ -36,6 +36,8 @@
 		9B76393B2A4EA12C0099B94C /* GoalUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B76393A2A4EA12C0099B94C /* GoalUseCaseProtocol.swift */; };
 		9B76393D2A4EA4D70099B94C /* GoalUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B76393C2A4EA4D70099B94C /* GoalUseCase.swift */; };
 		9B7639402A4EC9650099B94C /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B76393F2A4EC9650099B94C /* InfoView.swift */; };
+		9B76394F2A5078D90099B94C /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 9B76394E2A5078D90099B94C /* GoogleMobileAds */; };
+		9B7639512A510DA30099B94C /* GADBannerView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7639502A510DA30099B94C /* GADBannerView+Extension.swift */; };
 		9B83DC3A2A4D2C970073FBBC /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B83DC392A4D2C970073FBBC /* LaunchViewController.swift */; };
 		9B83DC3C2A4D2E5C0073FBBC /* LaunchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B83DC3B2A4D2E5C0073FBBC /* LaunchViewController.storyboard */; };
 		9B83DC3E2A4D33890073FBBC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B83DC3D2A4D33890073FBBC /* GoogleService-Info.plist */; };
@@ -82,6 +84,7 @@
 		9B76393A2A4EA12C0099B94C /* GoalUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalUseCaseProtocol.swift; sourceTree = "<group>"; };
 		9B76393C2A4EA4D70099B94C /* GoalUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalUseCase.swift; sourceTree = "<group>"; };
 		9B76393F2A4EC9650099B94C /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		9B7639502A510DA30099B94C /* GADBannerView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GADBannerView+Extension.swift"; sourceTree = "<group>"; };
 		9B83DC392A4D2C970073FBBC /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		9B83DC3B2A4D2E5C0073FBBC /* LaunchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchViewController.storyboard; sourceTree = "<group>"; };
 		9B83DC3D2A4D33890073FBBC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -104,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B76394F2A5078D90099B94C /* GoogleMobileAds in Frameworks */,
 				9B83DC492A4D38580073FBBC /* FirebaseDatabase in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -154,6 +158,7 @@
 				9B7639082A4D557D0099B94C /* UIColor.swift */,
 				9B76391D2A4D9C860099B94C /* UICollectionReusableView+Extension.swift */,
 				9B7639252A4E78000099B94C /* UIFont.swift */,
+				9B7639502A510DA30099B94C /* GADBannerView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -467,6 +472,7 @@
 			name = ThreeDayResolution;
 			packageProductDependencies = (
 				9B83DC482A4D38580073FBBC /* FirebaseDatabase */,
+				9B76394E2A5078D90099B94C /* GoogleMobileAds */,
 			);
 			productName = ThreeDayHump;
 			productReference = 9BF6C1F92781DC4800E486CE /* ThreeDayResolution.app */;
@@ -498,6 +504,7 @@
 			mainGroup = 9BF6C1F02781DC4800E486CE;
 			packageReferences = (
 				9B83DC472A4D38580073FBBC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				9B76394D2A5078D80099B94C /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 			);
 			productRefGroup = 9BF6C1FA2781DC4800E486CE /* Products */;
 			projectDirPath = "";
@@ -564,6 +571,7 @@
 				9BA9F7D52789889C00F9F86B /* UIButton.swift in Sources */,
 				9B7639202A4DBEF40099B94C /* SectionHeaderView.swift in Sources */,
 				9B1A0CF727891D360085B9CF /* Goal.swift in Sources */,
+				9B7639512A510DA30099B94C /* GADBannerView+Extension.swift in Sources */,
 				9BF6C1FF2781DC4800E486CE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -719,7 +727,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jeong9216.ThreeDayHump;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -749,7 +757,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jeong9216.ThreeDayHump;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -782,6 +790,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		9B76394D2A5078D80099B94C /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 		9B83DC472A4D38580073FBBC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -793,6 +809,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		9B76394E2A5078D90099B94C /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B76394D2A5078D80099B94C /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
 		9B83DC482A4D38580073FBBC /* FirebaseDatabase */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9B83DC472A4D38580073FBBC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

@@ -17,6 +17,7 @@ struct LaunchViewModel {
         setVersion(versionData)
         
         await fetchPolicyURL()
+        await fetchAdID()
         
         return serverStateData
     }
@@ -41,5 +42,10 @@ struct LaunchViewModel {
     
     private func fetchPolicyURL() async {
         BaseData.shared.policyURL = await FirebaseService.shared.fetchPolicyURL()
+    }
+    
+    private func fetchAdID() async {
+        BaseData.shared.adUnitID = await FirebaseService.shared.fetchAdID()
+//        BaseData.shared.adUnitID = "ca-app-pub-3940256099942544/6300978111" //테스트
     }
 }

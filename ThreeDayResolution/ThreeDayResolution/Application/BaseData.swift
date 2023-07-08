@@ -27,6 +27,7 @@ final class BaseData {
     var forcedUpdateVersion = "" //강제 업데이트 버전
     
     var policyURL: String = ""
+    var adUnitID: String = ""
     
     var lastRunDate: Date? {
         get {
